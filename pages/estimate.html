@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get a Free Estimate — HandKind Construction Brantford</title>
+<meta name="description" content="Request a free renovation estimate from HandKind Construction. Serving Brantford, Paris and Brant County. Kitchens, bathrooms, basements, additions and ARUs.">
+<link rel="canonical" href="https://handkindconstruction.ca/estimate">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  .estimate-layout {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 6rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .estimate-left {}
+
+  .estimate-promise {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .promise-item { display: flex; gap: 1rem; align-items: flex-start; }
+
+  .promise-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--navy);
+    flex-shrink: 0;
+    margin-top: 6px;
+    opacity: 0.4;
+  }
+
+  .promise-text h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+
+  .promise-text p {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--stone);
+    line-height: 1.7;
+  }
+
+  /* Jobtread form — themed */
+  .form-card {
+    background: #fff;
+    border: 1px solid var(--border);
+  }
+
+  .card-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .card-header-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--ink);
+  }
+
+  .card-header-sub {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--stone);
+    margin-top: 0.25rem;
+  }
+
+  .card-body { padding: 1.75rem 2rem; display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .field-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.45rem;
+  }
+
+  .field-required { color: #b91c1c; font-weight: 400; margin-left: 1px; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 300;
+    appearance: none;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  }
+
+  input[type="text"]:hover,
+  input[type="email"]:hover,
+  input[type="tel"]:hover,
+  textarea:hover { border-color: rgba(28,46,74,0.3); background: #fff; }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  textarea:focus { background: #fff; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(28,46,74,0.1); }
+
+  textarea { resize: vertical; min-height: 72px; }
+
+  input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    background: var(--cream);
+    border: 1px dashed rgba(28,46,74,0.25);
+    color: var(--stone);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  input[type="file"]:hover { border-color: var(--navy); background: #fff; }
+
+  .checkbox-group { border: 1px solid var(--border); overflow: hidden; }
+
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.15s;
+    font-size: 0.86rem;
+    font-weight: 300;
+    color: var(--ink);
+  }
+
+  .checkbox-row:last-child { border-bottom: none; }
+  .checkbox-row:hover { background: var(--cream); }
+  .checkbox-row input[type="checkbox"] { width: 15px; height: 15px; flex-shrink: 0; accent-color: var(--navy); cursor: pointer; }
+
+  .form-divider { height: 1px; background: var(--border); }
+
+  .card-footer {
+    padding: 1.25rem 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .card-footer-note { font-size: 0.7rem; color: var(--stone); line-height: 1.5; }
+
+  button[data-submit-button] {
+    padding: 0.85rem 1.75rem;
+    background: var(--navy-dark);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  button[data-submit-button]:hover { background: var(--navy-mid); }
+
+  @media (max-width: 860px) {
+    .estimate-layout { grid-template-columns: 1fr; gap: 3rem; }
+  }
+</style>
+</head>
+<body class="page-body">
+
+<div id="nav-placeholder"></div>
+
+<div class="page-hero">
+  <p class="section-label section-label--light">Free Estimate</p>
+  <h1 class="page-hero-title">Tell us about<br>your <em>project</em></h1>
+  <p class="page-hero-body">We'll review your details and reach out within one business day to arrange a free on-site visit — no pressure, no obligation.</p>
+</div>
+
+<section class="section">
+  <div class="estimate-layout">
+
+    <div class="estimate-left">
+      <p class="section-label">What Happens Next</p>
+      <h2 class="section-title">A straightforward<br><em>process</em></h2>
+
+      <div class="estimate-promise">
+        <div class="promise-item">
+          <div class="promise-dot"></div>
+          <div class="promise-text">
+            <h4>We review your submission</h4>
+            <p>Within one business day, someone from HandKind will reach out to confirm details and answer any initial questions.</p>
+          </div>
+        </div>
+        <div class="promise-item">
+          <div class="promise-dot"></div>
+          <div class="promise-text">
+            <h4>Free on-site visit</h4>
+            <p>We come to you. We walk the space, take measurements and talk through your goals — no charge, no commitment.</p>
+          </div>
+        </div>
+        <div class="promise-item">
+          <div class="promise-dot"></div>
+          <div class="promise-text">
+            <h4>Detailed line-item estimate</h4>
+            <p>You'll receive a transparent, itemised quote — not a vague number or a per-square-foot ballpark. You'll know exactly what you're paying for.</p>
+          </div>
+        </div>
+        <div class="promise-item">
+          <div class="promise-dot"></div>
+          <div class="promise-text">
+            <h4>No pressure, ever</h4>
+            <p>The estimate is free and there's no obligation to proceed. If it's not the right fit, we'll tell you honestly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
+        <p style="font-size:0.82rem;font-weight:300;color:var(--stone);line-height:1.7;">
+          <strong style="font-weight:500;color:var(--ink);">HandKind Construction Co.</strong><br>
+          20 Balmoral St, Paris, ON<br>
+          <a href="mailto:hello@handkindconstruction.ca" style="color:var(--navy);text-decoration:none;">hello@handkindconstruction.ca</a><br>
+          Licensed &amp; Insured · Ontario
+        </p>
+      </div>
+    </div>
+
+    <!-- JobTread form — data-key and submit action preserved exactly -->
+    <div>
+      <form data-jobtread-web-form="true" data-key="22TAE6ZehZcdDvJ5xssdX3Mrd8w6Hc2ERW">
+        <div class="form-card">
+
+          <div class="card-header">
+            <p class="card-header-title">Project Estimate Request</p>
+            <p class="card-header-sub">Fields marked * are required</p>
+          </div>
+
+          <div class="card-body">
+
+            <label>
+              <span class="field-label">Name <span class="field-required">*</span></span>
+              <input type="text" required name="contact.name" placeholder="Your full name">
+            </label>
+
+            <label>
+              <span class="field-label">Email <span class="field-required">*</span></span>
+              <input type="email" required name="contact.custom.22PKG3WWYXv3" placeholder="you@example.com">
+            </label>
+
+            <label>
+              <span class="field-label">Phone <span class="field-required">*</span></span>
+              <input type="tel" required name="contact.custom.22PKG3WtEWJG" placeholder="(519) 000-0000">
+            </label>
+
+            <label>
+              <span class="field-label">Project address <span class="field-required">*</span></span>
+              <textarea name="location.address" required placeholder="Street address, city, postal code"></textarea>
+            </label>
+
+            <div class="form-divider"></div>
+
+            <div>
+              <span class="field-label">Remodel type</span>
+              <div class="checkbox-group">
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Full Remodel"><span>Full Remodel</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Addition"><span>Addition</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Basement"><span>Basement</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Bathroom"><span>Bathroom</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Kitchen"><span>Kitchen</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Garage"><span>Garage</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Home Exterior"><span>Home Exterior</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Roof"><span>Roof</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Patio"><span>Patio</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Porch"><span>Porch</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Deck"><span>Deck</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Landscape"><span>Landscape</span></label>
+                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Restoration"><span>Restoration</span></label>
+              </div>
+            </div>
+
+            <div class="form-divider"></div>
+
+            <label>
+              <span class="field-label">Tell us about your project</span>
+              <input type="text" name="job.description" placeholder="Brief description, timeline, anything helpful…">
+            </label>
+
+            <label>
+              <span class="field-label">Files &amp; Photos</span>
+              <input type="file" multiple name="account.files">
+            </label>
+
+          </div>
+
+          <div class="card-footer">
+            <p class="card-footer-note">We'll reply within<br>one business day.</p>
+            <button data-submit-button="true" type="submit">Submit Request</button>
+          </div>
+
+        </div>
+      </form>
+      <script async src="https://app.jobtread.com/web-form.js"></script>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renovation Projects in Brantford & Brant County | HandKind Construction</title>
+<meta name="description" content="Browse HandKind Construction's portfolio of kitchen, bathroom, basement and addition projects in Brantford, Paris and Brant County, Ontario.">
+<link rel="canonical" href="https://handkindconstruction.ca/projects">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  .filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .filter-btn {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 0.45rem 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-body);
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: var(--navy-dark);
+    color: #fff;
+    border-color: var(--navy-dark);
+  }
+
+  .projects-masonry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .proj-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    cursor: pointer;
+  }
+
+  .proj-card--tall { aspect-ratio: 3/4; }
+  .proj-card--wide { aspect-ratio: 4/3; }
+  .proj-card--square { aspect-ratio: 1; }
+
+  .proj-photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+  }
+
+  .proj-card:hover .proj-photo { transform: scale(1.06); }
+
+  .proj-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(17,30,50,0.88) 0%, rgba(17,30,50,0.1) 60%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .proj-card:hover .proj-overlay { opacity: 1; }
+
+  .proj-info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.5rem;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  .proj-card:hover .proj-info { transform: translateY(0); opacity: 1; }
+
+  .proj-category {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy-light);
+    margin-bottom: 0.35rem;
+  }
+
+  .proj-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .proj-meta {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 0.3rem;
+  }
+
+  .proj-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    border: 1px dashed rgba(15,15,14,0.15);
+  }
+
+  .proj-ph-cat { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); opacity: 0.5; margin-bottom: 0.5rem; }
+  .proj-ph-title { font-family: var(--font-display); font-size: 1.1rem; color: var(--ink-mid); opacity: 0.45; }
+  .proj-ph-loc { font-size: 0.7rem; color: var(--stone); opacity: 0.35; margin-top: 0.35rem; }
+
+  .coming-soon-note {
+    text-align: center;
+    padding: 3rem;
+    background: var(--cream);
+    margin-top: 3rem;
+  }
+
+  .coming-soon-note p {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--stone);
+    margin-bottom: 1.25rem;
+  }
+
+  @media (max-width: 860px) {
+    .projects-masonry { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 580px) {
+    .projects-masonry { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="page-body">
+
+<div id="nav-placeholder"></div>
+
+<div class="page-hero">
+  <p class="section-label section-label--light">Portfolio</p>
+  <h1 class="page-hero-title">Projects across<br><em>Brant County</em></h1>
+  <p class="page-hero-body">Kitchens, bathrooms, basements, additions and ARUs — work we're proud to stand behind in Brantford, Paris and surrounding communities.</p>
+</div>
+
+<div class="marquee-placeholder"></div>
+
+<section class="section">
+  <div class="inner">
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="kitchen">Kitchens</button>
+      <button class="filter-btn" data-filter="bathroom">Bathrooms</button>
+      <button class="filter-btn" data-filter="basement">Basements</button>
+      <button class="filter-btn" data-filter="addition">Additions &amp; ARUs</button>
+    </div>
+
+    <div class="projects-masonry">
+
+      <!-- Real project with photo -->
+      <div class="proj-card proj-card--wide" data-category="kitchen">
+        <div class="proj-photo" style="background-image:url('https://img1.wsimg.com/isteam/ip/aa097d1d-e629-4807-b052-e57bc0bbb8db/f48a6c35-def1-49be-bc41-f10cd9dd03f3.jpg/:/rs=w:800,cg:true');"></div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-category">Kitchen Renovation</p>
+          <p class="proj-title">Main Floor Remodel</p>
+          <p class="proj-meta">Brantford, Ontario &middot; 2024</p>
+        </div>
+      </div>
+
+      <!-- Placeholders -->
+      <div class="proj-card proj-card--tall" data-category="bathroom"><div class="proj-placeholder"><p class="proj-ph-cat">Bathroom</p><p class="proj-ph-title">Ensuite Renovation</p><p class="proj-ph-loc">Paris, Ontario</p></div></div>
+      <div class="proj-card proj-card--square" data-category="basement"><div class="proj-placeholder"><p class="proj-ph-cat">Basement</p><p class="proj-ph-title">Finished Lower Level</p><p class="proj-ph-loc">Brantford, Ontario</p></div></div>
+      <div class="proj-card proj-card--wide" data-category="addition"><div class="proj-placeholder"><p class="proj-ph-cat">Addition</p><p class="proj-ph-title">Rear Addition &amp; ARU</p><p class="proj-ph-loc">St. George, Ontario</p></div></div>
+      <div class="proj-card proj-card--square" data-category="kitchen"><div class="proj-placeholder"><p class="proj-ph-cat">Kitchen</p><p class="proj-ph-title">Kitchen &amp; Main Floor</p><p class="proj-ph-loc">Brant County</p></div></div>
+      <div class="proj-card proj-card--tall" data-category="bathroom"><div class="proj-placeholder"><p class="proj-ph-cat">Bathroom</p><p class="proj-ph-title">Main Bath Remodel</p><p class="proj-ph-loc">Brantford, Ontario</p></div></div>
+      <div class="proj-card proj-card--square" data-category="addition"><div class="proj-placeholder"><p class="proj-ph-cat">ARU</p><p class="proj-ph-title">Secondary Suite</p><p class="proj-ph-loc">Brantford, Ontario</p></div></div>
+      <div class="proj-card proj-card--wide" data-category="basement"><div class="proj-placeholder"><p class="proj-ph-cat">Basement</p><p class="proj-ph-title">Family Room &amp; Office</p><p class="proj-ph-loc">Paris, Ontario</p></div></div>
+      <div class="proj-card proj-card--square" data-category="kitchen"><div class="proj-placeholder"><p class="proj-ph-cat">Kitchen</p><p class="proj-ph-title">Open Concept Reno</p><p class="proj-ph-loc">Brant County</p></div></div>
+
+    </div>
+
+    <div class="coming-soon-note">
+      <p>More project photos are being added regularly — check back soon.</p>
+      <a href="/pages/estimate.html" class="btn btn--dark">Start Your Project</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="cta-placeholder"></div>
+<div id="footer-placeholder"></div>
+
+<script src="/js/main.js"></script>
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.proj-card').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

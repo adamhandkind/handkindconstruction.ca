@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact HandKind Construction — Brantford & Brant County Renovations</title>
+<meta name="description" content="Get in touch with HandKind Construction. Based in Paris, Ontario — serving Brantford, Brant County and area. Free estimates for kitchens, bathrooms, basements and additions.">
+<link rel="canonical" href="https://handkindconstruction.ca/contact">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact HandKind Construction",
+  "url": "https://handkindconstruction.ca/contact",
+  "mainEntity": {
+    "@type": "HomeAndConstructionBusiness",
+    "name": "HandKind Construction Co.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "20 Balmoral St",
+      "addressLocality": "Paris",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .contact-item {}
+
+  .contact-item-label {
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .contact-item-label::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: var(--navy);
+    opacity: 0.4;
+  }
+
+  .contact-item-value {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .contact-item-value a {
+    text-decoration: none;
+    color: var(--navy-mid);
+    transition: opacity 0.2s;
+  }
+
+  .contact-item-value a:hover { opacity: 0.65; }
+
+  .contact-item-sub {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--stone);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+
+  .contact-areas {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-areas-label {
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 1rem;
+  }
+
+  .contact-area-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .contact-area-tag {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--navy);
+    border: 1px solid rgba(28,46,74,0.2);
+    padding: 0.3rem 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Form side */
+  .contact-form-wrap {
+    background: var(--cream);
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+  }
+
+  .contact-form-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .contact-form-title em { font-style: italic; color: var(--navy-mid); }
+
+  .form-field { margin-bottom: 1.1rem; }
+
+  .form-field label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.45rem;
+  }
+
+  .form-field input,
+  .form-field textarea,
+  .form-field select {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 300;
+    appearance: none;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus,
+  .form-field select:focus {
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(28,46,74,0.1);
+  }
+
+  .form-field textarea { resize: vertical; min-height: 100px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-note {
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: var(--stone);
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 860px) {
+    .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+  }
+
+  @media (max-width: 580px) {
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form-wrap { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body class="page-body">
+
+<div id="nav-placeholder"></div>
+
+<div class="page-hero">
+  <p class="section-label section-label--light">Get in Touch</p>
+  <h1 class="page-hero-title">Let's talk about<br>your <em>project</em></h1>
+  <p class="page-hero-body">Based in Paris, Ontario. Serving Brantford, Brant County and surrounding area. We respond within one business day.</p>
+</div>
+
+<section class="section">
+  <div class="contact-layout">
+
+    <div class="contact-detail">
+      <div class="contact-item">
+        <p class="contact-item-label">Address</p>
+        <p class="contact-item-value">20 Balmoral St<br>Paris, ON</p>
+        <p class="contact-item-sub">By appointment — we come to you for estimates.</p>
+      </div>
+
+      <div class="contact-item">
+        <p class="contact-item-label">Email</p>
+        <p class="contact-item-value"><a href="mailto:hello@handkindconstruction.ca">hello@handkindconstruction.ca</a></p>
+        <p class="contact-item-sub">Best for project inquiries and estimates.</p>
+      </div>
+
+      <div class="contact-item">
+        <p class="contact-item-label">Careers</p>
+        <p class="contact-item-value"><a href="mailto:careers@handkindconstruction.ca">careers@handkindconstruction.ca</a></p>
+        <p class="contact-item-sub">Trade inquiries and resume submissions.</p>
+      </div>
+
+      <div class="contact-item">
+        <p class="contact-item-label">Hours</p>
+        <p class="contact-item-value">Mon – Fri, 7am – 5pm</p>
+        <p class="contact-item-sub">We check messages outside these hours and reply the next business day.</p>
+      </div>
+
+      <div class="contact-areas">
+        <p class="contact-areas-label">Areas Served</p>
+        <div class="contact-area-tags">
+          <span class="contact-area-tag">Brantford</span>
+          <span class="contact-area-tag">Paris</span>
+          <span class="contact-area-tag">Brant County</span>
+          <span class="contact-area-tag">St. George</span>
+          <span class="contact-area-tag">Burford</span>
+          <span class="contact-area-tag">Ohsweken</span>
+          <span class="contact-area-tag">Cambridge</span>
+          <span class="contact-area-tag">Woodstock</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-form-wrap">
+        <h2 class="contact-form-title">Send us a<br><em>message</em></h2>
+        <form action="https://handkindconstruction.ca/contact-us" method="get">
+          <div class="form-row">
+            <div class="form-field">
+              <label>First name</label>
+              <input type="text" name="first_name" placeholder="Adam">
+            </div>
+            <div class="form-field">
+              <label>Last name</label>
+              <input type="text" name="last_name" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@example.com">
+          </div>
+          <div class="form-field">
+            <label>Phone</label>
+            <input type="tel" name="phone" placeholder="(519) 000-0000">
+          </div>
+          <div class="form-field">
+            <label>Project type</label>
+            <select name="project_type">
+              <option value="">Select one…</option>
+              <option>Kitchen renovation</option>
+              <option>Bathroom renovation</option>
+              <option>Basement finishing</option>
+              <option>Home addition</option>
+              <option>ARU / secondary suite</option>
+              <option>Full home renovation</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Tell us about your project</label>
+            <textarea name="message" placeholder="Brief description, location, ideal timeline…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--dark" style="width:100%;">Send Message</button>
+          <p class="form-note">Prefer to fill out a detailed estimate form? <a href="/pages/estimate.html" style="color:var(--navy);">Use the full estimate form →</a></p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MAP placeholder -->
+<section class="section section--cream">
+  <div class="inner" style="text-align:center;">
+    <p class="section-label" style="justify-content:center;">Find Us</p>
+    <h2 class="section-title" style="margin:0 auto 1.5rem; text-align:center;">Based in <em>Paris, Ontario</em></h2>
+    <div style="background:var(--navy-pale); border:1px solid rgba(28,46,74,0.15); padding:4rem 2rem; max-width:800px; margin:0 auto;">
+      <p style="font-family:var(--font-display);font-size:1.5rem;font-weight:300;font-style:italic;color:var(--navy-mid);margin-bottom:0.5rem;">20 Balmoral St, Paris, ON</p>
+      <p style="font-size:0.82rem;font-weight:300;color:var(--stone);margin-bottom:1.5rem;">Serving Brantford, Brant County and southwestern Ontario</p>
+      <a href="https://maps.google.com/?q=Paris+Ontario" target="_blank" class="btn btn--dark">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="/js/main.js"></script>
+</body>
+</html>
