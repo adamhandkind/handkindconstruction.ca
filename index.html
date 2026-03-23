@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handkind Construction — Vancouver Renovation Contractors</title>
+  <meta name="description" content="Handkind Construction delivers thoughtful kitchen, bathroom, basement, and addition renovations across Vancouver, Burnaby, North Vancouver, and West Vancouver." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    /* ── HERO ── */
+    .hero { padding-top: 74px; min-height: 100svh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+    .hero-left { background: var(--navy-dark); display: flex; flex-direction: column; justify-content: center; padding: 6rem 4rem 6rem 5rem; }
+    .hero-eyebrow { font-size: 0.67rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--navy-light); opacity: 0.6; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--navy-light); }
+    .hero-title { font-family: var(--font-display); font-size: clamp(2.6rem, 4.2vw, 4.4rem); font-weight: 300; line-height: 1.08; color: #fff; margin-bottom: 1.75rem; }
+    .hero-title em { font-style: italic; color: var(--navy-light); opacity: 0.75; }
+    .hero-body { font-size: 0.93rem; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,0.45); max-width: 400px; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; align-items: center; gap: 2rem; }
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-image-caption { position: absolute; bottom: 2rem; left: 2rem; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); background: rgba(0,0,0,0.25); backdrop-filter: blur(6px); padding: 0.4rem 0.75rem; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.07); margin-top: 3.5rem; }
+    .stat { background: var(--navy-dark); padding: 1.25rem 1rem; }
+    .stat-number { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: #fff; line-height: 1; }
+    .stat-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 0.35rem; }
+
+    /* ── INTRO ── */
+    .intro { background: #fff; }
+    .intro-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .intro-text .section-title { margin-bottom: 1.5rem; }
+    .intro-body { font-size: 0.93rem; font-weight: 300; line-height: 1.85; color: var(--stone); margin-bottom: 2rem; }
+    .intro-image { position: relative; }
+    .intro-image img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+    .intro-badge { position: absolute; bottom: -1.5rem; left: -1.5rem; background: var(--navy-dark); color: #fff; padding: 1.5rem; width: 130px; text-align: center; }
+    .intro-badge-number { font-family: var(--font-display); font-size: 2.6rem; font-weight: 300; line-height: 1; }
+    .intro-badge-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 0.3rem; }
+
+    /* ── SERVICES PREVIEW ── */
+    .services-preview { background: var(--cream); }
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+    .services-header { display: grid; grid-template-columns: 1fr 1fr; align-items: end; margin-bottom: 3.5rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .service-card { background: #fff; overflow: hidden; text-decoration: none; display: block; transition: transform 0.25s; }
+    .service-card:hover { transform: translateY(-3px); }
+    .service-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; background: var(--navy-pale); }
+    .service-img-placeholder { width: 100%; aspect-ratio: 3/4; background: var(--navy-pale); display: flex; align-items: center; justify-content: center; }
+    .service-img-placeholder span { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy-light); }
+    .service-info { padding: 1.25rem 1.25rem 1.5rem; }
+    .service-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; color: var(--ink); margin-bottom: 0.5rem; }
+    .service-desc { font-size: 0.8rem; font-weight: 300; line-height: 1.7; color: var(--stone); }
+
+    /* ── FEATURED PROJECT ── */
+    .featured { background: #fff; }
+    .featured-inner { max-width: 1200px; margin: 0 auto; }
+    .featured-header { display: grid; grid-template-columns: 1fr auto; align-items: end; margin-bottom: 3rem; }
+    .featured-grid { display: grid; grid-template-columns: 7fr 5fr; gap: 1.5rem; }
+    .featured-main { position: relative; overflow: hidden; }
+    .featured-main img { width: 100%; aspect-ratio: 16/11; object-fit: cover; display: block; background: var(--navy-pale); }
+    .featured-placeholder { width: 100%; aspect-ratio: 16/11; background: var(--navy-pale); display: flex; align-items: center; justify-content: center; }
+    .featured-placeholder span { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy-light); }
+    .featured-side { display: flex; flex-direction: column; gap: 1.5rem; }
+    .featured-thumb { position: relative; overflow: hidden; flex: 1; }
+    .featured-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; background: var(--navy-pale); }
+    .featured-thumb-placeholder { width: 100%; height: 100%; min-height: 180px; background: var(--navy-pale); display: flex; align-items: center; justify-content: center; }
+    .featured-thumb-placeholder span { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy-light); }
+    .featured-caption { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 2rem; }
+    .featured-project-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 300; color: var(--ink); }
+    .featured-meta { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone); margin-top: 0.35rem; }
+    .featured-detail { font-size: 0.82rem; font-weight: 300; line-height: 1.8; color: var(--stone); max-width: 400px; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { display: none; }
+      .hero-left { padding: 5rem 2rem 4rem; }
+      .intro-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .intro-badge { display: none; }
+      .services-header { grid-template-columns: 1fr; gap: 1.5rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .featured-side { flex-direction: row; }
+    }
+    @media (max-width: 580px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .featured-caption { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="/assets/logo.svg" alt="Handkind Construction" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="/" class="active">Home</a></li>
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/careers/">Careers</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="/contact-us/" class="nav-cta">Get a Quote</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Vancouver's Renovation Specialists</p>
+    <h1 class="hero-title">Homes built<br />with <em>intention</em><br />and craft.</h1>
+    <p class="hero-body">From a kitchen that finally works the way you live, to a basement suite that pays your mortgage — Handkind brings care and precision to every renovation.</p>
+    <div class="hero-actions">
+      <a href="/contact-us/" class="btn-primary">Start Your Project</a>
+      <a href="/projects/" class="btn-text">View Our Work</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-number">200+</div><div class="stat-label">Projects completed</div></div>
+      <div class="stat"><div class="stat-number">12+</div><div class="stat-label">Years in business</div></div>
+      <div class="stat"><div class="stat-number">5.0</div><div class="stat-label">Google rating</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="/assets/hero-kitchen.jpg" alt="Renovated kitchen by Handkind Construction" />
+    <div class="hero-image-caption">Kitchen Renovation — West Vancouver</div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <span class="marquee-item">Kitchen Renovations<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Bathroom Renovations<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Basement Suites<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Home Additions<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Laneway &amp; ARU<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Custom Millwork<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Full Gut Renovations<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Permit Coordination<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Kitchen Renovations<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Bathroom Renovations<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Basement Suites<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Home Additions<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Laneway &amp; ARU<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Custom Millwork<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Full Gut Renovations<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Permit Coordination<span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- ── INTRO ── -->
+<section class="intro">
+  <div class="intro-inner">
+    <div class="intro-text">
+      <p class="section-label">Who We Are</p>
+      <h2 class="section-title">Renovation done the <em>right way</em> — the first time.</h2>
+      <p class="intro-body">Handkind Construction is a licensed, full-service renovation contractor serving Greater Vancouver. We handle every phase in-house — from design and permits to the final coat of paint — so you never have to chase subcontractors or manage competing timelines.</p>
+      <p class="intro-body">Our name reflects our approach: every project receives the personal attention it deserves, and every trade is held to the same high standard we'd expect in our own homes.</p>
+      <a href="/services/" class="btn-primary">Explore Our Services</a>
+    </div>
+    <div class="intro-image">
+      <img src="/assets/intro-bathroom.jpg" alt="Handkind bathroom renovation" />
+      <div class="intro-badge">
+        <div class="intro-badge-number">12+</div>
+        <div class="intro-badge-label">Years of Craft</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES PREVIEW ── -->
+<section class="services-preview">
+  <div class="services-inner">
+    <div class="services-header">
+      <div>
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Renovation services built around your home.</h2>
+      </div>
+      <a href="/services/" class="btn-text">All Services</a>
+    </div>
+    <div class="services-grid">
+      <a href="/services/#kitchens" class="service-card">
+        <div class="service-img-placeholder"><span>Kitchen Photo</span></div>
+        <div class="service-info">
+          <div class="service-name">Kitchens</div>
+          <div class="service-desc">Complete kitchen renovations from layout and cabinetry to countertops, plumbing, and electrical.</div>
+        </div>
+      </a>
+      <a href="/services/#bathrooms" class="service-card">
+        <div class="service-img-placeholder"><span>Bathroom Photo</span></div>
+        <div class="service-info">
+          <div class="service-name">Bathrooms</div>
+          <div class="service-desc">Full bathroom remodels including tile, fixtures, vanities, showers, soaker tubs, and more.</div>
+        </div>
+      </a>
+      <a href="/services/#basements" class="service-card">
+        <div class="service-img-placeholder"><span>Basement Photo</span></div>
+        <div class="service-info">
+          <div class="service-name">Basements &amp; Suites</div>
+          <div class="service-desc">Legal basement suites, laneway homes, and ARU additions — permitted and built to code.</div>
+        </div>
+      </a>
+      <a href="/services/#additions" class="service-card">
+        <div class="service-img-placeholder"><span>Addition Photo</span></div>
+        <div class="service-info">
+          <div class="service-name">Additions &amp; ARUs</div>
+          <div class="service-desc">Expand your home's footprint with permitted additions, infills, and accessory dwelling units.</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED PROJECT ── -->
+<section class="featured">
+  <div class="featured-inner">
+    <div class="featured-header">
+      <div>
+        <p class="section-label">Featured Project</p>
+        <h2 class="section-title">Recent work we're <em>proud of.</em></h2>
+      </div>
+      <a href="/projects/" class="btn-text">All Projects</a>
+    </div>
+    <div class="featured-grid">
+      <div class="featured-main">
+        <div class="featured-placeholder"><span>Main Project Photo</span></div>
+      </div>
+      <div class="featured-side">
+        <div class="featured-thumb"><div class="featured-thumb-placeholder"><span>Detail Photo</span></div></div>
+        <div class="featured-thumb"><div class="featured-thumb-placeholder"><span>Detail Photo</span></div></div>
+      </div>
+    </div>
+    <div class="featured-caption">
+      <div>
+        <div class="featured-project-name">Dunbar Street Kitchen &amp; Basement Suite</div>
+        <div class="featured-meta">Vancouver · Kitchen · Basement Suite · 2024</div>
+      </div>
+      <div class="featured-detail">A complete main-floor kitchen overhaul paired with a legal one-bedroom suite below — transforming a single-family home into an income-generating property without sacrificing the feel of the original home.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AREAS ── -->
+<section class="areas">
+  <div class="areas-inner">
+    <p class="section-label">Service Areas</p>
+    <h2 class="section-title">We renovate homes across <em>Greater Vancouver.</em></h2>
+    <p class="areas-body">Locally owned and operated, Handkind is fully familiar with Metro Vancouver's permit requirements, building codes, and neighbourhood character. No matter where you live, you get the same attention and craftsmanship.</p>
+    <div class="areas-grid">
+      <div class="area-card">
+        <div class="area-name">Vancouver</div>
+        <div class="area-desc">From Kitsilano to East Van, Mount Pleasant to Dunbar — we work across every Vancouver neighbourhood.</div>
+        <div class="area-services"><span class="area-tag">City of Vancouver Permits</span><span class="area-tag">Laneway Homes</span><span class="area-tag">Heritage Upgrades</span></div>
+      </div>
+      <div class="area-card">
+        <div class="area-name">North Shore</div>
+        <div class="area-desc">North Vancouver and West Vancouver homeowners trust us for high-spec renovations and complex site work.</div>
+        <div class="area-services"><span class="area-tag">DNV &amp; CNV Permits</span><span class="area-tag">WV Permits</span><span class="area-tag">Luxury Finishes</span></div>
+      </div>
+      <div class="area-card">
+        <div class="area-name">Burnaby &amp; Beyond</div>
+        <div class="area-desc">Burnaby, New Westminster, Coquitlam, and Surrey — we bring the same standards wherever we work.</div>
+        <div class="area-services"><span class="area-tag">City of Burnaby</span><span class="area-tag">Tri-Cities</span><span class="area-tag">New West</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section class="process">
+  <div class="process-inner">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">A clear process. <em>No surprises.</em></h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number-wrap"><span class="step-number">01</span></div>
+        <div class="step-name">Consultation</div>
+        <div class="step-desc">We visit your home, listen to your goals, and understand your budget — no commitment required.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number-wrap"><span class="step-number">02</span></div>
+        <div class="step-name">Design &amp; Quote</div>
+        <div class="step-desc">We prepare a detailed scope of work, drawings if needed, and a fixed-price proposal.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number-wrap"><span class="step-number">03</span></div>
+        <div class="step-name">Permits</div>
+        <div class="step-desc">We manage all permit applications and coordinate with the city so you don't have to.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number-wrap"><span class="step-number">04</span></div>
+        <div class="step-name">Construction</div>
+        <div class="step-desc">Our crew works efficiently, keeps the site tidy, and communicates progress throughout.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-number-wrap"><span class="step-number">05</span></div>
+        <div class="step-name">Handover</div>
+        <div class="step-desc">We walk you through every detail, address any deficiencies, and leave you with a home you love.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section class="reviews">
+  <div class="reviews-inner">
+    <p class="section-label">Client Reviews</p>
+    <h2 class="section-title">What homeowners are <em>saying.</em></h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Handkind transformed our dated kitchen into something we genuinely love. They stayed on schedule, on budget, and the quality of work is exceptional."</p>
+        <div class="review-author">Sarah &amp; David M.</div>
+        <div class="review-location">Kitsilano, Vancouver</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The basement suite they built for us is now rented out and covering most of our mortgage. They handled every permit and inspection — we barely had to lift a finger."</p>
+        <div class="review-author">James T.</div>
+        <div class="review-location">East Vancouver</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Professional, honest, and meticulous. Our bathroom reno was done in two weeks, exactly as promised. I've already recommended them to four friends."</p>
+        <div class="review-author">Priya &amp; Rahul S.</div>
+        <div class="review-location">North Vancouver</div>
+      </div>
+    </div>
+    <p class="reviews-note">All reviews verified via <a href="https://www.google.com/maps" target="_blank" rel="noopener">Google Business Profile</a>.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <p class="section-label">Frequently Asked Questions</p>
+      <h2 class="section-title">Questions we hear <em>often.</em></h2>
+    </div>
+    <div class="faq-item open">
+      <div class="faq-q">How much does a kitchen renovation cost in Vancouver? <span class="faq-toggle">+</span></div>
+      <p class="faq-a">Most kitchen renovations in Vancouver range from $40,000 to $120,000+ depending on scope, size, and finish level. A mid-range kitchen with new cabinetry, countertops, appliances, and tile typically falls between $55,000–$85,000. We provide fixed-price quotes so there are no surprises.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you handle permits? <span class="faq-toggle">+</span></div>
+      <p class="faq-a">Yes — permit management is included in our service for all projects that require one. We prepare the drawings, submit the applications, and coordinate all city inspections from start to finish.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does a typical renovation take? <span class="faq-toggle">+</span></div>
+      <p class="faq-a">A bathroom renovation typically takes 2–4 weeks. A kitchen renovation is 4–8 weeks. A basement suite or larger addition can take 3–6 months. We provide a detailed schedule before work begins and update you at each phase.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I live in my home during the renovation? <span class="faq-toggle">+</span></div>
+      <p class="faq-a">For most kitchen and bathroom renovations, yes — many clients remain in their homes throughout. For larger gut renovations or basement suites requiring significant structural work, we'll discuss the best approach during consultation.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are you licensed and insured in BC? <span class="faq-toggle">+</span></div>
+      <p class="faq-a">Yes. Handkind Construction holds a valid BC Contractor licence, carries $5M general liability insurance, and maintains WCB coverage for all workers on site. We're happy to provide documentation on request.</p>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you offer a warranty on your work? <span class="faq-toggle">+</span></div>
+      <p class="faq-a">All our projects include a 2-year workmanship warranty in addition to applicable BC New Home Warranty protections for qualifying projects. We stand behind our work long after the final walkthrough.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <p class="cta-eyebrow">Ready to Get Started?</p>
+  <h2 class="cta-title">Let's talk about<br /><em>your</em> project.</h2>
+  <p class="cta-slogan">Done right. Done once.</p>
+  <p class="cta-sub">Tell us what you're dreaming of, and we'll put together a plan — and a price — that makes it real.</p>
+  <a href="/contact-us/" class="btn-white">Book a Free Consultation</a>
+  <p class="cta-address">Greater Vancouver &amp; North Shore · Licensed &amp; Insured · BC Contractor</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">
+    <img src="/assets/logo-white.svg" alt="Handkind Construction" />
+  </div>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/careers/">Careers</a></li>
+    <li><a href="/contact-us/">Contact</a></li>
+  </ul>
+  <div class="footer-right">
+    <span>© 2025 Handkind Construction Ltd.</span><br />
+    <span>Licensed General Contractor · Greater Vancouver, BC</span>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      item.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
