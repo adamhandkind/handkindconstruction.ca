@@ -11,9 +11,9 @@ const NAV_HTML = `
     <li><a href="/index.html">Home</a></li>
     <li><a href="/pages/services.html">Services</a></li>
     <li><a href="/pages/projects.html">Projects</a></li>
-    <li><a href="/pages/careers.html">Careers</a></li>
     <li><a href="/pages/faq.html">FAQ</a></li>
     <li><a href="/blog/index.html">Blog</a></li>
+    <li><a href="/pages/careers.html">Careers</a></li>
     <li><a href="/pages/contact.html">Contact</a></li>
   </ul>
   <a href="/pages/estimate.html" class="nav-cta">Get a Free Estimate</a>
