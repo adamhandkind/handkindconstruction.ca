@@ -124,8 +124,6 @@
 
   /* Form side */
   .contact-form-wrap {
-    background: var(--cream);
-    padding: 2.5rem;
     border: 1px solid var(--border);
   }
 
@@ -134,58 +132,53 @@
     font-size: 1.5rem;
     font-weight: 300;
     color: var(--ink);
-    margin-bottom: 1.75rem;
     line-height: 1.2;
   }
 
   .contact-form-title em { font-style: italic; color: var(--navy-mid); }
 
-  .form-field { margin-bottom: 1.1rem; }
-
-  .form-field label {
-    display: block;
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 0.45rem;
-  }
-
-  .form-field input,
-  .form-field textarea,
-  .form-field select {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
     display: block;
     width: 100%;
     padding: 0.75rem 1rem;
-    background: #fff;
+    background: var(--cream);
     border: 1px solid var(--border);
     color: var(--ink);
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 300;
     appearance: none;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
   }
 
-  .form-field input:focus,
-  .form-field textarea:focus,
-  .form-field select:focus {
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  textarea:focus {
+    background: #fff;
     border-color: var(--navy);
     box-shadow: 0 0 0 3px rgba(28,46,74,0.1);
   }
 
-  .form-field textarea { resize: vertical; min-height: 100px; }
+  textarea { resize: vertical; min-height: 80px; }
 
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-  .form-note {
-    font-size: 0.75rem;
-    font-weight: 300;
+  input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    background: var(--cream);
+    border: 1px dashed rgba(28,46,74,0.25);
     color: var(--stone);
-    margin-top: 1rem;
-    line-height: 1.6;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
   }
 
   @media (max-width: 860px) {
@@ -252,48 +245,74 @@
     </div>
 
     <div>
-      <div class="contact-form-wrap">
-        <h2 class="contact-form-title">Send us a<br><em>message</em></h2>
-        <form action="https://handkindconstruction.ca/contact-us" method="get">
-          <div class="form-row">
-            <div class="form-field">
-              <label>First name</label>
-              <input type="text" name="first_name" placeholder="Adam">
+      <form data-jobtread-web-form="true" data-key="22TAE6ZehZcdDvJ5xssdX3Mrd8w6Hc2ERW">
+        <div class="contact-form-wrap" style="padding:0;background:#fff;">
+
+          <div style="padding:1.5rem 2rem;border-bottom:1px solid var(--border);">
+            <h2 class="contact-form-title" style="margin-bottom:0.25rem;">Project Estimate<br><em>Request</em></h2>
+            <p style="font-size:0.78rem;font-weight:300;color:var(--stone);margin:0;">Fields marked * are required</p>
+          </div>
+
+          <div style="padding:1.75rem 2rem;display:flex;flex-direction:column;gap:1.1rem;">
+
+            <label>
+              <span class="form-field"><span style="display:block;font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:0.45rem;">Name <span style="color:#b91c1c;">*</span></span></span>
+              <input type="text" required name="contact.name" placeholder="Your full name">
+            </label>
+
+            <label>
+              <span class="form-field"><span style="display:block;font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:0.45rem;">Email <span style="color:#b91c1c;">*</span></span></span>
+              <input type="email" required name="contact.custom.22PKG3WWYXv3" placeholder="you@example.com">
+            </label>
+
+            <label>
+              <span class="form-field"><span style="display:block;font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:0.45rem;">Phone <span style="color:#b91c1c;">*</span></span></span>
+              <input type="tel" required name="contact.custom.22PKG3WtEWJG" placeholder="(519) 000-0000">
+            </label>
+
+            <label>
+              <span class="form-field"><span style="display:block;font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:0.45rem;">Project address <span style="color:#b91c1c;">*</span></span></span>
+              <textarea name="location.address" required placeholder="Street address, city, postal code"></textarea>
+            </label>
+
+            <div style="height:1px;background:var(--border);"></div>
+
+            <div>
+              <span style="display:block;font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:0.45rem;">Remodel type</span>
+              <div style="border:1px solid var(--border);overflow:hidden;">
+                <label style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1rem;border-bottom:1px solid var(--border);cursor:pointer;font-size:0.86rem;font-weight:300;color:var(--ink);"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Full Remodel" style="width:15px;height:15px;flex-shrink:0;accent-color:var(--navy);"><span>Full Remodel</span></label>
+                <label style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1rem;border-bottom:1px solid var(--border);cursor:pointer;font-size:0.86rem;font-weight:300;color:var(--ink);"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Addition" style="width:15px;height:15px;flex-shrink:0;accent-color:var(--navy);"><span>Addition</span></label>
+                <label style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1rem;border-bottom:1px solid var(--border);cursor:pointer;font-size:0.86rem;font-weight:300;color:var(--ink);"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Basement" style="width:15px;height:15px;flex-shrink:0;accent-color:var(--navy);"><span>Basement</span></label>
+                <label style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1rem;border-bottom:1px solid var(--border);cursor:pointer;font-size:0.86rem;font-weight:300;color:var(--ink);"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Bathroom" style="width:15px;height:15px;flex-shrink:0;accent-color:var(--navy);"><span>Bathroom</span></label>
+                <label style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1rem;border-bottom:1px solid var(--border);cursor:pointer;font-size:0.86rem;font-weight:300;color:var(--ink);"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Kitchen" style="width:15px;height:15px;flex-shrink:0;accent-color:var(--navy);"><span>Kitchen</span></label>
+                <label style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1rem;border-bottom:1px solid var(--border);cursor:pointer;font-size:0.86rem;font-weight:300;color:var(--ink);"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Garage" style="width:15px;height:15px;flex-shrink:0;accent-color:var(--navy);"><span>Garage</span></label>
+                <label style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1rem;border-bottom:1px solid var(--border);cursor:pointer;font-size:0.86rem;font-weight:300;color:var(--ink);"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Home Exterior" style="width:15px;height:15px;flex-shrink:0;accent-color:var(--navy);"><span>Home Exterior</span></label>
+                <label style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1rem;cursor:pointer;font-size:0.86rem;font-weight:300;color:var(--ink);"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Other" style="width:15px;height:15px;flex-shrink:0;accent-color:var(--navy);"><span>Other</span></label>
+              </div>
             </div>
-            <div class="form-field">
-              <label>Last name</label>
-              <input type="text" name="last_name" placeholder="Smith">
-            </div>
+
+            <div style="height:1px;background:var(--border);"></div>
+
+            <label>
+              <span style="display:block;font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:0.45rem;">Tell us about your project</span>
+              <input type="text" name="job.description" placeholder="Brief description, timeline, anything helpful…">
+            </label>
+
+            <label>
+              <span style="display:block;font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:0.45rem;">Files &amp; Photos</span>
+              <input type="file" multiple name="account.files">
+            </label>
+
           </div>
-          <div class="form-field">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="you@example.com">
+
+          <div style="padding:1.25rem 2rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+            <p style="font-size:0.7rem;color:var(--stone);line-height:1.5;margin:0;">We'll reply within<br>one business day.</p>
+            <button data-submit-button="true" type="submit" class="btn btn--dark">Submit Request</button>
           </div>
-          <div class="form-field">
-            <label>Phone</label>
-            <input type="tel" name="phone" placeholder="(519) 000-0000">
-          </div>
-          <div class="form-field">
-            <label>Project type</label>
-            <select name="project_type">
-              <option value="">Select one…</option>
-              <option>Kitchen renovation</option>
-              <option>Bathroom renovation</option>
-              <option>Basement finishing</option>
-              <option>Home addition</option>
-              <option>ARU / secondary suite</option>
-              <option>Full home renovation</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label>Tell us about your project</label>
-            <textarea name="message" placeholder="Brief description, location, ideal timeline…"></textarea>
-          </div>
-          <button type="submit" class="btn btn--dark" style="width:100%;">Send Message</button>
-          <p class="form-note">Prefer to fill out a detailed estimate form? <a href="/pages/estimate.html" style="color:var(--navy);">Use the full estimate form →</a></p>
-        </form>
-      </div>
+
+        </div>
+      </form>
+      <script async src="https://app.jobtread.com/web-form.js"></script>
     </div>
 
   </div>
