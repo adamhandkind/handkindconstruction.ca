@@ -13,6 +13,7 @@ const NAV_HTML = `
     <li><a href="/pages/projects.html">Projects</a></li>
     <li><a href="/pages/careers.html">Careers</a></li>
     <li><a href="/pages/faq.html">FAQ</a></li>
+    <li><a href="/blog/index.html">Blog</a></li>
     <li><a href="/pages/contact.html">Contact</a></li>
   </ul>
   <a href="/pages/estimate.html" class="nav-cta">Get a Free Estimate</a>
@@ -48,6 +49,7 @@ const FOOTER_HTML = `
     <li><a href="/pages/careers.html">Careers</a></li>
     <li><a href="/pages/faq.html">FAQ</a></li>
     <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/blog/index.html">Blog</a></li>
     <li><a href="/pages/estimate.html">Free Estimate</a></li>
   </ul>
   <div class="footer-right">
