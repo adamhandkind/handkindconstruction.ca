@@ -5,7 +5,7 @@
 const NAV_HTML = `
 <nav class="nav" id="site-nav">
   <a href="/index.html" class="nav-logo">
-    <img src="/assets/logo.png" alt="HandKind Construction">
+    <img src="/assets/logo.avif" alt="HandKind Construction">
   </a>
   <ul class="nav-links">
     <li><a href="/index.html">Home</a></li>
@@ -40,7 +40,7 @@ const MARQUEE_HTML = `
 const FOOTER_HTML = `
 <footer class="footer">
   <div class="footer-logo">
-    <img src="/assets/logo.png" alt="HandKind Construction">
+    <img src="/assets/logo.avif" alt="HandKind Construction">
   </div>
   <ul class="footer-links">
     <li><a href="/index.html">Home</a></li>
