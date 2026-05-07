@@ -1,5 +1,16 @@
 [
   {
+    "slug": "in-floor-heating-brantford-bathrooms",
+    "title": "In-Floor Heating in Brantford Bathrooms: Is It Worth It?",
+    "date": "2026-05-07",
+    "author": "Adam McQuaig",
+    "category": "Bathrooms",
+    "location": "Brantford",
+    "excerpt": "Heated bathroom floors in Brantford — are they worth the cost? Here's what electric and hydronic systems actually run, and when we recommend them.",
+    "image": "",
+    "featured": true
+  },
+  {
     "slug": "open-concept-kitchen-brantford",
     "title": "Open Concept Kitchen Renovations in Brantford: What's Involved",
     "date": "2026-04-30",
@@ -8,7 +19,7 @@
     "location": "Brantford",
     "excerpt": "Removing a wall to open up your kitchen sounds simple — until you find out it's load-bearing. Here's what Brantford homeowners actually deal with when going open concept.",
     "image": "",
-    "featured": true
+    "featured": false
   },
   {
     "slug": "kitchen-renovation-permit-brantford",
