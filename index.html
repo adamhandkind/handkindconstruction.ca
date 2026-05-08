@@ -26,22 +26,57 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "HandKind Construction Co.",
-  "url": "https://handkindconstruction.ca",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "20 Balmoral St",
-    "addressLocality": "Paris",
-    "addressRegion": "ON",
-    "addressCountry": "CA"
-  },
-  "areaServed": [
-    {"@type": "City", "name": "Brantford"},
-    {"@type": "City", "name": "Paris"},
-    {"@type": "AdministrativeArea", "name": "Brant County"}
-  ],
-  "description": "Specialised renovation company serving Brant County, Brantford and Paris. Kitchens, bathrooms, basements, additions and ARUs."
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://handkindconstruction.ca/#business",
+      "name": "HandKind Construction",
+      "url": "https://handkindconstruction.ca",
+      "telephone": "+12269387108",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "20 Balmoral St",
+        "addressLocality": "Paris",
+        "addressRegion": "ON",
+        "postalCode": "N3L 0C8",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Brantford"},
+        {"@type": "City", "name": "Paris"},
+        {"@type": "AdministrativeArea", "name": "Brant County"},
+        {"@type": "City", "name": "St. George"},
+        {"@type": "City", "name": "Burford"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Renovation Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kitchen Renovation"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bathroom Renovation"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Basement Finishing"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Home Additions"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Additional Residential Units (ARUs)"}}
+        ]
+      },
+      "priceRange": "$$",
+      "openingHours": "Mo-Fr 07:00-18:00",
+      "description": "Renovation specialists serving Brant County, Brantford and Paris. Kitchens, bathrooms, basements, additions and ARUs."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home",         "item": "https://handkindconstruction.ca/"},
+        {"@type": "ListItem", "position": 2, "name": "Services",     "item": "https://handkindconstruction.ca/pages/services.html"},
+        {"@type": "ListItem", "position": 3, "name": "Projects",     "item": "https://handkindconstruction.ca/pages/projects.html"},
+        {"@type": "ListItem", "position": 4, "name": "FAQ",          "item": "https://handkindconstruction.ca/pages/faq.html"},
+        {"@type": "ListItem", "position": 5, "name": "Blog",         "item": "https://handkindconstruction.ca/blog/"},
+        {"@type": "ListItem", "position": 6, "name": "Careers",      "item": "https://handkindconstruction.ca/pages/careers.html"},
+        {"@type": "ListItem", "position": 7, "name": "Contact",      "item": "https://handkindconstruction.ca/pages/contact.html"},
+        {"@type": "ListItem", "position": 8, "name": "Free Estimate","item": "https://handkindconstruction.ca/pages/estimate.html"}
+      ]
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
