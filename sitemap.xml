@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://handkindconstruction.ca/</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Service pages -->
   <url>
-    <loc>https://handkindconstruction.ca/pages/services.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://handkindconstruction.ca/services</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://handkindconstruction.ca/estimate</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Location / portfolio pages -->
   <url>
     <loc>https://handkindconstruction.ca/pages/kitchen-renovation-brantford.html</loc>
     <lastmod>2026-05-08</lastmod>
@@ -30,59 +40,104 @@
   </url>
 
   <url>
-    <loc>https://handkindconstruction.ca/pages/contact.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://handkindconstruction.ca/contact</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog index -->
   <url>
-    <loc>https://handkindconstruction.ca/pages/estimate.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://handkindconstruction.ca/pages/faq.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://handkindconstruction.ca/pages/careers.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://handkindconstruction.ca/blog/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://handkindconstruction.ca/blog</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Other pages -->
   <url>
-    <loc>https://handkindconstruction.ca/blog/how-much-does-a-kitchen-renovation-cost-brantford.html</loc>
-    <lastmod>2026-03-24</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://handkindconstruction.ca/faq</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://handkindconstruction.ca/blog/bathroom-renovation-timeline-brant-county.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://handkindconstruction.ca/careers</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog posts -->
+  <url>
+    <loc>https://handkindconstruction.ca/blog/how-much-does-a-kitchen-renovation-cost-brantford</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://handkindconstruction.ca/blog/aru-secondary-suite-brantford-guide.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://handkindconstruction.ca/blog/bathroom-renovation-timeline-brant-county</loc>
+    <lastmod>2026-05-08</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://handkindconstruction.ca/blog/aru-secondary-suite-brantford-guide</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://handkindconstruction.ca/blog/basement-finishing-cost-brantford</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://handkindconstruction.ca/blog/bathroom-renovation-cost-brantford</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://handkindconstruction.ca/blog/5-kitchen-renovation-mistakes-brantford</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://handkindconstruction.ca/blog/how-to-choose-a-renovation-contractor-brantford</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://handkindconstruction.ca/blog/in-floor-heating-brantford-bathrooms</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://handkindconstruction.ca/blog/kitchen-renovation-permit-brantford</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://handkindconstruction.ca/blog/open-concept-kitchen-brantford</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
