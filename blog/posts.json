@@ -1,5 +1,16 @@
 [
   {
+    "slug": "kitchen-vs-basement-renovation-value-brantford",
+    "title": "Kitchen vs. Basement Renovation: Which Adds More Value in Brantford?",
+    "date": "2026-05-27",
+    "author": "Adam McQuaig",
+    "category": "General",
+    "location": "Brantford",
+    "excerpt": "Kitchen or basement — which renovation adds more value to a Brantford home? Real numbers, honest trade-offs, and what we tell homeowners who ask us this every week.",
+    "image": "",
+    "featured": true
+  },
+  {
     "slug": "egress-windows-brantford-basement",
     "title": "Egress Windows in Brantford Basements: Rules, Costs and When You Need One",
     "date": "2026-05-13",
@@ -8,7 +19,7 @@
     "location": "Brantford",
     "excerpt": "Egress window rules, permit requirements, and real installation costs for Brantford basement bedrooms and secondary suites — what the Ontario Building Code requires.",
     "image": "",
-    "featured": true
+    "featured": false
   },
   {
     "slug": "in-floor-heating-brantford-bathrooms",

@@ -1,0 +1,32 @@
+# HandKind Construction Co.
+> Renovation contractor serving Brantford, Paris and Brant County, Ontario.
+> Specialising in kitchens, bathrooms, basements, home additions and ARUs.
+> Owner-led, 12+ years, 400+ projects delivered.
+
+## Services
+- [Kitchen Renovations Brantford](https://handkindconstruction.ca/pages/kitchen-renovation-brantford.html): Full kitchen renovation — layout, demo, cabinetry, tile, lighting and all trades coordinated. Serving Brantford and Brant County, Ontario.
+- [Bathroom Renovations Brantford](https://handkindconstruction.ca/pages/bathroom-renovation-brantford.html): Full gut renovations with Schluter KERDI waterproofing, tiled showers and in-floor radiant heating.
+- [Basement Finishing Brantford](https://handkindconstruction.ca/pages/basement-finishing-brantford.html): Framing, insulation, egress windows, bathrooms, built-in cabinetry and SDU/in-law suite conversions.
+- [Home Additions & ARUs Brantford](https://handkindconstruction.ca/pages/home-additions-arus-brantford.html): Design, engineering, permits and full construction for additions and accessory residential units.
+- [Free Estimate](https://handkindconstruction.ca/pages/estimate.html): Request a free on-site estimate — no obligation, reply within one business day.
+
+## Key Facts
+- Business name: HandKind Construction Co.
+- Address: 20 Balmoral St, Paris, ON N3L 0A1
+- Phone: +1 226-938-7108
+- Email: hello@handkindconstruction.ca
+- Service area: Brantford, Paris, Brant County, Norfolk County, Ontario
+- Licensed and insured in Ontario
+- Owner present on every job site
+- Specialties: Kitchen renovations, bathroom renovations, basement finishing, home additions, ARUs, secondary suite conversions
+- Average project range: $15,000–$120,000+
+
+## Pricing Reference
+- Bathroom renovation Brantford: $15,000–$50,000+
+- Kitchen renovation Brantford: $25,000–$80,000+
+- Basement finishing Brantford: $45,000–$120,000+
+- Home addition Brantford: varies by scope, permit required
+
+## Do Not Index
+- /assets/
+- /admin/
