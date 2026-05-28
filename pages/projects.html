@@ -25,6 +25,20 @@
 <meta property="og:image" content="https://handkindconstruction.ca/assets/og-image.avif">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Renovation Projects in Brantford | HandKind Construction">
+<meta name="twitter:description" content="Browse HandKind Construction's portfolio of kitchen, bathroom, basement and addition projects in Brantford, Paris and Brant County, Ontario.">
+<meta name="twitter:image" content="https://handkindconstruction.ca/assets/og-image.avif">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://handkindconstruction.ca/"},
+    {"@type": "ListItem", "position": 2, "name": "Projects", "item": "https://handkindconstruction.ca/pages/projects.html"}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -78,8 +92,10 @@
   .proj-photo {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     transition: transform 0.5s ease;
   }
 
@@ -194,9 +210,8 @@
 
     <div class="projects-masonry">
 
-      <!-- Real project with photo -->
       <div class="proj-card proj-card--wide" data-category="kitchen">
-        <div class="proj-photo" style="background-image:url('https://img1.wsimg.com/isteam/ip/aa097d1d-e629-4807-b052-e57bc0bbb8db/f48a6c35-def1-49be-bc41-f10cd9dd03f3.jpg/:/rs=w:800,cg:true');"></div>
+        <img class="proj-photo" src="https://img1.wsimg.com/isteam/ip/aa097d1d-e629-4807-b052-e57bc0bbb8db/f48a6c35-def1-49be-bc41-f10cd9dd03f3.jpg/:/rs=w:800,cg:true" alt="Kitchen main floor remodel — HandKind Construction, Brantford Ontario" loading="lazy" width="800" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Kitchen Renovation</p>
@@ -206,7 +221,7 @@
       </div>
 
       <div class="proj-card proj-card--tall" data-category="bathroom">
-        <div class="proj-photo" style="background-image:url('/assets/projects/bathroom-ensuite-glass-shower.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/bathroom-ensuite-glass-shower.avif" alt="Ensuite glass shower renovation — HandKind Construction, Paris Ontario" loading="lazy" width="600" height="800">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Bathroom</p>
@@ -215,7 +230,7 @@
         </div>
       </div>
       <div class="proj-card proj-card--square" data-category="basement">
-        <div class="proj-photo" style="background-image:url('/assets/projects/basement-builtin-shelving.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/basement-builtin-shelving.avif" alt="Basement built-in shelving renovation — HandKind Construction, Brantford Ontario" loading="lazy" width="600" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Basement</p>
@@ -224,7 +239,7 @@
         </div>
       </div>
       <div class="proj-card proj-card--wide" data-category="addition">
-        <div class="proj-photo" style="background-image:url('/assets/projects/aru_cottage_exterior_front.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/aru_cottage_exterior_front.avif" alt="Rear addition and ARU exterior — HandKind Construction, St. George Ontario" loading="lazy" width="800" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Addition &amp; ARU</p>
@@ -233,7 +248,7 @@
         </div>
       </div>
       <div class="proj-card proj-card--square" data-category="kitchen">
-        <div class="proj-photo" style="background-image:url('/assets/projects/laundry-room-white-cabinets.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/laundry-room-white-cabinets.avif" alt="Laundry room white cabinet refresh — HandKind Construction, Brant County" loading="lazy" width="600" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Laundry Room</p>
@@ -242,7 +257,7 @@
         </div>
       </div>
       <div class="proj-card proj-card--tall" data-category="bathroom">
-        <div class="proj-photo" style="background-image:url('/assets/projects/bathroom-wainscoting-black-fixtures.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/bathroom-wainscoting-black-fixtures.avif" alt="Bathroom wainscoting with black fixtures — HandKind Construction, Brantford Ontario" loading="lazy" width="600" height="800">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Bathroom</p>
@@ -251,7 +266,7 @@
         </div>
       </div>
       <div class="proj-card proj-card--square" data-category="addition">
-        <div class="proj-photo" style="background-image:url('/assets/projects/aru_cottage_exterior_porch.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/aru_cottage_exterior_porch.avif" alt="Secondary suite ARU exterior porch — HandKind Construction, Brantford Ontario" loading="lazy" width="600" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">ARU</p>
@@ -260,7 +275,7 @@
         </div>
       </div>
       <div class="proj-card proj-card--wide" data-category="basement">
-        <div class="proj-photo" style="background-image:url('/assets/projects/basement_family_room_green_cabinets.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/basement_family_room_green_cabinets.avif" alt="Basement family room with green cabinets — HandKind Construction, Paris Ontario" loading="lazy" width="800" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Basement</p>
@@ -269,7 +284,7 @@
         </div>
       </div>
       <div class="proj-card proj-card--square" data-category="bathroom">
-        <div class="proj-photo" style="background-image:url('/assets/projects/bathroom-shower-hexagon-tile.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/bathroom-shower-hexagon-tile.avif" alt="Bathroom hexagon tile shower — HandKind Construction, Brantford Ontario" loading="lazy" width="600" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Bathroom</p>
@@ -279,7 +294,7 @@
       </div>
 
       <div class="proj-card proj-card--wide" data-category="kitchen">
-        <div class="proj-photo" style="background-image:url('/assets/projects/kitchen_white_big_island.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/kitchen_white_big_island.avif" alt="White kitchen with large island — HandKind Construction, Brant County" loading="lazy" width="800" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Kitchen Renovation</p>
@@ -289,7 +304,7 @@
       </div>
 
       <div class="proj-card proj-card--tall" data-category="bathroom">
-        <div class="proj-photo" style="background-image:url('/assets/projects/tiled_shower_tub.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/tiled_shower_tub.avif" alt="Tiled shower and tub surround bathroom — HandKind Construction, Brantford Ontario" loading="lazy" width="600" height="800">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Bathroom</p>
@@ -299,7 +314,7 @@
       </div>
 
       <div class="proj-card proj-card--square" data-category="addition">
-        <div class="proj-photo" style="background-image:url('/assets/projects/refreshed_staircase_railings.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/refreshed_staircase_railings.avif" alt="Refreshed staircase and railings interior renovation — HandKind Construction, Brant County" loading="lazy" width="600" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Interior Renovation</p>
@@ -309,7 +324,7 @@
       </div>
 
       <div class="proj-card proj-card--wide" data-category="addition">
-        <div class="proj-photo" style="background-image:url('/assets/projects/turret_built_on_ground.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/turret_built_on_ground.avif" alt="Turret addition built on ground — HandKind Construction, Brantford Ontario" loading="lazy" width="800" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Addition</p>
@@ -319,7 +334,7 @@
       </div>
 
       <div class="proj-card proj-card--square" data-category="addition">
-        <div class="proj-photo" style="background-image:url('/assets/projects/turret_craned_to_top.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/turret_craned_to_top.avif" alt="Turret addition craned into place — HandKind Construction, Brantford Ontario" loading="lazy" width="600" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Addition</p>
@@ -329,7 +344,7 @@
       </div>
 
       <div class="proj-card proj-card--tall" data-category="addition">
-        <div class="proj-photo" style="background-image:url('/assets/projects/turret_secured_in_place.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/turret_secured_in_place.avif" alt="Turret addition secured in place — HandKind Construction, Brantford Ontario" loading="lazy" width="600" height="800">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Addition</p>
@@ -339,7 +354,7 @@
       </div>
 
       <div class="proj-card proj-card--wide" data-category="addition">
-        <div class="proj-photo" style="background-image:url('/assets/projects/turret_interior_woodwoorking.avif');"></div>
+        <img class="proj-photo" src="/assets/projects/turret_interior_woodwoorking.avif" alt="Turret addition interior woodworking — HandKind Construction, Brantford Ontario" loading="lazy" width="800" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
           <p class="proj-category">Addition</p>
