@@ -23,31 +23,43 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "What does a kitchen renovation cost in Brantford?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A kitchen renovation in Brantford typically ranges from $25,000 to $80,000 or more. A cabinet and countertop refresh with minimal layout changes starts around $25,000–$35,000. A full gut renovation with layout changes, new cabinetry, tile, lighting and plumbing updates typically runs $50,000–$80,000+. HandKind provides detailed line-item quotes — you know exactly what's included before work starts."
-      }
+      "@type": "Service",
+      "@id": "https://handkindconstruction.ca/pages/kitchen-renovation-brantford.html#service",
+      "name": "Kitchen Renovation Brantford",
+      "url": "https://handkindconstruction.ca/pages/kitchen-renovation-brantford.html",
+      "provider": {"@id": "https://handkindconstruction.ca/#business"},
+      "areaServed": ["Brantford", "Paris", "Brant County", "Ontario"]
     },
     {
-      "@type": "Question",
-      "name": "How long does a kitchen renovation take in Brantford?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most kitchen renovations in Brantford take 4–8 weeks from demolition to final handover, depending on scope and material lead times. Projects involving structural wall removal or significant plumbing and electrical changes typically fall on the longer end. HandKind provides a week-by-week schedule before work starts."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a permit for a kitchen renovation in Brantford?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most cosmetic kitchen renovations — cabinet replacements, countertops, tile and painting — do not require a building permit in Brantford. Permits are required when the renovation involves structural changes, relocating plumbing stacks, or upgrading the electrical panel. HandKind handles all permit applications as part of the project scope when required."
-      }
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does a kitchen renovation cost in Brantford?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A kitchen renovation in Brantford typically ranges from $25,000 to $80,000 or more. A cabinet and countertop refresh with minimal layout changes starts around $25,000–$35,000. A full gut renovation with layout changes, new cabinetry, tile, lighting and plumbing updates typically runs $50,000–$80,000+. HandKind provides detailed line-item quotes — you know exactly what's included before work starts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a kitchen renovation take in Brantford?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most kitchen renovations in Brantford take 4–8 weeks from demolition to final handover, depending on scope and material lead times. Projects involving structural wall removal or significant plumbing and electrical changes typically fall on the longer end. HandKind provides a week-by-week schedule before work starts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a permit for a kitchen renovation in Brantford?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most cosmetic kitchen renovations — cabinet replacements, countertops, tile and painting — do not require a building permit in Brantford. Permits are required when the renovation involves structural changes, relocating plumbing stacks, or upgrading the electrical panel. HandKind handles all permit applications as part of the project scope when required."
+          }
+        }
+      ]
     }
   ]
 }
