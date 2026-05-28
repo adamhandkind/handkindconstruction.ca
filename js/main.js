@@ -54,7 +54,7 @@ const FOOTER_HTML = `
   </ul>
   <div class="footer-right">
     &copy; 2026 HandKind Construction Co.<br>
-    20 Balmoral St, Paris, ON &middot; Licensed &amp; Insured
+    20 Balmoral St, Paris, ON &middot; <a href="tel:+12269387108" style="color:inherit;text-decoration:none;">+1 226-938-7108</a> &middot; Licensed &amp; Insured
   </div>
 </footer>`;
 
