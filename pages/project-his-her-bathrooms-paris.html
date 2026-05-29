@@ -45,6 +45,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="/css/blog-post.css">
+<style>
+  .proj-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 2.5rem 0;
+  }
+  .proj-gallery img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+  .proj-gallery img:first-child {
+    grid-column: span 2;
+    aspect-ratio: 16/9;
+  }
+  @media (max-width: 640px) {
+    .proj-gallery { grid-template-columns: 1fr 1fr; }
+    .proj-gallery img:first-child { grid-column: span 2; }
+  }
+</style>
 </head>
 <body class="page-body">
 
@@ -121,6 +143,21 @@
     <p>The basement scope was added after demolition was underway upstairs. The homeowners had the space and had been thinking about it for years — having a crew already on site with the plumber and electrician booked made it the right time to pull the trigger.</p>
 
     <p>The scope included full plumbing rough-in, wall framing, drywall, electrical, flooring, trim, and door — built from nothing to a complete 2-piece powder room adjacent to a proper laundry area.</p>
+
+    <div class="proj-gallery">
+      <img src="/assets/projects/his_bathroom_before_after.avif" alt="His bathroom before and after renovation — Paris, Ontario" loading="lazy">
+      <img src="/assets/projects/bathroom-1.avif" alt="Bathroom renovation in progress — Paris, Ontario" loading="lazy">
+      <img src="/assets/projects/bathroom-2.avif" alt="Bathroom construction detail" loading="lazy">
+      <img src="/assets/projects/bathroom-3.avif" alt="Bathroom framing and rough-in" loading="lazy">
+      <img src="/assets/projects/bathroom-4.avif" alt="Bathroom wall finishing" loading="lazy">
+      <img src="/assets/projects/bathroom-5.avif" alt="Bathroom drywall and details" loading="lazy">
+      <img src="/assets/projects/bathroom-6.avif" alt="Bathroom interior progress" loading="lazy">
+      <img src="/assets/projects/bathroom-7.avif" alt="Bathroom renovation detail" loading="lazy">
+      <img src="/assets/projects/bathroom-8.avif" alt="Bathroom finish work" loading="lazy">
+      <img src="/assets/projects/bathroom-9.avif" alt="Bathroom completed view" loading="lazy">
+      <img src="/assets/projects/bathroom-10.avif" alt="Bathroom detail shot" loading="lazy">
+      <img src="/assets/projects/bathroom-11.avif" alt="Bathroom renovation result" loading="lazy">
+    </div>
 
     <h2>What we found in the walls</h2>
 
