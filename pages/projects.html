@@ -176,6 +176,62 @@
     margin-bottom: 1.25rem;
   }
 
+  a.proj-card {
+    text-decoration: none;
+    display: block;
+  }
+
+  .proj-card--linked::after {
+    content: "Read more →";
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .proj-card--linked:hover::after { opacity: 1; }
+
+  .proj-placeholder--dark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: var(--navy-dark);
+  }
+
+  .proj-placeholder--dark .proj-ph-cat {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.5rem;
+  }
+
+  .proj-placeholder--dark .proj-ph-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.25;
+  }
+
+  .proj-placeholder--dark .proj-ph-loc {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.3);
+    margin-top: 0.5rem;
+  }
+
   @media (max-width: 860px) {
     .projects-masonry { grid-template-columns: 1fr 1fr; }
   }
@@ -209,6 +265,49 @@
     </div>
 
     <div class="projects-masonry">
+
+      <!-- Featured projects with full write-ups -->
+      <a class="proj-card proj-card--wide proj-card--linked" data-category="bathroom" href="/pages/project-his-her-bathrooms-paris.html">
+        <img class="proj-photo" src="/assets/projects/his_bathroom_before_after.avif" alt="His and her bathrooms fully renovated — Paris, Ontario" loading="lazy" width="800" height="600">
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-category">Dual Bathroom Renovation</p>
+          <p class="proj-title">His &amp; Her Bathrooms</p>
+          <p class="proj-meta">Paris, Ontario &middot; 2026</p>
+        </div>
+      </a>
+
+      <a class="proj-card proj-card--square proj-card--linked" data-category="addition" href="/pages/project-covered-porch-paris.html">
+        <div class="proj-placeholder--dark">
+          <p class="proj-ph-cat">Exterior &amp; Addition</p>
+          <p class="proj-ph-title">Covered Porch Rebuild</p>
+          <p class="proj-ph-loc">Paris, Ontario &middot; 2025</p>
+        </div>
+      </a>
+
+      <a class="proj-card proj-card--tall proj-card--linked" data-category="kitchen" href="/pages/project-condo-main-level-brantford.html">
+        <div class="proj-placeholder--dark">
+          <p class="proj-ph-cat">Kitchen &amp; Interior</p>
+          <p class="proj-ph-title">Condo Main Level Makeover</p>
+          <p class="proj-ph-loc">Brantford, Ontario &middot; 2026</p>
+        </div>
+      </a>
+
+      <a class="proj-card proj-card--square proj-card--linked" data-category="addition" href="/pages/project-he-shed-paris.html">
+        <div class="proj-placeholder--dark">
+          <p class="proj-ph-cat">Specialty &amp; Additions</p>
+          <p class="proj-ph-title">He-Shed Transformation</p>
+          <p class="proj-ph-loc">Paris, Ontario &middot; 2026</p>
+        </div>
+      </a>
+
+      <a class="proj-card proj-card--wide proj-card--linked" data-category="addition" href="/pages/project-garage-overhaul-brantford.html">
+        <div class="proj-placeholder--dark">
+          <p class="proj-ph-cat">Garages &amp; Additions</p>
+          <p class="proj-ph-title">Garage Overhaul</p>
+          <p class="proj-ph-loc">Brantford, Ontario &middot; 2026</p>
+        </div>
+      </a>
 
       <div class="proj-card proj-card--wide" data-category="kitchen">
         <img class="proj-photo" src="https://img1.wsimg.com/isteam/ip/aa097d1d-e629-4807-b052-e57bc0bbb8db/f48a6c35-def1-49be-bc41-f10cd9dd03f3.jpg/:/rs=w:800,cg:true" alt="Kitchen main floor remodel — HandKind Construction, Brantford Ontario" loading="lazy" width="800" height="600">
