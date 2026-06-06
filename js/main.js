@@ -106,13 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Scroll-shrink nav
+  // Nav shadow on scroll
   const nav = document.getElementById('site-nav');
   if (nav) {
     window.addEventListener('scroll', () => {
-      nav.style.padding = window.scrollY > 40
-        ? '0.5rem 3.5rem'
-        : '0.85rem 3.5rem';
+      nav.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
   }
 
