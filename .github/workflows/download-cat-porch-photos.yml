@@ -1,7 +1,11 @@
 name: Download Cat Porch Photos
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - claude/screened-cat-porch-page-4ZpXs
+    paths-ignore:
+      - 'assets/projects/cat-porch-*.avif'
 
 jobs:
   download:
