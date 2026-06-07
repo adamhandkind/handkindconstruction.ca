@@ -233,117 +233,8 @@
 
   .hero-stat { border-top: 1px solid rgba(74,179,230,0.4); padding-top: var(--space-3); }
 
-  /* projects grid — clean card layout */
+  /* projects grid — pulls shared .proj-card styles from main.css */
   .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
-
-  .project-card {
-    display: block;
-    background: var(--surface-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    text-decoration: none;
-    color: inherit;
-    transition:
-      box-shadow var(--dur-base) var(--ease-out),
-      transform var(--dur-base) var(--ease-out);
-  }
-
-  .project-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-3px);
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .project-card__img-wrap {
-    height: 220px;
-    overflow: hidden;
-    background: var(--surface-sunken);
-  }
-
-  .project-card__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.45s var(--ease-out);
-  }
-
-  .project-card:hover .project-card__img { transform: scale(1.04); }
-
-  /* Placeholder when no photo is available */
-  .project-card__img-placeholder {
-    width: 100%;
-    height: 100%;
-    background: var(--navy-800);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-    padding: var(--space-6);
-    text-align: center;
-  }
-
-  .project-card__img-placeholder-label {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    font-weight: var(--fw-semibold);
-    letter-spacing: var(--tracking-caps);
-    text-transform: uppercase;
-    color: var(--brand-accent);
-  }
-
-  .project-card__img-placeholder-title {
-    font-family: var(--font-display);
-    font-size: var(--text-lg);
-    font-weight: var(--fw-bold);
-    color: rgba(255,255,255,0.85);
-    line-height: var(--leading-snug);
-  }
-
-  .project-card__body {
-    padding: var(--space-5);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .project-card__type {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    font-weight: var(--fw-semibold);
-    letter-spacing: var(--tracking-wide);
-    text-transform: uppercase;
-    color: var(--brand-primary);
-  }
-
-  .project-card__title {
-    font-family: var(--font-display);
-    font-size: var(--text-lg);
-    font-weight: var(--fw-semibold);
-    color: var(--text-strong);
-    line-height: var(--leading-snug);
-    margin: 0;
-  }
-
-  .project-card__loc {
-    display: flex;
-    align-items: center;
-    gap: var(--space-1);
-    font-family: var(--font-sans);
-    font-size: var(--text-sm);
-    color: var(--text-muted);
-    margin: 0;
-  }
-
-  .project-card__loc-icon {
-    flex-shrink: 0;
-    opacity: 0.6;
-  }
 
   /* philosophy / about */
   .philosophy-inner {
@@ -481,7 +372,7 @@
     .hero-stat-row { bottom: var(--space-6); left: var(--space-6); gap: var(--space-6); }
     .hero-stats { flex-wrap: wrap; gap: var(--space-5); }
     .projects-grid { grid-template-columns: 1fr 1fr; }
-    .project-card__img-wrap { height: 180px; }
+    .proj-card__img-wrap { height: 180px; }
     .philosophy-inner { grid-template-columns: 1fr; gap: var(--space-8); }
     .reviews-grid { grid-template-columns: 1fr; }
     .sections-header { flex-direction: column; align-items: flex-start; }
@@ -489,7 +380,7 @@
 
   @media (max-width: 540px) {
     .projects-grid { grid-template-columns: 1fr; }
-    .project-card__img-wrap { height: 200px; }
+    .proj-card__img-wrap { height: 200px; }
     .hero-actions { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
   }
 </style>
@@ -592,85 +483,85 @@
     <!-- Latest 6 projects — ordered by project sort order in /pages/projects.html (newest first) -->
     <div class="projects-grid">
 
-      <a class="project-card" href="/pages/project-ravenwood-basement-brantford.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/ravenwood-1.avif" alt="Ravenwood basement finish — built-in TV wall with walnut shelves, Brantford" loading="lazy" width="800" height="600">
+      <a class="proj-card" href="/pages/project-ravenwood-basement-brantford.html">
+        <div class="proj-card__img-wrap">
+          <img class="proj-card__img" src="/assets/projects/ravenwood-1.avif" alt="Ravenwood basement finish — built-in TV wall with walnut shelves, Brantford" loading="lazy" width="800" height="600">
         </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Full Basement Finish</span>
-          <h3 class="project-card__title">Ravenwood Basement</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="proj-card__body">
+          <span class="proj-card__type">Full Basement Finish</span>
+          <h3 class="proj-card__title">Ravenwood Basement</h3>
+          <p class="proj-card__loc">
+            <svg class="proj-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             Brantford, Ontario &middot; 2026
           </p>
         </div>
       </a>
 
-      <a class="project-card" href="/pages/project-kathleen-garage-paris.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/kathleen-1.avif" alt="New detached garage with covered porch — Paris, Ontario" loading="lazy" width="800" height="600">
+      <a class="proj-card" href="/pages/project-kathleen-garage-paris.html">
+        <div class="proj-card__img-wrap">
+          <img class="proj-card__img" src="/assets/projects/kathleen-1.avif" alt="New detached garage with covered porch — Paris, Ontario" loading="lazy" width="800" height="600">
         </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Detached Garage Build</span>
-          <h3 class="project-card__title">Kathleen St Garage</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="proj-card__body">
+          <span class="proj-card__type">Detached Garage Build</span>
+          <h3 class="proj-card__title">Kathleen St Garage</h3>
+          <p class="proj-card__loc">
+            <svg class="proj-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             Paris, Ontario &middot; 2026
           </p>
         </div>
       </a>
 
-      <a class="project-card" href="/pages/project-pharmacy-fitout-brantford.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/pharmacy-10.avif" alt="Commercial pharmacy fitout — custom cabinetry, Brantford" loading="lazy" width="800" height="600">
+      <a class="proj-card" href="/pages/project-pharmacy-fitout-brantford.html">
+        <div class="proj-card__img-wrap">
+          <img class="proj-card__img" src="/assets/projects/pharmacy-10.avif" alt="Commercial pharmacy fitout — custom cabinetry, Brantford" loading="lazy" width="800" height="600">
         </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Commercial Fitout</span>
-          <h3 class="project-card__title">Pharmacy Build-Out</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="proj-card__body">
+          <span class="proj-card__type">Commercial Fitout</span>
+          <h3 class="proj-card__title">Pharmacy Build-Out</h3>
+          <p class="proj-card__loc">
+            <svg class="proj-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             Brantford, Ontario &middot; 2026
           </p>
         </div>
       </a>
 
-      <a class="project-card" href="/pages/project-his-her-bathrooms-paris.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/his_bathroom_before_after.avif" alt="His and her bathrooms fully renovated — Paris, Ontario" loading="lazy" width="800" height="600">
+      <a class="proj-card" href="/pages/project-his-her-bathrooms-paris.html">
+        <div class="proj-card__img-wrap">
+          <img class="proj-card__img" src="/assets/projects/his_bathroom_before_after.avif" alt="His and her bathrooms fully renovated — Paris, Ontario" loading="lazy" width="800" height="600">
         </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Dual Bathroom Renovation</span>
-          <h3 class="project-card__title">His &amp; Her Bathrooms</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="proj-card__body">
+          <span class="proj-card__type">Dual Bathroom Renovation</span>
+          <h3 class="proj-card__title">His &amp; Her Bathrooms</h3>
+          <p class="proj-card__loc">
+            <svg class="proj-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             Paris, Ontario &middot; 2026
           </p>
         </div>
       </a>
 
-      <a class="project-card" href="/pages/project-covered-porch-paris.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/porch-4.avif" alt="Covered porch rebuild — Paris, Ontario" loading="lazy" width="800" height="600">
+      <a class="proj-card" href="/pages/project-covered-porch-paris.html">
+        <div class="proj-card__img-wrap">
+          <img class="proj-card__img" src="/assets/projects/porch-4.avif" alt="Covered porch rebuild — Paris, Ontario" loading="lazy" width="800" height="600">
         </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Exterior &amp; Addition</span>
-          <h3 class="project-card__title">Covered Porch Rebuild</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="proj-card__body">
+          <span class="proj-card__type">Exterior &amp; Addition</span>
+          <h3 class="proj-card__title">Covered Porch Rebuild</h3>
+          <p class="proj-card__loc">
+            <svg class="proj-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             Paris, Ontario &middot; 2025
           </p>
         </div>
       </a>
 
-      <a class="project-card" href="/pages/project-he-shed-paris.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/he-shed-5.avif" alt="He-shed transformation — finished outbuilding interior, Paris Ontario" loading="lazy" width="800" height="600">
+      <a class="proj-card" href="/pages/project-he-shed-paris.html">
+        <div class="proj-card__img-wrap">
+          <img class="proj-card__img" src="/assets/projects/he-shed-5.avif" alt="He-shed transformation — finished outbuilding interior, Paris Ontario" loading="lazy" width="800" height="600">
         </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Specialty &amp; Additions</span>
-          <h3 class="project-card__title">He-Shed Transformation</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="proj-card__body">
+          <span class="proj-card__type">Specialty &amp; Additions</span>
+          <h3 class="proj-card__title">He-Shed Transformation</h3>
+          <p class="proj-card__loc">
+            <svg class="proj-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             Paris, Ontario &middot; 2026
           </p>
         </div>
