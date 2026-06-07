@@ -233,79 +233,116 @@
 
   .hero-stat { border-top: 1px solid rgba(74,179,230,0.4); padding-top: var(--space-3); }
 
-  /* projects grid */
+  /* projects grid — clean card layout */
   .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
 
   .project-card {
-    position: relative;
-    overflow: hidden;
-    background: var(--surface-sunken);
+    display: block;
+    background: var(--surface-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
-    aspect-ratio: 4/3;
+    overflow: hidden;
     box-shadow: var(--shadow-sm);
-    transition: box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+    text-decoration: none;
+    color: inherit;
+    transition:
+      box-shadow var(--dur-base) var(--ease-out),
+      transform var(--dur-base) var(--ease-out);
   }
 
   .project-card:hover {
     box-shadow: var(--shadow-lg);
     transform: translateY(-3px);
+    text-decoration: none;
+    color: inherit;
   }
 
-  .project-photo {
-    position: absolute;
-    inset: 0;
+  .project-card__img-wrap {
+    height: 220px;
+    overflow: hidden;
+    background: var(--surface-sunken);
+  }
+
+  .project-card__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.5s var(--ease-out);
+    display: block;
+    transition: transform 0.45s var(--ease-out);
   }
 
-  .project-card:hover .project-photo { transform: scale(1.05); }
+  .project-card:hover .project-card__img { transform: scale(1.04); }
 
-  .project-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(13,31,45,0.85) 0%, transparent 55%);
-    opacity: 0;
-    transition: opacity var(--dur-base) var(--ease-out);
+  /* Placeholder when no photo is available */
+  .project-card__img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--navy-800);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-6);
+    text-align: center;
   }
 
-  .project-card:hover .project-overlay { opacity: 1; }
-
-  .project-info {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: var(--space-5);
-    transform: translateY(8px);
-    opacity: 0;
-    transition: all var(--dur-base) var(--ease-out);
-  }
-
-  .project-card:hover .project-info { transform: translateY(0); opacity: 1; }
-
-  .project-type {
+  .project-card__img-placeholder-label {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
-    font-weight: var(--fw-medium);
-    letter-spacing: var(--tracking-wide);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-caps);
     text-transform: uppercase;
     color: var(--brand-accent);
-    margin-bottom: var(--space-1);
   }
 
-  .project-title {
+  .project-card__img-placeholder-title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: var(--fw-bold);
+    color: rgba(255,255,255,0.85);
+    line-height: var(--leading-snug);
+  }
+
+  .project-card__body {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .project-card__type {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--brand-primary);
+  }
+
+  .project-card__title {
     font-family: var(--font-display);
     font-size: var(--text-lg);
     font-weight: var(--fw-semibold);
-    color: #fff;
+    color: var(--text-strong);
+    line-height: var(--leading-snug);
+    margin: 0;
   }
 
-  .project-location {
+  .project-card__loc {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
     font-family: var(--font-sans);
-    font-size: var(--text-xs);
-    color: rgba(255,255,255,0.6);
-    margin-top: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .project-card__loc-icon {
+    flex-shrink: 0;
+    opacity: 0.6;
   }
 
   /* philosophy / about */
@@ -433,6 +470,10 @@
     margin: 0 auto;
   }
 
+  @media (max-width: 1024px) {
+    .projects-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+  }
+
   @media (max-width: 860px) {
     .hero { grid-template-columns: 1fr; }
     .hero-left { padding: 4rem var(--space-6) 3rem; }
@@ -440,13 +481,15 @@
     .hero-stat-row { bottom: var(--space-6); left: var(--space-6); gap: var(--space-6); }
     .hero-stats { flex-wrap: wrap; gap: var(--space-5); }
     .projects-grid { grid-template-columns: 1fr 1fr; }
+    .project-card__img-wrap { height: 180px; }
     .philosophy-inner { grid-template-columns: 1fr; gap: var(--space-8); }
     .reviews-grid { grid-template-columns: 1fr; }
     .sections-header { flex-direction: column; align-items: flex-start; }
   }
 
-  @media (max-width: 580px) {
+  @media (max-width: 540px) {
     .projects-grid { grid-template-columns: 1fr; }
+    .project-card__img-wrap { height: 200px; }
     .hero-actions { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
   }
 </style>
@@ -537,7 +580,7 @@
 </section>
 
 <!-- PROJECTS -->
-<section class="section" id="projects">
+<section class="section section--cream" id="projects">
   <div class="inner">
     <div class="sections-header">
       <div>
@@ -546,63 +589,95 @@
       </div>
       <a href="/pages/projects.html" class="btn-text">See all projects</a>
     </div>
+    <!-- Latest 6 projects — ordered by project sort order in /pages/projects.html (newest first) -->
     <div class="projects-grid">
-      <div class="project-card">
-        <img class="project-photo" src="https://img1.wsimg.com/isteam/ip/aa097d1d-e629-4807-b052-e57bc0bbb8db/f48a6c35-def1-49be-bc41-f10cd9dd03f3.jpg/:/rs=w:800,cg:true" alt="Kitchen main floor remodel — HandKind Construction, Brantford Ontario" loading="lazy" width="800" height="600">
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <p class="project-type">Kitchen Renovation</p>
-          <p class="project-title">Main Floor Remodel</p>
-          <p class="project-location">Brantford, Ontario</p>
+
+      <a class="project-card" href="/pages/project-ravenwood-basement-brantford.html">
+        <div class="project-card__img-wrap">
+          <img class="project-card__img" src="/assets/projects/ravenwood-1.avif" alt="Ravenwood basement finish — built-in TV wall with walnut shelves, Brantford" loading="lazy" width="800" height="600">
         </div>
-      </div>
-      <div class="project-card">
-        <img class="project-photo" src="/assets/projects/bathroom-ensuite-glass-shower.avif" alt="Ensuite glass shower renovation — HandKind Construction, Paris Ontario" loading="lazy" width="800" height="600">
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <p class="project-type">Bathroom Renovation</p>
-          <p class="project-title">Ensuite Glass Shower</p>
-          <p class="project-location">Paris, Ontario</p>
+        <div class="project-card__body">
+          <span class="project-card__type">Full Basement Finish</span>
+          <h3 class="project-card__title">Ravenwood Basement</h3>
+          <p class="project-card__loc">
+            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Brantford, Ontario &middot; 2026
+          </p>
         </div>
-      </div>
-      <div class="project-card">
-        <img class="project-photo" src="/assets/projects/basement-builtin-shelving.avif" alt="Basement built-in shelving — HandKind Construction, Brantford Ontario" loading="lazy" width="800" height="600">
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <p class="project-type">Basement Finishing</p>
-          <p class="project-title">Built-In Shelving</p>
-          <p class="project-location">Brantford, Ontario</p>
+      </a>
+
+      <a class="project-card" href="/pages/project-kathleen-garage-paris.html">
+        <div class="project-card__img-wrap">
+          <img class="project-card__img" src="/assets/projects/kathleen-1.avif" alt="New detached garage with covered porch — Paris, Ontario" loading="lazy" width="800" height="600">
         </div>
-      </div>
-      <div class="project-card">
-        <img class="project-photo" src="/assets/projects/bathroom-wainscoting-black-fixtures.avif" alt="Bathroom wainscoting with black fixtures — HandKind Construction, Brant County" loading="lazy" width="800" height="600">
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <p class="project-type">Bathroom Renovation</p>
-          <p class="project-title">Wainscoting &amp; Black Fixtures</p>
-          <p class="project-location">Brant County</p>
+        <div class="project-card__body">
+          <span class="project-card__type">Detached Garage Build</span>
+          <h3 class="project-card__title">Kathleen St Garage</h3>
+          <p class="project-card__loc">
+            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Paris, Ontario &middot; 2026
+          </p>
         </div>
-      </div>
-      <div class="project-card">
-        <img class="project-photo" src="/assets/projects/laundry-room-white-cabinets.avif" alt="Laundry room white cabinet refresh — HandKind Construction, Brantford Ontario" loading="lazy" width="800" height="600">
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <p class="project-type">Laundry Room</p>
-          <p class="project-title">White Cabinet Refresh</p>
-          <p class="project-location">Brantford, Ontario</p>
+      </a>
+
+      <a class="project-card" href="/pages/project-pharmacy-fitout-brantford.html">
+        <div class="project-card__img-wrap">
+          <img class="project-card__img" src="/assets/projects/pharmacy-10.avif" alt="Commercial pharmacy fitout — custom cabinetry, Brantford" loading="lazy" width="800" height="600">
         </div>
-      </div>
-      <div class="project-card">
-        <img class="project-photo" src="/assets/projects/bathroom-shower-hexagon-tile.avif" alt="Bathroom hexagon tile shower — HandKind Construction, Brantford Ontario" loading="lazy" width="800" height="600">
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <p class="project-type">Bathroom Renovation</p>
-          <p class="project-title">Hexagon Tile Shower</p>
-          <p class="project-location">Brantford, Ontario</p>
+        <div class="project-card__body">
+          <span class="project-card__type">Commercial Fitout</span>
+          <h3 class="project-card__title">Pharmacy Build-Out</h3>
+          <p class="project-card__loc">
+            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Brantford, Ontario &middot; 2026
+          </p>
         </div>
-      </div>
+      </a>
+
+      <a class="project-card" href="/pages/project-his-her-bathrooms-paris.html">
+        <div class="project-card__img-wrap">
+          <img class="project-card__img" src="/assets/projects/his_bathroom_before_after.avif" alt="His and her bathrooms fully renovated — Paris, Ontario" loading="lazy" width="800" height="600">
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__type">Dual Bathroom Renovation</span>
+          <h3 class="project-card__title">His &amp; Her Bathrooms</h3>
+          <p class="project-card__loc">
+            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Paris, Ontario &middot; 2026
+          </p>
+        </div>
+      </a>
+
+      <a class="project-card" href="/pages/project-covered-porch-paris.html">
+        <div class="project-card__img-wrap">
+          <img class="project-card__img" src="/assets/projects/porch-4.avif" alt="Covered porch rebuild — Paris, Ontario" loading="lazy" width="800" height="600">
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__type">Exterior &amp; Addition</span>
+          <h3 class="project-card__title">Covered Porch Rebuild</h3>
+          <p class="project-card__loc">
+            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Paris, Ontario &middot; 2025
+          </p>
+        </div>
+      </a>
+
+      <a class="project-card" href="/pages/project-he-shed-paris.html">
+        <div class="project-card__img-wrap">
+          <img class="project-card__img" src="/assets/projects/he-shed-5.avif" alt="He-shed transformation — finished outbuilding interior, Paris Ontario" loading="lazy" width="800" height="600">
+        </div>
+        <div class="project-card__body">
+          <span class="project-card__type">Specialty &amp; Additions</span>
+          <h3 class="project-card__title">He-Shed Transformation</h3>
+          <p class="project-card__loc">
+            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Paris, Ontario &middot; 2026
+          </p>
+        </div>
+      </a>
+
     </div>
-    <div style="text-align:center; margin-top:2.5rem;">
+    <div style="text-align:center; margin-top:var(--space-10);">
       <a href="/pages/projects.html" class="btn btn--dark">View Full Portfolio</a>
     </div>
   </div>
