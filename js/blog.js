@@ -25,7 +25,7 @@
     const [y, m, d] = p.date.split('-');
     const dateStr = `${MONTHS[parseInt(m)-1]} ${parseInt(d)}, ${y}`;
     return `
-      <a href="/blog/${p.slug}.html" style="background:var(--white);border:1px solid var(--border);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(28,46,74,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+      <a href="/blog/${p.slug}.html" style="background:var(--white);border:1px solid var(--border);display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(13,31,45,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
         <div style="padding:1.5rem;">
           <div style="display:flex;gap:0.6rem;align-items:center;margin-bottom:0.75rem;">
             <span style="font-size:0.62rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#fff;background:var(--navy);padding:0.2rem 0.55rem;">${p.category}</span>

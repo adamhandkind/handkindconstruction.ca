@@ -4,17 +4,13 @@
    ───────────────────────────────────────────── */
 
 /* ── Webfonts ── */
-@font-face { font-family: 'Archivo'; font-weight: 500; font-display: swap; src: url('/fonts/archivo-500.woff2') format('woff2'); }
-@font-face { font-family: 'Archivo'; font-weight: 600; font-display: swap; src: url('/fonts/archivo-600.woff2') format('woff2'); }
-@font-face { font-family: 'Archivo'; font-weight: 700; font-display: swap; src: url('/fonts/archivo-700.woff2') format('woff2'); }
-@font-face { font-family: 'Archivo'; font-weight: 800; font-display: swap; src: url('/fonts/archivo-800.woff2') format('woff2'); }
-@font-face { font-family: 'Hanken Grotesk'; font-weight: 400; font-display: swap; src: url('/fonts/hanken-400.woff2') format('woff2'); }
-@font-face { font-family: 'Hanken Grotesk'; font-weight: 500; font-display: swap; src: url('/fonts/hanken-500.woff2') format('woff2'); }
-@font-face { font-family: 'Hanken Grotesk'; font-weight: 600; font-display: swap; src: url('/fonts/hanken-600.woff2') format('woff2'); }
-@font-face { font-family: 'Hanken Grotesk'; font-weight: 700; font-display: swap; src: url('/fonts/hanken-700.woff2') format('woff2'); }
-@font-face { font-family: 'IBM Plex Mono'; font-weight: 400; font-display: swap; src: url('/fonts/plexmono-400.woff2') format('woff2'); }
-@font-face { font-family: 'IBM Plex Mono'; font-weight: 500; font-display: swap; src: url('/fonts/plexmono-500.woff2') format('woff2'); }
-@font-face { font-family: 'IBM Plex Mono'; font-weight: 600; font-display: swap; src: url('/fonts/plexmono-600.woff2') format('woff2'); }
+@font-face { font-family: 'Poppins'; font-weight: 400; font-display: swap; src: url('/fonts/poppins-400.woff2') format('woff2'); }
+@font-face { font-family: 'Poppins'; font-weight: 500; font-display: swap; src: url('/fonts/poppins-500.woff2') format('woff2'); }
+@font-face { font-family: 'Poppins'; font-weight: 600; font-display: swap; src: url('/fonts/poppins-600.woff2') format('woff2'); }
+@font-face { font-family: 'Poppins'; font-weight: 700; font-display: swap; src: url('/fonts/poppins-700.woff2') format('woff2'); }
+@font-face { font-family: 'Poppins'; font-weight: 800; font-display: swap; src: url('/fonts/poppins-800.woff2') format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/lora-variable.woff2') format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: italic; font-weight: 400; font-display: swap; src: url('/fonts/lora-italic.woff2') format('woff2'); }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -23,13 +19,13 @@
   --blue-50:  #EAF4FB;
   --blue-100: #CFE6F7;
   --blue-200: #A6D3F0;
-  --blue-300: #74BCE8;
-  --blue-400: #48B3E6;
-  --blue-500: #3887C5;
-  --blue-600: #3173B5;
-  --blue-700: #285E96;
-  --blue-800: #214B77;
-  --blue-900: #1A3A5C;
+  --blue-300: #6FBEE0;
+  --blue-400: #3DA4D6;
+  --blue-500: #1A8FCA;
+  --blue-600: #1678AA;
+  --blue-700: #12628C;
+  --blue-800: #0F4E70;
+  --blue-900: #0C3D58;
 
   --navy-950: #081521;
   --navy-900: #0D1F2D;
@@ -49,14 +45,26 @@
   --slate-800: #1F2C38;
   --slate-900: #0D1F2D;
 
+  --gold-50:  #F7F1E6;
+  --gold-100: #EEE1C4;
+  --gold-300: #DAC091;
+  --gold-500: #C8A96E;
+  --gold-700: #A3854E;
+
   --green-50:  #E6F4ED;
   --green-500: #1F8A5B;
 
-  /* ── Semantic aliases ── */
-  --brand-primary:       #3173B5;
-  --brand-primary-hover: #285E96;
-  --brand-accent:        #48B3E6;
-  --brand-gradient:      linear-gradient(155deg, #48B3E6 0%, #3173B5 55%, #285E96 100%);
+  /* ── Semantic aliases ──
+     NOTE: the spec's literal "sky" (#1A8FCA) is 3.6:1 on white — below WCAG AA (4.5:1)
+     for normal text. --brand-primary uses blue-600 (#1678AA, 4.9:1) as the spec's own
+     "approved darker SKY action shade" (Section 8.2) for text/links/buttons on light
+     surfaces. Full #1A8FCA is kept as --brand-sky for large-scale/decorative use only. */
+  --brand-sky:           #1A8FCA;
+  --brand-primary:       #1678AA;
+  --brand-primary-hover: #12628C;
+  --brand-accent:        #3DA4D6;
+  --brand-gold:          #C8A96E;
+  --brand-gradient:      linear-gradient(155deg, #3DA4D6 0%, #1678AA 55%, #12628C 100%);
 
   --surface-page:    #F6F8FA;
   --surface-card:    #FFFFFF;
@@ -69,18 +77,19 @@
   --text-faint:         #97A6B5;
   --text-on-dark:       #EAF1F7;
   --text-on-dark-muted: #9DB2C4;
-  --text-link:          #3173B5;
+  --text-link:          #1678AA;
 
   --border-subtle:   #DDE4EB;
   --border-default:  #C5D0DA;
   --border-strong:   #97A6B5;
   --border-on-dark:  rgba(255,255,255,0.12);
-  --ring-focus:      rgba(49,115,181,0.45);
+  --ring-focus:      rgba(22,120,170,0.45);
 
   /* ── Fonts ── */
-  --font-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
-  --font-sans:    'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono:    'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --font-display: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-ui:      'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans:    'Lora', Georgia, 'Times New Roman', serif;
+  --font-mono:    var(--font-ui);
 
   /* Legacy aliases so inner pages still resolve */
   --font-body:    var(--font-sans);
@@ -146,7 +155,7 @@
   --shadow-md: 0 2px 4px rgba(13,31,45,0.06), 0 8px 20px rgba(13,31,45,0.08);
   --shadow-lg: 0 6px 14px rgba(13,31,45,0.08), 0 18px 42px rgba(13,31,45,0.12);
   --shadow-xl: 0 12px 28px rgba(13,31,45,0.12), 0 40px 80px rgba(13,31,45,0.18);
-  --shadow-brand: 0 8px 20px rgba(49,115,181,0.28);
+  --shadow-brand: 0 8px 20px rgba(22,120,170,0.28);
 
   /* ── Motion ── */
   --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -226,7 +235,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-links a {
-  font-family: var(--font-sans);
+  font-family: var(--font-ui);
   font-size: var(--text-sm);
   font-weight: var(--fw-medium);
   letter-spacing: 0;
@@ -239,13 +248,32 @@ h1, h2, h3, h4 {
 .nav-links a:hover,
 .nav-links a.active { color: var(--brand-primary); text-decoration: none; }
 
+.nav-links-phone { display: none; }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.nav-phone {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-medium);
+  color: var(--text-body);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-phone:hover { color: var(--brand-primary); text-decoration: none; }
+
 .nav-cta {
   display: inline-flex;
   align-items: center;
   padding: 0.5rem 1.25rem;
   background: var(--brand-primary);
   color: #fff !important;
-  font-family: var(--font-sans);
+  font-family: var(--font-ui);
   font-size: var(--text-sm);
   font-weight: var(--fw-semibold);
   letter-spacing: 0;
@@ -261,6 +289,32 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-brand);
   text-decoration: none;
 }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-strong);
+  border-radius: 1px;
+  transition: transform var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── PAGE WRAPPER ── */
 .page-body { padding-top: 0; }
@@ -313,7 +367,7 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1.75rem;
-  font-family: var(--font-sans);
+  font-family: var(--font-ui);
   font-size: var(--text-base);
   font-weight: var(--fw-semibold);
   letter-spacing: 0;
@@ -337,7 +391,7 @@ h1, h2, h3, h4 {
 .btn--outline:hover { background: var(--blue-50); text-decoration: none; }
 
 .btn-text {
-  font-family: var(--font-sans);
+  font-family: var(--font-ui);
   font-size: var(--text-sm);
   font-weight: var(--fw-medium);
   letter-spacing: 0;
@@ -456,7 +510,7 @@ h1, h2, h3, h4 {
 }
 
 .footer-links a {
-  font-family: var(--font-sans);
+  font-family: var(--font-ui);
   font-size: var(--text-sm);
   letter-spacing: 0;
   text-transform: none;
@@ -664,7 +718,7 @@ h1, h2, h3, h4 {
 }
 
 .section--navy .step-number-wrap {
-  border-color: rgba(74,179,230,0.35);
+  border-color: rgba(200,169,110,0.4);
   background: var(--navy-800);
 }
 
@@ -675,7 +729,7 @@ h1, h2, h3, h4 {
   color: var(--brand-primary);
 }
 
-.section--navy .step-number { color: var(--brand-accent); }
+.section--navy .step-number { color: var(--brand-gold); }
 
 .step-name {
   font-family: var(--font-display);
@@ -802,7 +856,7 @@ h1, h2, h3, h4 {
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   color: var(--brand-accent);
-  border: 1px solid rgba(74,179,230,0.3);
+  border: 1px solid rgba(61,164,214,0.3);
   border-radius: var(--radius-pill);
   padding: 0.2rem 0.65rem;
 }
@@ -816,7 +870,7 @@ h1, h2, h3, h4 {
 }
 
 .review-stars {
-  color: var(--brand-accent);
+  color: var(--brand-gold);
   font-size: var(--text-sm);
   letter-spacing: 0.1em;
   margin-bottom: var(--space-4);
@@ -870,7 +924,38 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 860px) {
-  .nav-links { display: none; }
+  .nav-toggle { display: flex; order: 3; }
+  .nav-actions { gap: var(--space-3); }
+  .nav-phone { display: none; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    margin-left: 0;
+    background: var(--surface-card);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: var(--text-base);
+  }
+
+  .nav-links li:last-child a { border-bottom: none; }
+
+  .nav-links-phone { display: block; }
+  .nav-links-phone a { color: var(--brand-primary); font-weight: var(--fw-semibold); }
+
   .grid-4, .grid-3 { grid-template-columns: 1fr 1fr; }
   .why-grid { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
   .areas-grid { grid-template-columns: 1fr; }
