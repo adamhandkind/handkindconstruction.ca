@@ -196,6 +196,38 @@ a { color: inherit; }
 ::selection { background: var(--blue-100); color: var(--navy-900); }
 :focus-visible { outline: none; box-shadow: 0 0 0 3px var(--ring-focus); border-radius: var(--radius-sm); }
 
+/* ── SKIP LINK ── */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: var(--space-4, 1rem);
+  z-index: 1000;
+  background: var(--navy-900, #0D1F2D);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: top var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus {
+  top: var(--space-4, 1rem);
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-inner {
+    animation: none !important;
+  }
+}
+
 /* ── TYPOGRAPHY ── */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
