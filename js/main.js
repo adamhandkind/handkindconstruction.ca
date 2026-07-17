@@ -168,4 +168,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  /* ── Analytics: sitewide delegated events (Section 25.2) ──
+     Non-personal parameters only — never send name/email/phone/address/free text. */
+  const isLocationPage = window.location.pathname.includes('/pages/locations/');
+
+  document.addEventListener('click', (e) => {
+    const telLink = e.target.closest('a[href^="tel:"]');
+    if (telLink) {
+      track('phone_click', { cta_location: linkContext(telLink) });
+      return;
+    }
+
+    const mailLink = e.target.closest('a[href^="mailto:"]');
+    if (mailLink) {
+      track('email_click', { cta_location: linkContext(mailLink) });
+      return;
+    }
+
+    const blogCard = e.target.closest('.post-card');
+    if (blogCard) {
+      track('blog_article_click', { page_type: 'blog_index' });
+      return;
+    }
+
+    const projectCard = e.target.closest('.project-card, .proj-card');
+    if (projectCard && projectCard.tagName === 'A') {
+      track('project_card_click', { project_slug: slugFromHref(projectCard.getAttribute('href')) });
+      return;
+    }
+
+    const serviceLink = e.target.closest('.service-card a, .service-link');
+    if (serviceLink) {
+      const name = (serviceLink.closest('.service-card')?.querySelector('.service-name')?.textContent || serviceLink.textContent).trim();
+      track('service_card_click', { service_name: name });
+      return;
+    }
+
+    const cta = e.target.closest('.nav-cta, .btn, .btn-text, .btn--dark, .btn--white, .btn--outline');
+    if (cta && cta.tagName === 'A') {
+      const label = cta.textContent.trim();
+      const location_ = linkContext(cta);
+      track('cta_click', { cta_label: label, cta_location: location_ });
+      if (isLocationPage) track('location_page_cta_click', { cta_label: label, location_name: document.title });
+    }
+  });
+
+  function linkContext(el) {
+    if (el.closest('.nav')) return 'nav';
+    if (el.closest('.footer')) return 'footer';
+    if (el.closest('.cta-section')) return 'cta_section';
+    if (el.closest('.hero, .page-hero')) return 'hero';
+    return 'page_body';
+  }
+
+  function slugFromHref(href) {
+    if (!href) return '';
+    return href.replace(/^\/+|\.html$/g, '').split('/').pop();
+  }
+
+  function track(name, params) {
+    if (typeof gtag === 'function') gtag('event', name, params || {});
+  }
+  window.hkTrack = track;
+
 });

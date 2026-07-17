@@ -391,7 +391,7 @@
 
     <!-- JobTread form — data-key and submit action preserved exactly -->
     <div>
-      <form data-jobtread-web-form="true" data-key="22TAE6ZehZcdDvJ5xssdX3Mrd8w6Hc2ERW" id="estimate-form">
+      <form data-jobtread-web-form="true" data-key="22TAE6ZehZcdDvJ5xssdX3Mrd8w6Hc2ERW" data-success-url="/thank-you.html" id="estimate-form">
         <div class="form-card">
 
           <div class="card-header">
@@ -558,6 +558,19 @@
           const progress = document.querySelector('#step-progress .step-progress-current');
           const errorSummary = document.getElementById('form-error-summary');
 
+          /* ── Analytics (Section 25.2) — non-personal parameters only ── */
+          function track(name, params) {
+            if (typeof gtag === 'function') gtag('event', name, params || {});
+          }
+          let formStarted = false;
+          function markFormStarted() {
+            if (formStarted) return;
+            formStarted = true;
+            track('lead_form_start', { form_id: 'estimate' });
+          }
+          form.addEventListener('input', markFormStarted, { once: true });
+          form.addEventListener('change', markFormStarted, { once: true });
+
           function showError(id) { const el = document.getElementById(id); if (el) el.classList.add('visible'); }
           function clearErrors() {
             document.querySelectorAll('.field-error').forEach(el => el.classList.remove('visible'));
@@ -583,6 +596,7 @@
               errorSummary.innerHTML = '<strong>Please fix the following:</strong><ul style="margin:0.4rem 0 0 1.1rem;">' + problems.map(p => `<li>${p}</li>`).join('') + '</ul>';
               errorSummary.classList.add('visible');
               errorSummary.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              track('lead_form_error', { form_id: 'estimate', error_type: 'step_1_validation' });
               return false;
             }
             return true;
@@ -620,7 +634,21 @@
             progress.textContent = 'Step 2 of 2';
             document.querySelector('#step-progress').innerHTML = '<span class="step-progress"><span class="step-progress-current">Step 2 of 2</span> &middot; Contact &amp; readiness</span>';
             step2.querySelector('input, textarea, select').focus();
+            track('lead_form_step_1_complete', { form_id: 'estimate' });
           });
+
+          const fileInput = document.querySelector('input[name="account.files"]');
+          if (fileInput) {
+            fileInput.addEventListener('change', () => {
+              if (fileInput.files && fileInput.files.length > 0) {
+                track('file_upload', { form_id: 'estimate' });
+              }
+            });
+          }
+
+          form.addEventListener('invalid', (e) => {
+            track('lead_form_error', { form_id: 'estimate', error_type: 'missing_required_field' });
+          }, true);
 
           document.getElementById('step-2-back').addEventListener('click', () => {
             step2.classList.remove('active');
@@ -638,8 +666,10 @@
               e.stopImmediatePropagation();
               showError('error-consent');
               consent.focus();
+              track('lead_form_error', { form_id: 'estimate', error_type: 'missing_consent' });
               return false;
             }
+            track('lead_form_submit', { form_id: 'estimate' });
           }, true);
         })();
       </script>
