@@ -101,23 +101,14 @@
   .proj-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(13,31,45,0.88) 0%, rgba(13,31,45,0.1) 60%, transparent 100%);
-    opacity: 0;
-    transition: opacity 0.3s;
+    background: linear-gradient(to top, rgba(13,31,45,0.88) 0%, rgba(13,31,45,0.35) 55%, rgba(13,31,45,0.05) 100%);
   }
-
-  .proj-card:hover .proj-overlay { opacity: 1; }
 
   .proj-info {
     position: absolute;
     bottom: 0; left: 0; right: 0;
     padding: 1.5rem;
-    transform: translateY(10px);
-    opacity: 0;
-    transition: all 0.3s;
   }
-
-  .proj-card:hover .proj-info { transform: translateY(0); opacity: 1; }
 
   .proj-category {
     font-size: 0.62rem;
