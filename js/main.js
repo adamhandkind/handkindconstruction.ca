@@ -62,6 +62,7 @@ const FOOTER_HTML = `
       <img src="/assets/logo.avif" alt="HandKind Construction">
     </div>
     <p class="footer-slogan">Built by hand, defined by kind.</p>
+    <p class="footer-areas">Serving <a href="/pages/locations/brantford.html">Brantford</a>, <a href="/pages/locations/paris.html">Paris</a> &amp; <a href="/pages/locations/brant-county.html">Brant County</a></p>
   </div>
   <ul class="footer-links">
     <li><a href="/index.html">Home</a></li>
