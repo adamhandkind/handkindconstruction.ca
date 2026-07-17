@@ -319,6 +319,39 @@ h1, h2, h3, h4 {
 /* ── PAGE WRAPPER ── */
 .page-body { padding-top: 0; }
 
+/* ── TRUST STRIP ── */
+.trust-strip {
+  background: var(--surface-card);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: var(--space-5) var(--space-8);
+}
+
+.trust-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-medium);
+  color: var(--text-body);
+  white-space: nowrap;
+}
+
+.trust-item-mark { color: var(--text-strong); letter-spacing: 0.05em; }
+
+@media (max-width: 640px) {
+  .trust-strip-inner { gap: var(--space-4); justify-content: flex-start; }
+  .trust-item { font-size: var(--text-xs); }
+}
+
 /* ── SECTION SHARED ── */
 .section { padding: 5rem var(--space-8); }
 .section--cream { background: var(--surface-sunken); }
@@ -690,6 +723,8 @@ h1, h2, h3, h4 {
   grid-template-columns: repeat(5, 1fr);
   position: relative;
 }
+
+.process-steps--six { grid-template-columns: repeat(6, 1fr); }
 
 .process-steps::before {
   content: '';
