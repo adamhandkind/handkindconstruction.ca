@@ -11,6 +11,8 @@ const BUSINESS = {
   addressDisplay: '20 Balmoral St, Paris, ON',
 };
 
+const SKIP_LINK_HTML = `<a href="#main-content" class="skip-link">Skip to main content</a>`;
+
 const NAV_HTML = `
 <nav class="nav" id="site-nav">
   <a href="/index.html" class="nav-logo">
@@ -94,9 +96,9 @@ const CTA_HTML = `
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Inject nav
+  // Inject nav (skip link precedes it as the first focusable element in the document)
   const navEl = document.getElementById('nav-placeholder');
-  if (navEl) navEl.outerHTML = NAV_HTML;
+  if (navEl) navEl.outerHTML = SKIP_LINK_HTML + NAV_HTML;
 
   // Inject marquee
   document.querySelectorAll('.marquee-placeholder').forEach(el => {
@@ -111,6 +113,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inject footer
   const footerEl = document.getElementById('footer-placeholder');
   if (footerEl) footerEl.outerHTML = FOOTER_HTML;
+
+  // Wrap the page's own content in a <main> landmark, between the nav and footer
+  const navFinal = document.getElementById('site-nav');
+  const footerFinal = document.querySelector('.footer');
+  if (navFinal && footerFinal && !document.getElementById('main-content')) {
+    const main = document.createElement('main');
+    main.id = 'main-content';
+    let node = navFinal.nextSibling;
+    while (node && node !== footerFinal) {
+      const next = node.nextSibling;
+      main.appendChild(node);
+      node = next;
+    }
+    footerFinal.parentNode.insertBefore(main, footerFinal);
+  }
 
   // Active nav link
   const path = window.location.pathname;
