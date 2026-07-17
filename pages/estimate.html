@@ -223,6 +223,101 @@
   @media (max-width: 860px) {
     .estimate-layout { grid-template-columns: 1fr; gap: 3rem; }
   }
+
+  /* Two-step form */
+  .form-step { display: none; }
+  .form-step.active { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .step-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  .step-progress-current { color: var(--navy); }
+
+  .field-hint { font-size: 0.72rem; color: var(--stone); margin-top: 0.35rem; }
+
+  select {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  }
+
+  select:focus { background: #fff; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(13,31,45,0.1); }
+
+  .radio-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .radio-row {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.86rem;
+    font-weight: 300;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .radio-row input[type="radio"] { accent-color: var(--navy); cursor: pointer; }
+
+  .consent-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--stone);
+    line-height: 1.5;
+  }
+
+  .consent-row input[type="checkbox"] { margin-top: 3px; accent-color: var(--navy); cursor: pointer; flex-shrink: 0; }
+  .consent-row a { color: var(--navy); }
+
+  .step-nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+
+  .step-back {
+    background: none;
+    border: none;
+    color: var(--stone);
+    font-size: 0.78rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
+
+  .field-error {
+    display: none;
+    font-size: 0.72rem;
+    color: #b91c1c;
+    margin-top: 0.35rem;
+  }
+
+  .field-error.visible { display: block; }
+
+  .form-error-summary {
+    display: none;
+    background: #FEF2F2;
+    border: 1px solid #b91c1c;
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    color: #b91c1c;
+  }
+
+  .form-error-summary.visible { display: block; }
 </style>
 <script type="application/ld+json">
 {
@@ -296,79 +391,258 @@
 
     <!-- JobTread form — data-key and submit action preserved exactly -->
     <div>
-      <form data-jobtread-web-form="true" data-key="22TAE6ZehZcdDvJ5xssdX3Mrd8w6Hc2ERW">
+      <form data-jobtread-web-form="true" data-key="22TAE6ZehZcdDvJ5xssdX3Mrd8w6Hc2ERW" id="estimate-form">
         <div class="form-card">
 
           <div class="card-header">
             <p class="card-header-title">Project Estimate Request</p>
-            <p class="card-header-sub">Fields marked * are required</p>
+            <p class="card-header-sub" id="step-progress">
+              <span class="step-progress"><span class="step-progress-current">Step 1 of 2</span> &middot; Project details</span>
+            </p>
           </div>
 
           <div class="card-body">
 
-            <label>
-              <span class="field-label">Name <span class="field-required">*</span></span>
-              <input type="text" required name="contact.name" placeholder="Your full name">
-            </label>
+            <div class="form-error-summary" id="form-error-summary" role="alert"></div>
 
-            <label>
-              <span class="field-label">Email <span class="field-required">*</span></span>
-              <input type="email" required name="contact.custom.22PKG3WWYXv3" placeholder="you@example.com">
-            </label>
+            <!-- STEP 1: Project fit -->
+            <div class="form-step active" id="form-step-1">
 
-            <label>
-              <span class="field-label">Phone <span class="field-required">*</span></span>
-              <input type="tel" required name="contact.custom.22PKG3WtEWJG" placeholder="(519) 000-0000">
-            </label>
-
-            <label>
-              <span class="field-label">Project address <span class="field-required">*</span></span>
-              <textarea name="location.address" required placeholder="Street address, city, postal code"></textarea>
-            </label>
-
-            <div class="form-divider"></div>
-
-            <div>
-              <span class="field-label">Remodel type</span>
-              <div class="checkbox-group">
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Full Remodel"><span>Full Remodel</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Addition"><span>Addition</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Basement"><span>Basement</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Bathroom"><span>Bathroom</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Kitchen"><span>Kitchen</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Garage"><span>Garage</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Home Exterior"><span>Home Exterior</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Roof"><span>Roof</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Patio"><span>Patio</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Porch"><span>Porch</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Deck"><span>Deck</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Landscape"><span>Landscape</span></label>
-                <label class="checkbox-row"><input type="checkbox" name="job.custom.22PKNVPQh32q" value="Restoration"><span>Restoration</span></label>
+              <div>
+                <span class="field-label">Project type <span class="field-required">*</span></span>
+                <div class="checkbox-group" id="project-type-group">
+                  <label class="checkbox-row"><input type="checkbox" class="project-type-input" name="job.custom.22PKNVPQh32q" value="Kitchen / Main Floor"><span>Kitchen / Main Floor</span></label>
+                  <label class="checkbox-row"><input type="checkbox" class="project-type-input" name="job.custom.22PKNVPQh32q" value="Bathroom / Laundry"><span>Bathroom / Laundry</span></label>
+                  <label class="checkbox-row"><input type="checkbox" class="project-type-input" name="job.custom.22PKNVPQh32q" value="Basement"><span>Basement</span></label>
+                  <label class="checkbox-row"><input type="checkbox" class="project-type-input" name="job.custom.22PKNVPQh32q" value="Addition"><span>Addition</span></label>
+                  <label class="checkbox-row"><input type="checkbox" class="project-type-input" name="job.custom.22PKNVPQh32q" value="ARU / Secondary Suite"><span>Additional Residential Unit (ARU) / Secondary Suite</span></label>
+                  <label class="checkbox-row"><input type="checkbox" class="project-type-input" name="job.custom.22PKNVPQh32q" value="Whole-Home Renovation"><span>Whole-Home Renovation</span></label>
+                  <label class="checkbox-row"><input type="checkbox" class="project-type-input" name="job.custom.22PKNVPQh32q" value="Structural Renovation"><span>Structural Renovation</span></label>
+                  <label class="checkbox-row"><input type="checkbox" class="project-type-input" name="job.custom.22PKNVPQh32q" value="Exterior / Porch"><span>Exterior / Porch</span></label>
+                  <label class="checkbox-row"><input type="checkbox" class="project-type-input" name="job.custom.22PKNVPQh32q" value="Other"><span>Other</span></label>
+                </div>
+                <p class="field-error" id="error-project-type">Select at least one project type.</p>
               </div>
+
+              <div class="form-divider"></div>
+
+              <label>
+                <span class="field-label">Municipality or postal code <span class="field-required">*</span></span>
+                <input type="text" id="field-municipality" placeholder="e.g. Brantford, or N3T 0A1" autocomplete="postal-code">
+                <p class="field-hint">Your exact address isn't needed yet — just the general area.</p>
+                <p class="field-error" id="error-municipality">Let us know the municipality or postal code.</p>
+              </label>
+
+              <label>
+                <span class="field-label">Approximate project budget <span class="field-required">*</span></span>
+                <select id="field-budget">
+                  <option value="">Select a range…</option>
+                  <option value="Under $25,000">Under $25,000</option>
+                  <option value="$25,000–$50,000">$25,000–$50,000</option>
+                  <option value="$50,000–$100,000">$50,000–$100,000</option>
+                  <option value="$100,000–$200,000">$100,000–$200,000</option>
+                  <option value="$200,000+">$200,000+</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+                <p class="field-error" id="error-budget">Choose a budget range.</p>
+              </label>
+
+              <label>
+                <span class="field-label">Desired start period <span class="field-required">*</span></span>
+                <select id="field-start">
+                  <option value="">Select a timeframe…</option>
+                  <option value="As soon as practical">As soon as practical</option>
+                  <option value="Within 1–3 months">Within 1–3 months</option>
+                  <option value="Within 3–6 months">Within 3–6 months</option>
+                  <option value="Within 6–12 months">Within 6–12 months</option>
+                  <option value="More than 12 months">More than 12 months</option>
+                  <option value="Researching only">Researching only</option>
+                </select>
+                <p class="field-error" id="error-start">Choose a desired start period.</p>
+              </label>
+
+              <label>
+                <span class="field-label">Project summary <span class="field-required">*</span></span>
+                <textarea id="field-summary" minlength="30" maxlength="2000" placeholder="What are you hoping to do? A few sentences is plenty."></textarea>
+                <p class="field-error" id="error-summary">Give us at least a short sentence or two (30+ characters).</p>
+              </label>
+
+              <div class="card-footer">
+                <p class="card-footer-note">Step 1 of 2</p>
+                <button type="button" class="btn btn--dark" id="step-1-continue">Continue</button>
+              </div>
+
             </div>
 
-            <div class="form-divider"></div>
+            <!-- STEP 2: Contact and readiness -->
+            <div class="form-step" id="form-step-2">
 
-            <label>
-              <span class="field-label">Tell us about your project</span>
-              <input type="text" name="job.description" placeholder="Brief description, timeline, anything helpful…">
-            </label>
+              <label>
+                <span class="field-label">Name <span class="field-required">*</span></span>
+                <input type="text" required name="contact.name" placeholder="Your full name" autocomplete="name">
+              </label>
 
-            <label>
-              <span class="field-label">Files &amp; Photos</span>
-              <input type="file" multiple name="account.files">
-            </label>
+              <label>
+                <span class="field-label">Email <span class="field-required">*</span></span>
+                <input type="email" required name="contact.custom.22PKG3WWYXv3" placeholder="you@example.com" autocomplete="email" inputmode="email">
+              </label>
 
-          </div>
+              <label>
+                <span class="field-label">Phone <span class="field-required">*</span></span>
+                <input type="tel" required name="contact.custom.22PKG3WtEWJG" placeholder="(519) 000-0000" autocomplete="tel" inputmode="tel">
+              </label>
 
-          <div class="card-footer">
-            <p class="card-footer-note">We'll reply within<br>one business day.</p>
-            <button data-submit-button="true" type="submit">Submit Request</button>
+              <label>
+                <span class="field-label">Project address <span class="field-required">*</span></span>
+                <textarea name="location.address" required placeholder="Street address, city, postal code" autocomplete="street-address"></textarea>
+              </label>
+
+              <div class="form-divider"></div>
+
+              <div>
+                <span class="field-label">Have drawings been started?</span>
+                <div class="radio-group" id="readiness-group">
+                  <label class="radio-row"><input type="checkbox" class="readiness-input" value="No"><span>No</span></label>
+                  <label class="radio-row"><input type="checkbox" class="readiness-input" value="Concept/sketch only"><span>Concept/sketch only</span></label>
+                  <label class="radio-row"><input type="checkbox" class="readiness-input" value="Designer engaged"><span>Designer engaged</span></label>
+                  <label class="radio-row"><input type="checkbox" class="readiness-input" value="Permit drawings underway"><span>Permit drawings underway</span></label>
+                  <label class="radio-row"><input type="checkbox" class="readiness-input" value="Permit submitted/issued"><span>Permit submitted/issued</span></label>
+                </div>
+              </div>
+
+              <label>
+                <span class="field-label">How did you hear about us?</span>
+                <select id="field-referral">
+                  <option value="">Select…</option>
+                  <option value="Google Search">Google Search</option>
+                  <option value="Google Maps">Google Maps</option>
+                  <option value="Referral">Referral</option>
+                  <option value="Returning client">Returning client</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Job-site sign/vehicle">Job-site sign/vehicle</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+
+              <label>
+                <span class="field-label">Files &amp; Photos</span>
+                <input type="file" multiple name="account.files">
+              </label>
+
+              <input type="hidden" name="job.description" id="field-description-hidden">
+
+              <div class="consent-row">
+                <input type="checkbox" id="field-consent" required>
+                <label for="field-consent">I agree to be contacted by HandKind Construction about this inquiry. <span class="field-required">*</span></label>
+              </div>
+              <p class="field-error" id="error-consent">Please check the box to continue — we need your consent to follow up.</p>
+
+              <div class="card-footer">
+                <button type="button" class="step-back" id="step-2-back">← Back</button>
+                <button data-submit-button="true" type="submit">Submit Request</button>
+              </div>
+
+            </div>
+
           </div>
 
         </div>
       </form>
       <script async src="https://app.jobtread.com/web-form.js"></script>
+      <script>
+        (function () {
+          const form = document.getElementById('estimate-form');
+          const step1 = document.getElementById('form-step-1');
+          const step2 = document.getElementById('form-step-2');
+          const progress = document.querySelector('#step-progress .step-progress-current');
+          const errorSummary = document.getElementById('form-error-summary');
+
+          function showError(id) { const el = document.getElementById(id); if (el) el.classList.add('visible'); }
+          function clearErrors() {
+            document.querySelectorAll('.field-error').forEach(el => el.classList.remove('visible'));
+            errorSummary.classList.remove('visible');
+            errorSummary.innerHTML = '';
+          }
+
+          function validateStep1() {
+            clearErrors();
+            const problems = [];
+            const anyType = document.querySelectorAll('.project-type-input:checked').length > 0;
+            if (!anyType) { showError('error-project-type'); problems.push('Select at least one project type.'); }
+            const municipality = document.getElementById('field-municipality').value.trim();
+            if (!municipality) { showError('error-municipality'); problems.push('Municipality or postal code is required.'); }
+            const budget = document.getElementById('field-budget').value;
+            if (!budget) { showError('error-budget'); problems.push('Budget range is required.'); }
+            const start = document.getElementById('field-start').value;
+            if (!start) { showError('error-start'); problems.push('Desired start period is required.'); }
+            const summary = document.getElementById('field-summary').value.trim();
+            if (summary.length < 30) { showError('error-summary'); problems.push('Project summary needs at least 30 characters.'); }
+
+            if (problems.length) {
+              errorSummary.innerHTML = '<strong>Please fix the following:</strong><ul style="margin:0.4rem 0 0 1.1rem;">' + problems.map(p => `<li>${p}</li>`).join('') + '</ul>';
+              errorSummary.classList.add('visible');
+              errorSummary.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              return false;
+            }
+            return true;
+          }
+
+          function syncHiddenFields() {
+            const municipality = document.getElementById('field-municipality').value.trim();
+            const budget = document.getElementById('field-budget').value;
+            const start = document.getElementById('field-start').value;
+            const summary = document.getElementById('field-summary').value.trim();
+            const readiness = (document.querySelector('.readiness-input:checked') || {}).value || '';
+            const referral = document.getElementById('field-referral').value;
+
+            const lines = [summary, '', `Municipality/postal code: ${municipality}`, `Budget: ${budget}`, `Desired start: ${start}`];
+            if (readiness) lines.push(`Readiness: ${readiness}`);
+            if (referral) lines.push(`Referral source: ${referral}`);
+            document.getElementById('field-description-hidden').value = lines.join('\n');
+          }
+
+          document.querySelectorAll('.readiness-input').forEach(cb => {
+            cb.addEventListener('change', () => {
+              if (cb.checked) {
+                document.querySelectorAll('.readiness-input').forEach(other => {
+                  if (other !== cb) other.checked = false;
+                });
+              }
+            });
+          });
+
+          document.getElementById('step-1-continue').addEventListener('click', () => {
+            if (!validateStep1()) return;
+            syncHiddenFields();
+            step1.classList.remove('active');
+            step2.classList.add('active');
+            progress.textContent = 'Step 2 of 2';
+            document.querySelector('#step-progress').innerHTML = '<span class="step-progress"><span class="step-progress-current">Step 2 of 2</span> &middot; Contact &amp; readiness</span>';
+            step2.querySelector('input, textarea, select').focus();
+          });
+
+          document.getElementById('step-2-back').addEventListener('click', () => {
+            step2.classList.remove('active');
+            step1.classList.add('active');
+            document.querySelector('#step-progress').innerHTML = '<span class="step-progress"><span class="step-progress-current">Step 1 of 2</span> &middot; Project details</span>';
+            step1.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+
+          form.addEventListener('submit', (e) => {
+            clearErrors();
+            syncHiddenFields();
+            const consent = document.getElementById('field-consent');
+            if (!consent.checked) {
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              showError('error-consent');
+              consent.focus();
+              return false;
+            }
+          }, true);
+        })();
+      </script>
     </div>
 
   </div>

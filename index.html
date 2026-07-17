@@ -233,117 +233,6 @@
 
   .hero-stat { border-top: 1px solid rgba(61,164,214,0.4); padding-top: var(--space-3); }
 
-  /* projects grid — clean card layout */
-  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
-
-  .project-card {
-    display: block;
-    background: var(--surface-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    text-decoration: none;
-    color: inherit;
-    transition:
-      box-shadow var(--dur-base) var(--ease-out),
-      transform var(--dur-base) var(--ease-out);
-  }
-
-  .project-card:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-3px);
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .project-card__img-wrap {
-    height: 220px;
-    overflow: hidden;
-    background: var(--surface-sunken);
-  }
-
-  .project-card__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.45s var(--ease-out);
-  }
-
-  .project-card:hover .project-card__img { transform: scale(1.04); }
-
-  /* Placeholder when no photo is available */
-  .project-card__img-placeholder {
-    width: 100%;
-    height: 100%;
-    background: var(--navy-800);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-    padding: var(--space-6);
-    text-align: center;
-  }
-
-  .project-card__img-placeholder-label {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    font-weight: var(--fw-semibold);
-    letter-spacing: var(--tracking-caps);
-    text-transform: uppercase;
-    color: var(--brand-accent);
-  }
-
-  .project-card__img-placeholder-title {
-    font-family: var(--font-display);
-    font-size: var(--text-lg);
-    font-weight: var(--fw-bold);
-    color: rgba(255,255,255,0.85);
-    line-height: var(--leading-snug);
-  }
-
-  .project-card__body {
-    padding: var(--space-5);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .project-card__type {
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    font-weight: var(--fw-semibold);
-    letter-spacing: var(--tracking-wide);
-    text-transform: uppercase;
-    color: var(--brand-primary);
-  }
-
-  .project-card__title {
-    font-family: var(--font-display);
-    font-size: var(--text-lg);
-    font-weight: var(--fw-semibold);
-    color: var(--text-strong);
-    line-height: var(--leading-snug);
-    margin: 0;
-  }
-
-  .project-card__loc {
-    display: flex;
-    align-items: center;
-    gap: var(--space-1);
-    font-family: var(--font-sans);
-    font-size: var(--text-sm);
-    color: var(--text-muted);
-    margin: 0;
-  }
-
-  .project-card__loc-icon {
-    flex-shrink: 0;
-    opacity: 0.6;
-  }
 
   /* philosophy / about */
   .philosophy-inner {
@@ -510,8 +399,8 @@
       High-end renovations, additions and ARUs — handled by a tight, skilled crew that treats your home like their own and a long-term investment.
     </p>
     <div class="hero-actions fade-up delay-4">
-      <a href="/pages/estimate.html" class="btn btn--dark">Get Your Free Estimate</a>
-      <a href="/pages/projects.html" class="btn-text">View Projects</a>
+      <a href="/pages/estimate.html" class="btn btn--dark">Start Your Project</a>
+      <a href="/pages/projects.html" class="btn-text">View Completed Projects</a>
     </div>
     <div class="hero-stats fade-up delay-4">
       <div class="hero-stat">
@@ -527,6 +416,22 @@
   <div class="hero-right">
     <div class="hero-photo"></div>
     <div class="hero-photo-overlay"></div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust-strip">
+  <div class="inner trust-strip-inner">
+    <div class="trust-item">
+      <span class="trust-item-mark">★★★★★</span>
+      <span class="trust-item-text">5.0 from 5 Google reviews</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-item-text">Insured, with WSIB coverage and licensed trades</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-item-text">Permits and trade scheduling managed for you</span>
+    </div>
   </div>
 </section>
 
@@ -697,6 +602,24 @@
   </div>
 </section>
 
+<!-- PROCESS -->
+<section class="section section--navy" id="process">
+  <div class="inner">
+    <div style="margin-bottom:4rem;">
+      <p class="section-label section-label--light">How We Work</p>
+      <h2 class="section-title section-title--light">A renovation process<br>you can <em>follow</em></h2>
+    </div>
+    <div class="process-steps process-steps--six">
+      <div class="process-step"><div class="step-number-wrap"><span class="step-number">01</span></div><h3 class="step-name">Project review</h3><p class="step-desc">We review your submission and confirm the project is a good fit before booking a site visit.</p></div>
+      <div class="process-step"><div class="step-number-wrap"><span class="step-number">02</span></div><h3 class="step-name">Site consultation</h3><p class="step-desc">We walk your space, take measurements, and talk through your goals — no charge, no obligation.</p></div>
+      <div class="process-step"><div class="step-number-wrap"><span class="step-number">03</span></div><h3 class="step-name">Scope &amp; estimate</h3><p class="step-desc">A detailed, line-item estimate — no vague allowances, no numbers hidden behind "TBD."</p></div>
+      <div class="process-step"><div class="step-number-wrap"><span class="step-number">04</span></div><h3 class="step-name">Design &amp; permits</h3><p class="step-desc">Selections, drawings and required permits are co-ordinated before anything is scheduled.</p></div>
+      <div class="process-step"><div class="step-number-wrap"><span class="step-number">05</span></div><h3 class="step-name">Construction</h3><p class="step-desc">Scheduled trades, daily accountability, and regular progress updates through to completion.</p></div>
+      <div class="process-step"><div class="step-number-wrap"><span class="step-number">06</span></div><h3 class="step-name">Handover</h3><p class="step-desc">Final walkthrough, punch list cleared, and warranty documentation in hand.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- PHILOSOPHY -->
 <section class="section" id="about">
   <div class="philosophy-inner">
@@ -725,8 +648,37 @@
           <div class="sig-title">Owner &amp; Lead Contractor, HandKind Construction Co.</div>
         </div>
       </div>
-      <p style="font-size:0.88rem;font-weight:300;line-height:1.85;color:var(--stone);margin-top:1.5rem;">Jason Gagnon has worked in residential construction since his early teens, beginning alongside his carpenter father. He completed a three-year Construction Engineering program and went on to manage projects exceeding $70 million with major builders across Canada. He founded HandKind Construction in Paris, Ontario to bring that level of organisation and craft to residential renovation — and remains personally present on every job site.</p>
+      <p style="font-size:0.88rem;font-weight:300;line-height:1.85;color:var(--stone);margin-top:1.5rem;">Jason Gagnon has worked in residential construction since his early teens, beginning alongside his carpenter father. He completed a three-year Construction Engineering program and went on to manage projects exceeding $70 million with major builders across Canada. He founded HandKind Construction in Paris, Ontario to bring that level of organisation and craft to residential renovation, and now leads the company's management team and standards for every project.</p>
       <p style="margin-top:1rem;font-size:0.82rem;"><a href="https://www.linkedin.com/in/jason-gagnon-38929717b/" rel="noopener" style="color:var(--navy);text-decoration:none;font-weight:400;letter-spacing:0.03em;">View LinkedIn Profile →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM & ACCOUNTABILITY -->
+<section class="section section--cream" id="team">
+  <div class="inner">
+    <div style="margin-bottom:3rem; max-width:640px;">
+      <p class="section-label">Owner-Led Standards</p>
+      <h2 class="section-title">A team accountable<br>for the <em>result</em></h2>
+      <p style="margin-top:1.25rem; font-family:var(--font-sans); font-size:var(--text-base); color:var(--text-muted); line-height:var(--leading-relaxed);">Every HandKind project is overseen by company management, assigned an accountable site lead, and supported by trusted licensed trades. Clients know who is responsible, how decisions are documented, and where the project stands.</p>
+    </div>
+    <div class="grid-4">
+      <div class="service-card">
+        <h3 class="service-name">Owner</h3>
+        <p class="service-desc">Sets the standards and manages the company's direction on every project.</p>
+      </div>
+      <div class="service-card">
+        <h3 class="service-name">Project Management</h3>
+        <p class="service-desc">Owns the schedule, budget and client communication from estimate to handover.</p>
+      </div>
+      <div class="service-card">
+        <h3 class="service-name">Site Leadership</h3>
+        <p class="service-desc">On-site daily to check work, coordinate trades, and keep the build on sequence.</p>
+      </div>
+      <div class="service-card">
+        <h3 class="service-name">Trusted Trade Network</h3>
+        <p class="service-desc">Licensed electrical, plumbing and mechanical trades co-ordinated under one accountable plan.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -752,6 +704,19 @@
   <div class="about-block-inner">
     <p class="section-label">About HandKind Construction</p>
     <p style="font-family:var(--font-sans);font-size:var(--text-base);font-weight:var(--fw-regular);line-height:var(--leading-relaxed);color:var(--text-muted);margin-top:var(--space-5);">HandKind Construction Co. is a renovation contractor based in Paris, Ontario, serving Brantford, Paris and Brant County. The company specialises in kitchen renovations, bathroom renovations, basement finishing, home additions and accessory residential units (ARUs). HandKind operates under an owner-led model — every project is overseen by company management and assigned an accountable site lead. The company has completed 400+ renovation projects across Brant County over 12+ years. Kitchen renovations range from $25,000 to $80,000+. Bathroom renovations range from $15,000 to $50,000+. Basement finishing ranges from $45,000 to $120,000+. All bathroom projects use Schluter KERDI waterproof membrane on shower walls and DITRA uncoupling membrane on tiled floors as a baseline standard. HandKind handles all permit applications, trade coordination, and site management under one contract. Free estimates are available for projects in Brantford, Paris, Brant County and surrounding areas. Contact: hello@handkindconstruction.ca or +1 226-938-7108.</p>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="section" style="text-align:center; padding-top:3rem; padding-bottom:3rem;">
+  <div class="inner--narrow">
+    <p class="section-label" style="justify-content:center;">Service Area</p>
+    <p style="font-family:var(--font-sans); font-size:var(--text-md); color:var(--text-body); line-height:var(--leading-relaxed);">Based in Paris, serving Brantford, Brant County and selected nearby communities.</p>
+    <p style="margin-top:1rem; font-family:var(--font-ui); font-size:var(--text-sm); display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
+      <a href="/pages/locations/brantford.html" style="color:var(--brand-primary); text-decoration:none;">Brantford →</a>
+      <a href="/pages/locations/paris.html" style="color:var(--brand-primary); text-decoration:none;">Paris →</a>
+      <a href="/pages/locations/brant-county.html" style="color:var(--brand-primary); text-decoration:none;">Brant County →</a>
+    </p>
   </div>
 </section>
 
