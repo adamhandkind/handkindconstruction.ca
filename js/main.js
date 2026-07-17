@@ -27,9 +27,10 @@ const NAV_HTML = `
     <li><a href="/index.html">Home</a></li>
     <li><a href="/pages/services.html">Services</a></li>
     <li><a href="/pages/projects.html">Projects</a></li>
+    <li><a href="/pages/process.html">Process</a></li>
+    <li><a href="/pages/about.html">About</a></li>
     <li><a href="/pages/faq.html">FAQ</a></li>
     <li><a href="/blog/index.html">Blog</a></li>
-    <li><a href="/pages/careers.html">Careers</a></li>
     <li><a href="/pages/contact.html">Contact</a></li>
     <li class="nav-links-phone"><a href="${BUSINESS.phoneHref}">${BUSINESS.phoneDisplay}</a></li>
   </ul>
@@ -70,10 +71,13 @@ const FOOTER_HTML = `
     <li><a href="/index.html">Home</a></li>
     <li><a href="/pages/services.html">Services</a></li>
     <li><a href="/pages/projects.html">Projects</a></li>
-    <li><a href="/pages/careers.html">Careers</a></li>
+    <li><a href="/pages/process.html">Process</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+    <li><a href="/pages/reviews.html">Reviews</a></li>
     <li><a href="/pages/faq.html">FAQ</a></li>
-    <li><a href="/pages/contact.html">Contact</a></li>
     <li><a href="/blog/index.html">Blog</a></li>
+    <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/pages/careers.html">Careers</a></li>
     <li><a href="/pages/estimate.html">Start Your Project</a></li>
   </ul>
   <div class="footer-right">
@@ -87,9 +91,9 @@ const FOOTER_HTML = `
 const CTA_HTML = `
 <div class="cta-section">
   <p class="cta-eyebrow">Paris, Ontario &middot; Serving Brantford &amp; Brant County</p>
-  <h2 class="cta-title">Start your renovation<br><em>today</em></h2>
+  <h2 class="cta-title">Planning a substantial<br><em>renovation?</em></h2>
   <p class="cta-slogan">Built by hand, defined by kind.</p>
-  <p class="cta-sub">Free on-site estimate. Transparent quote. A crew that shows up.</p>
+  <p class="cta-sub">Tell us what you're planning, where the project is located, and when you hope to begin. We'll review the fit and outline the next step.</p>
   <a href="/pages/estimate.html" class="btn btn--white">Start Your Project</a>
   <p class="cta-address">${BUSINESS.addressDisplay} &middot; handkindconstruction.ca</p>
 </div>`;
