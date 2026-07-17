@@ -27,9 +27,10 @@ const NAV_HTML = `
     <li><a href="/index.html">Home</a></li>
     <li><a href="/pages/services.html">Services</a></li>
     <li><a href="/pages/projects.html">Projects</a></li>
+    <li><a href="/pages/process.html">Process</a></li>
+    <li><a href="/pages/about.html">About</a></li>
     <li><a href="/pages/faq.html">FAQ</a></li>
     <li><a href="/blog/index.html">Blog</a></li>
-    <li><a href="/pages/careers.html">Careers</a></li>
     <li><a href="/pages/contact.html">Contact</a></li>
     <li class="nav-links-phone"><a href="${BUSINESS.phoneHref}">${BUSINESS.phoneDisplay}</a></li>
   </ul>
@@ -70,10 +71,13 @@ const FOOTER_HTML = `
     <li><a href="/index.html">Home</a></li>
     <li><a href="/pages/services.html">Services</a></li>
     <li><a href="/pages/projects.html">Projects</a></li>
-    <li><a href="/pages/careers.html">Careers</a></li>
+    <li><a href="/pages/process.html">Process</a></li>
+    <li><a href="/pages/about.html">About</a></li>
+    <li><a href="/pages/reviews.html">Reviews</a></li>
     <li><a href="/pages/faq.html">FAQ</a></li>
-    <li><a href="/pages/contact.html">Contact</a></li>
     <li><a href="/blog/index.html">Blog</a></li>
+    <li><a href="/pages/contact.html">Contact</a></li>
+    <li><a href="/pages/careers.html">Careers</a></li>
     <li><a href="/pages/estimate.html">Start Your Project</a></li>
   </ul>
   <div class="footer-right">
