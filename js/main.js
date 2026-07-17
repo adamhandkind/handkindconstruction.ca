@@ -77,7 +77,8 @@ const FOOTER_HTML = `
   <div class="footer-right">
     &copy; 2026 HandKind Construction Co.<br>
     ${BUSINESS.addressDisplay} &middot; <a href="${BUSINESS.phoneHref}" style="color:inherit;text-decoration:none;">${BUSINESS.phoneDisplay}</a><br>
-    <a href="mailto:${BUSINESS.email}" style="color:inherit;text-decoration:none;">${BUSINESS.email}</a>
+    <a href="mailto:${BUSINESS.email}" style="color:inherit;text-decoration:none;">${BUSINESS.email}</a><br>
+    <a href="/privacy.html" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.25);">Privacy Policy</a>
   </div>
 </footer>`;
 
