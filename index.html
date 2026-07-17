@@ -370,7 +370,6 @@
     .hero-stat-row { bottom: var(--space-6); left: var(--space-6); gap: var(--space-6); }
     .hero-stats { flex-wrap: wrap; gap: var(--space-5); }
     .projects-grid { grid-template-columns: 1fr 1fr; }
-    .project-card__img-wrap { height: 180px; }
     .philosophy-inner { grid-template-columns: 1fr; gap: var(--space-8); }
     .reviews-grid { grid-template-columns: 1fr; }
     .sections-header { flex-direction: column; align-items: flex-start; }
@@ -378,7 +377,6 @@
 
   @media (max-width: 540px) {
     .projects-grid { grid-template-columns: 1fr; }
-    .project-card__img-wrap { height: 200px; }
     .hero-actions { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
   }
 </style>
@@ -493,87 +491,63 @@
     <!-- Latest 6 projects — ordered by project sort order in /pages/projects.html (newest first) -->
     <div class="projects-grid">
 
-      <a class="project-card" href="/pages/project-ravenwood-basement-brantford.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/ravenwood-1.avif" alt="Ravenwood basement finish — built-in TV wall with walnut shelves, Brantford" loading="lazy" width="800" height="600">
-        </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Full Basement Finish</span>
-          <h3 class="project-card__title">Ravenwood Basement</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            Brantford, Ontario &middot; 2026
-          </p>
+      <a class="project-card" href="/pages/project-full-basement-finish-brantford.html">
+        <img class="project-photo" src="/assets/projects/basement-finish-brantford-1.avif" alt="Full basement finish — built-in TV wall with walnut shelves, Brantford" loading="lazy" width="800" height="600">
+        <div class="project-overlay"></div>
+        <div class="project-info">
+          <p class="project-type">Basements</p>
+          <p class="project-title">Full Basement Finish</p>
+          <p class="project-location">Brantford, Ontario &middot; 2026</p>
         </div>
       </a>
 
-      <a class="project-card" href="/pages/project-kathleen-garage-paris.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/kathleen-1.avif" alt="New detached garage with covered porch — Paris, Ontario" loading="lazy" width="800" height="600">
-        </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Detached Garage Build</span>
-          <h3 class="project-card__title">Kathleen St Garage</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            Paris, Ontario &middot; 2026
-          </p>
+      <a class="project-card" href="/pages/project-detached-garage-paris.html">
+        <img class="project-photo" src="/assets/projects/garage-paris-1.avif" alt="New detached garage with covered porch — Paris, Ontario" loading="lazy" width="800" height="600">
+        <div class="project-overlay"></div>
+        <div class="project-info">
+          <p class="project-type">Exterior &amp; Structural</p>
+          <p class="project-title">Detached Garage</p>
+          <p class="project-location">Paris, Ontario &middot; 2026</p>
         </div>
       </a>
 
       <a class="project-card" href="/pages/project-pharmacy-fitout-brantford.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/pharmacy-10.avif" alt="Commercial pharmacy fitout — custom cabinetry, Brantford" loading="lazy" width="800" height="600">
-        </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Commercial Fitout</span>
-          <h3 class="project-card__title">Pharmacy Build-Out</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            Brantford, Ontario &middot; 2026
-          </p>
+        <img class="project-photo" src="/assets/projects/pharmacy-10.avif" alt="Commercial pharmacy fitout — custom cabinetry, Brantford" loading="lazy" width="800" height="600">
+        <div class="project-overlay"></div>
+        <div class="project-info">
+          <p class="project-type">Commercial</p>
+          <p class="project-title">Pharmacy Build-Out</p>
+          <p class="project-location">Brantford, Ontario &middot; 2026</p>
         </div>
       </a>
 
       <a class="project-card" href="/pages/project-his-her-bathrooms-paris.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/his_bathroom_before_after.avif" alt="His and her bathrooms fully renovated — Paris, Ontario" loading="lazy" width="800" height="600">
-        </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Dual Bathroom Renovation</span>
-          <h3 class="project-card__title">His &amp; Her Bathrooms</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            Paris, Ontario &middot; 2026
-          </p>
+        <img class="project-photo" src="/assets/projects/his_bathroom_before_after.avif" alt="His and her bathrooms fully renovated — Paris, Ontario" loading="lazy" width="800" height="600">
+        <div class="project-overlay"></div>
+        <div class="project-info">
+          <p class="project-type">Bathrooms</p>
+          <p class="project-title">His &amp; Her Bathrooms</p>
+          <p class="project-location">Paris, Ontario &middot; 2026</p>
         </div>
       </a>
 
       <a class="project-card" href="/pages/project-covered-porch-paris.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/porch-4.avif" alt="Covered porch rebuild — Paris, Ontario" loading="lazy" width="800" height="600">
-        </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Exterior &amp; Addition</span>
-          <h3 class="project-card__title">Covered Porch Rebuild</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            Paris, Ontario &middot; 2025
-          </p>
+        <img class="project-photo" src="/assets/projects/porch-4.avif" alt="Covered porch rebuild — Paris, Ontario" loading="lazy" width="800" height="600">
+        <div class="project-overlay"></div>
+        <div class="project-info">
+          <p class="project-type">Exterior &amp; Structural</p>
+          <p class="project-title">Covered Porch Rebuild</p>
+          <p class="project-location">Paris, Ontario &middot; 2025</p>
         </div>
       </a>
 
       <a class="project-card" href="/pages/project-he-shed-paris.html">
-        <div class="project-card__img-wrap">
-          <img class="project-card__img" src="/assets/projects/he-shed-5.avif" alt="He-shed transformation — finished outbuilding interior, Paris Ontario" loading="lazy" width="800" height="600">
-        </div>
-        <div class="project-card__body">
-          <span class="project-card__type">Specialty &amp; Additions</span>
-          <h3 class="project-card__title">He-Shed Transformation</h3>
-          <p class="project-card__loc">
-            <svg class="project-card__loc-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            Paris, Ontario &middot; 2026
-          </p>
+        <img class="project-photo" src="/assets/projects/he-shed-5.avif" alt="He-shed transformation — finished outbuilding interior, Paris Ontario" loading="lazy" width="800" height="600">
+        <div class="project-overlay"></div>
+        <div class="project-info">
+          <p class="project-type">Exterior &amp; Structural</p>
+          <p class="project-title">He-Shed Transformation</p>
+          <p class="project-location">Paris, Ontario &middot; 2026</p>
         </div>
       </a>
 
