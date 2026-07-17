@@ -171,6 +171,14 @@
 
   .hero-actions { display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; }
 
+  .hero-qualifier {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-top: var(--space-4);
+    max-width: 42ch;
+  }
+
   /* Stats strip */
   .hero-stats {
     display: flex;
@@ -327,7 +335,9 @@
     margin-top: var(--space-1);
   }
 
-  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); margin-top: var(--space-10); }
+  .reviews-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: var(--space-5); margin-top: var(--space-10); align-items: stretch; }
+  .review-card--featured { grid-row: span 1; padding: var(--space-6); background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); }
+  .review-card--featured .review-text { font-size: var(--text-lg); line-height: var(--leading-relaxed); }
   .reviews-note { margin-top: var(--space-6); text-align: center; font-family: var(--font-sans); font-size: var(--text-sm); color: var(--text-on-dark-muted); }
   .reviews-note a { color: var(--brand-accent); }
 
@@ -361,6 +371,7 @@
 
   @media (max-width: 1024px) {
     .projects-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+    .projects-grid--4 { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 860px) {
@@ -400,6 +411,7 @@
       <a href="/pages/estimate.html" class="btn btn--dark">Start Your Project</a>
       <a href="/pages/projects.html" class="btn-text">View Completed Projects</a>
     </div>
+    <p class="hero-qualifier fade-up delay-4">Best suited to complete-room, multi-room, addition, and whole-home projects.</p>
     <div class="hero-stats fade-up delay-4">
       <div class="hero-stat">
         <div class="hero-stat-num">12+</div>
@@ -488,8 +500,9 @@
       </div>
       <a href="/pages/projects.html" class="btn-text">See all projects</a>
     </div>
-    <!-- Latest 6 projects — ordered by project sort order in /pages/projects.html (newest first) -->
-    <div class="projects-grid">
+    <!-- Curated residential-first mix (HK-011) — only projects with real photography.
+         Pharmacy (commercial) and He-Shed (novelty/exterior) moved to the full index only. -->
+    <div class="projects-grid projects-grid--4">
 
       <a class="project-card" href="/pages/project-full-basement-finish-brantford.html">
         <img class="project-photo" src="/assets/projects/basement-finish-brantford-3.avif" alt="Full basement finish — finished living and TV area, Brantford" loading="lazy" width="800" height="600">
@@ -497,26 +510,6 @@
         <div class="project-info">
           <p class="project-type">Basements</p>
           <p class="project-title">Full Basement Finish</p>
-          <p class="project-location">Brantford, Ontario &middot; 2026</p>
-        </div>
-      </a>
-
-      <a class="project-card" href="/pages/project-detached-garage-paris.html">
-        <img class="project-photo" src="/assets/projects/garage-paris-1.avif" alt="New detached garage with covered porch — Paris, Ontario" loading="lazy" width="800" height="600">
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <p class="project-type">Exterior &amp; Structural</p>
-          <p class="project-title">Detached Garage</p>
-          <p class="project-location">Paris, Ontario &middot; 2026</p>
-        </div>
-      </a>
-
-      <a class="project-card" href="/pages/project-pharmacy-fitout-brantford.html">
-        <img class="project-photo" src="/assets/projects/pharmacy-1.avif" alt="Commercial pharmacy fitout — custom cabinetry, Brantford" loading="lazy" width="800" height="600">
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <p class="project-type">Commercial</p>
-          <p class="project-title">Pharmacy Build-Out</p>
           <p class="project-location">Brantford, Ontario &middot; 2026</p>
         </div>
       </a>
@@ -531,6 +524,16 @@
         </div>
       </a>
 
+      <a class="project-card" href="/pages/project-detached-garage-paris.html">
+        <img class="project-photo" src="/assets/projects/garage-paris-1.avif" alt="New detached garage with covered porch — Paris, Ontario" loading="lazy" width="800" height="600">
+        <div class="project-overlay"></div>
+        <div class="project-info">
+          <p class="project-type">Exterior &amp; Structural</p>
+          <p class="project-title">Detached Garage</p>
+          <p class="project-location">Paris, Ontario &middot; 2026</p>
+        </div>
+      </a>
+
       <a class="project-card" href="/pages/project-covered-porch-paris.html">
         <img class="project-photo" src="/assets/projects/porch-4.avif" alt="Covered porch rebuild — Paris, Ontario" loading="lazy" width="800" height="600">
         <div class="project-overlay"></div>
@@ -538,16 +541,6 @@
           <p class="project-type">Exterior &amp; Structural</p>
           <p class="project-title">Covered Porch Rebuild</p>
           <p class="project-location">Paris, Ontario &middot; 2025</p>
-        </div>
-      </a>
-
-      <a class="project-card" href="/pages/project-he-shed-paris.html">
-        <img class="project-photo" src="/assets/projects/he-shed-5.avif" alt="He-shed transformation — finished outbuilding interior, Paris Ontario" loading="lazy" width="800" height="600">
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <p class="project-type">Exterior &amp; Structural</p>
-          <p class="project-title">He-Shed Transformation</p>
-          <p class="project-location">Paris, Ontario &middot; 2026</p>
         </div>
       </a>
 
@@ -663,11 +656,10 @@
     <p class="section-label section-label--light">What Clients Say</p>
     <h2 class="section-title section-title--light">Trusted by Brant County<br><em>homeowners</em></h2>
     <div class="reviews-grid">
+      <div class="review-card review-card--featured"><div class="review-stars">★ ★ ★ ★ ★</div><p class="review-text">"We recently completed a full home renovation with HandKind Construction, and we could not be happier. Their communication was clear, consistent, and always proactive. We trusted them every step of the way and they truly delivered. We can hardly believe it's the same house we bought in June."</p><p class="review-author">Delia L.</p><p class="review-location">Ontario</p></div>
       <div class="review-card"><div class="review-stars">★ ★ ★ ★ ★</div><p class="review-text">"Immediately, Jason and the HandKind Construction team stood out from the pack for their knowledge and enthusiasm. There were no delays. When there were changes or challenges there was no hesitation or pushback. The end results speak for themselves — I would highly recommend this team!"</p><p class="review-author">Brad S.</p><p class="review-location">Great Room Conversion, Ontario</p></div>
       <div class="review-card"><div class="review-stars">★ ★ ★ ★ ★</div><p class="review-text">"Jason and his team are ultimate professionals; friendly and highly-skilled. It was a pleasure having them in our home. They were well-organized and very attentive to their work — always checking in with us and adjusting to new ideas. We highly recommend them!"</p><p class="review-author">Carolyn R.</p><p class="review-location">Ontario</p></div>
-      <div class="review-card"><div class="review-stars">★ ★ ★ ★ ★</div><p class="review-text">"We recently completed a full home renovation with HandKind Construction, and we could not be happier. Their communication was clear, consistent, and always proactive. We trusted them every step of the way and they truly delivered. We can hardly believe it's the same house we bought in June."</p><p class="review-author">Delia L.</p><p class="review-location">Ontario</p></div>
       <div class="review-card"><div class="review-stars">★ ★ ★ ★ ★</div><p class="review-text">"We have just completed our third project with HandKind and we are so happy! Jason takes care of everything — electrical, plumbing, flooring, painting, new doors and more. We will not hesitate to have Jason and his team back for our next project."</p><p class="review-author">Katie W.</p><p class="review-location">Ontario</p></div>
-      <div class="review-card"><div class="review-stars">★ ★ ★ ★ ★</div><p class="review-text">"Jason and his incredible team approached the project with the type of care and creativity that one would only expect from artists. I can't say enough about the personal touch HandKind Construction brought to the assignment. If you are looking to make your home feel like an extension of your personality — the best move you'll ever make."</p><p class="review-author">Maria Montanaro</p><p class="review-location">Ancaster, Ontario</p></div>
     </div>
     <p class="reviews-note">Verified reviews from Google.</p>
   </div>

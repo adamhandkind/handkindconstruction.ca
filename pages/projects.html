@@ -244,15 +244,16 @@
 <section class="section">
   <div class="inner">
 
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="kitchen">Kitchens</button>
-      <button class="filter-btn" data-filter="bathroom">Bathrooms</button>
-      <button class="filter-btn" data-filter="basement">Basements</button>
-      <button class="filter-btn" data-filter="addition">Additions &amp; ARUs</button>
-      <button class="filter-btn" data-filter="exterior">Exterior &amp; Structural</button>
-      <button class="filter-btn" data-filter="commercial">Commercial</button>
+    <div class="filter-bar" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All Projects</button>
+      <button class="filter-btn" data-filter="kitchen" aria-pressed="false">Kitchens</button>
+      <button class="filter-btn" data-filter="bathroom" aria-pressed="false">Bathrooms</button>
+      <button class="filter-btn" data-filter="basement" aria-pressed="false">Basements</button>
+      <button class="filter-btn" data-filter="addition" aria-pressed="false">Additions &amp; ARUs</button>
+      <button class="filter-btn" data-filter="exterior" aria-pressed="false">Exterior &amp; Structural</button>
+      <button class="filter-btn" data-filter="commercial" aria-pressed="false">Commercial</button>
     </div>
+    <p id="filter-result-count" class="sr-only" aria-live="polite"></p>
 
     <div class="projects-masonry">
 
@@ -342,16 +343,6 @@
           <p class="proj-ph-loc">Brantford, Ontario &middot; 2026</p>
         </div>
       </a>
-
-      <div class="proj-card proj-card--wide" data-category="kitchen">
-        <img class="proj-photo" src="https://img1.wsimg.com/isteam/ip/aa097d1d-e629-4807-b052-e57bc0bbb8db/f48a6c35-def1-49be-bc41-f10cd9dd03f3.jpg/:/rs=w:800,cg:true" alt="Kitchen main floor remodel — HandKind Construction, Brantford Ontario" loading="lazy" width="800" height="600">
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-category">Kitchens</p>
-          <p class="proj-title">Main Floor Remodel</p>
-          <p class="proj-meta">Brantford, Ontario &middot; 2024</p>
-        </div>
-      </div>
 
       <div class="proj-card proj-card--tall" data-category="bathroom">
         <img class="proj-photo" src="/assets/projects/bathroom-ensuite-glass-shower.avif" alt="Ensuite glass shower renovation — HandKind Construction, Paris Ontario" loading="lazy" width="600" height="800">
@@ -446,7 +437,7 @@
         </div>
       </div>
 
-      <div class="proj-card proj-card--square" data-category="specialty">
+      <div class="proj-card proj-card--square" data-category="exterior">
         <img class="proj-photo" src="/assets/projects/refreshed_staircase_railings.avif" alt="Refreshed staircase and railings interior renovation — HandKind Construction, Brant County" loading="lazy" width="600" height="600">
         <div class="proj-overlay"></div>
         <div class="proj-info">
@@ -510,17 +501,56 @@
 <div id="footer-placeholder"></div>
 
 <script src="/js/main.js"></script>
+<script src="/js/lightbox.js"></script>
 <script>
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.proj-card').forEach(card => {
-        card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+  (function () {
+    const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
+    const cards = Array.from(document.querySelectorAll('.proj-card'));
+    const countEl = document.getElementById('filter-result-count');
+    const labels = {};
+    filterBtns.forEach(b => { labels[b.dataset.filter] = b.textContent.trim(); });
+
+    function applyFilter(filter, pushState) {
+      let visible = 0;
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
       });
+
+      filterBtns.forEach(b => {
+        const active = b.dataset.filter === filter;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+
+      countEl.textContent = `${visible} project${visible === 1 ? '' : 's'} shown — ${labels[filter] || 'All Projects'}`;
+
+      const url = new URL(window.location);
+      if (filter === 'all') {
+        url.searchParams.delete('category');
+      } else {
+        url.searchParams.set('category', filter);
+      }
+      if (pushState) {
+        history.pushState({ filter }, '', url);
+      } else {
+        history.replaceState({ filter }, '', url);
+      }
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.filter, true));
     });
-  });
+
+    window.addEventListener('popstate', () => {
+      const params = new URLSearchParams(window.location.search);
+      applyFilter(params.get('category') || 'all', false);
+    });
+
+    const initial = new URLSearchParams(window.location.search).get('category');
+    applyFilter(filterBtns.some(b => b.dataset.filter === initial) ? initial : 'all', false);
+  })();
 </script>
 </body>
 </html>
