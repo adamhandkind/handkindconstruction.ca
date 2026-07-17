@@ -15,7 +15,7 @@ const SKIP_LINK_HTML = `<a href="#main-content" class="skip-link">Skip to main c
 
 const NAV_HTML = `
 <nav class="nav" id="site-nav">
-  <a href="/index.html" class="nav-logo">
+  <a href="/" class="nav-logo">
     <img src="/assets/logo.avif" alt="HandKind Construction">
   </a>
   <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links-list" aria-label="Open menu">
@@ -24,13 +24,13 @@ const NAV_HTML = `
     <span class="nav-toggle-bar"></span>
   </button>
   <ul class="nav-links" id="nav-links-list">
-    <li><a href="/index.html">Home</a></li>
+    <li><a href="/">Home</a></li>
     <li><a href="/pages/services.html">Services</a></li>
     <li><a href="/pages/projects.html">Projects</a></li>
     <li><a href="/pages/process.html">Process</a></li>
     <li><a href="/pages/about.html">About</a></li>
     <li><a href="/pages/faq.html">FAQ</a></li>
-    <li><a href="/blog/index.html">Blog</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="/pages/contact.html">Contact</a></li>
     <li class="nav-links-phone"><a href="${BUSINESS.phoneHref}">${BUSINESS.phoneDisplay}</a></li>
   </ul>
@@ -68,14 +68,14 @@ const FOOTER_HTML = `
     <p class="footer-areas">Serving <a href="/pages/locations/brantford.html">Brantford</a>, <a href="/pages/locations/paris.html">Paris</a> &amp; <a href="/pages/locations/brant-county.html">Brant County</a></p>
   </div>
   <ul class="footer-links">
-    <li><a href="/index.html">Home</a></li>
+    <li><a href="/">Home</a></li>
     <li><a href="/pages/services.html">Services</a></li>
     <li><a href="/pages/projects.html">Projects</a></li>
     <li><a href="/pages/process.html">Process</a></li>
     <li><a href="/pages/about.html">About</a></li>
     <li><a href="/pages/reviews.html">Reviews</a></li>
     <li><a href="/pages/faq.html">FAQ</a></li>
-    <li><a href="/blog/index.html">Blog</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="/pages/contact.html">Contact</a></li>
     <li><a href="/pages/careers.html">Careers</a></li>
     <li><a href="/pages/estimate.html">Start Your Project</a></li>
@@ -136,7 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Active nav link
   const path = window.location.pathname;
   document.querySelectorAll('.nav-links a').forEach(link => {
-    if (link.getAttribute('href') && path.endsWith(link.getAttribute('href').replace(/^\//, ''))) {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    const isHome = href === '/' && (path === '/' || path.endsWith('/index.html'));
+    const isMatch = href !== '/' && path.endsWith(href.replace(/^\//, ''));
+    if (isHome || isMatch) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }
