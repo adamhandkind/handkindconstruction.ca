@@ -840,7 +840,12 @@ h1, h2, h3, h4 {
   margin-top: 2px;
 }
 
-.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-item.open .faq-toggle,
+.faq-item[open] .faq-toggle { transform: rotate(45deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-toggle { transition: none; }
+}
 
 .faq-a {
   font-family: var(--font-sans);
@@ -852,7 +857,22 @@ h1, h2, h3, h4 {
   margin-top: var(--space-4);
 }
 
-.faq-item.open .faq-a { display: block; }
+.faq-a a { color: var(--brand-primary); text-decoration: underline; text-underline-offset: 2px; }
+
+.faq-item.open .faq-a,
+.faq-item[open] .faq-a { display: block; }
+
+/* Native <details>/<summary> accordion (accessible, keyboard-operable by default) */
+summary.faq-q {
+  list-style: none;
+}
+
+summary.faq-q::-webkit-details-marker { display: none; }
+
+summary.faq-q:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 4px;
+}
 
 /* ── PROCESS ── */
 .process-steps {

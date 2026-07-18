@@ -175,8 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // FAQ accordion
+  // FAQ accordion (legacy div-based markup only — native <details>/<summary> handles its own toggling and keyboard behaviour)
   document.querySelectorAll('.faq-q').forEach(q => {
+    if (q.tagName === 'SUMMARY') return;
     q.addEventListener('click', () => {
       const item = q.closest('.faq-item');
       const wasOpen = item.classList.contains('open');
