@@ -1,0 +1,18 @@
+# HandKind Construction — canonical host + URL consolidation
+# Requires Apache with mod_rewrite enabled (confirmed live host is Apache).
+
+RewriteEngine On
+
+# 1. Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Force non-www (www.handkindconstruction.ca -> handkindconstruction.ca)
+RewriteCond %{HTTP_HOST} ^www\.handkindconstruction\.ca$ [NC]
+RewriteRule ^(.*)$ https://handkindconstruction.ca/$1 [L,R=301]
+
+# 3. Collapse /blog/index.html -> /blog/ (avoid duplicate URL for the same page)
+RewriteRule ^blog/index\.html$ /blog/ [L,R=301]
+
+# 4. Collapse /index.html -> / site-wide
+RewriteRule ^index\.html$ / [L,R=301]
