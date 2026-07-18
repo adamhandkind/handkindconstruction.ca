@@ -110,7 +110,7 @@
 
   <!-- Blog index -->
   <url>
-    <loc>https://handkindconstruction.ca/blog/index.html</loc>
+    <loc>https://handkindconstruction.ca/blog/</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -279,11 +279,5 @@
     <priority>0.7</priority>
   </url>
 
-  <url>
-    <loc>https://handkindconstruction.ca/pages/locations/cambridge.html</loc>
-    <lastmod>2026-07-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
 </urlset>
