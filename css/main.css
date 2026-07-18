@@ -250,6 +250,8 @@ h1, h2, h3, h4 {
 }
 
 /* ── NAV ── */
+#nav-placeholder { height: 64px; }
+
 .nav {
   position: sticky;
   top: 0;

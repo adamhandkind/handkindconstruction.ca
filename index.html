@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2Q3G09W17B"></script>
 <script>
@@ -9,8 +11,6 @@
   gtag('js', new Date());
   gtag('config', 'G-2Q3G09W17B');
 </script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home Renovations in Brantford &amp; Brant County | HandKind Construction</title>
 <meta name="description" content="HandKind Construction delivers expert home renovation in Brantford — kitchens, bathrooms, basements, additions and ARUs. Start your project in Brant County.">
 <meta name="robots" content="index, follow">
@@ -23,23 +23,27 @@
 <meta property="og:title" content="Home Renovations in Brantford &amp; Brant County | HandKind Construction">
 <meta property="og:description" content="Kitchens, bathrooms, basements, additions and ARUs. Serving Brantford, Paris and Brant County.">
 <meta property="og:url" content="https://handkindconstruction.ca/">
-<meta property="og:image" content="https://handkindconstruction.ca/assets/og-image.avif">
+<meta property="og:image" content="https://handkindconstruction.ca/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:site_name" content="HandKind Construction">
+<meta property="og:locale" content="en_CA">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Home Renovations in Brantford &amp; Brant County | HandKind Construction">
 <meta name="twitter:description" content="Kitchens, bathrooms, basements, additions and ARUs. Serving Brantford, Paris and Brant County.">
-<meta name="twitter:image" content="https://handkindconstruction.ca/assets/og-image.avif">
+<meta name="twitter:image" content="https://handkindconstruction.ca/assets/og-image.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+      "@type": ["GeneralContractor", "HomeAndConstructionBusiness"],
       "@id": "https://handkindconstruction.ca/#business",
       "name": "HandKind Construction Co.",
       "url": "https://handkindconstruction.ca",
       "telephone": "+12269387108",
+      "image": "https://handkindconstruction.ca/assets/og/kitchen-og.jpg",
+      "logo": "https://handkindconstruction.ca/assets/logo.avif",
       "email": "hello@handkindconstruction.ca",
       "address": {
         "@type": "PostalAddress",
@@ -56,10 +60,10 @@
         "@type": "OfferCatalog",
         "name": "Renovation Services",
         "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kitchen Renovation Brantford"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bathroom Renovation Brantford"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Basement Finishing Brantford"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Home Additions and ARUs Brantford"}}
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kitchen Renovation Brantford", "url": "https://handkindconstruction.ca/pages/kitchen-renovation-brantford.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bathroom Renovation Brantford", "url": "https://handkindconstruction.ca/pages/bathroom-renovation-brantford.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Basement Finishing Brantford", "url": "https://handkindconstruction.ca/pages/basement-finishing-brantford.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Home Additions and ARUs Brantford", "url": "https://handkindconstruction.ca/pages/home-additions-arus-brantford.html"}}
         ]
       },
       "sameAs": [
@@ -191,9 +195,10 @@
   .hero-photo {
     position: absolute;
     inset: 0;
-    background-image: url('/assets/projects/main_floor_open_concept_kitchen.avif');
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     transition: transform 8s ease;
   }
 
@@ -370,6 +375,15 @@
     .projects-grid { grid-template-columns: 1fr; }
     .hero-actions { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
   }
+
+  .h2-inline {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--tracking-tight);
+    color: var(--text-strong);
+    margin-top: var(--space-3);
+  }
 </style>
 </head>
 <body class="page-body">
@@ -385,7 +399,7 @@
     </h1>
     <p class="hero-slogan fade-up delay-3">Built by hand, defined by kind.</p>
     <p class="hero-body fade-up delay-3">
-      High-end renovations, additions and ARUs — handled by a tight, skilled crew that treats your home like their own and a long-term investment.
+      High-end renovations, additions and ARUs — handled by a tight, skilled crew that treats your home like their own, and like the long-term investment it is.
     </p>
     <div class="hero-actions fade-up delay-4">
       <a href="/pages/estimate.html" class="btn btn--dark">Start Your Project</a>
@@ -404,7 +418,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-photo"></div>
+    <img class="hero-photo" src="/assets/projects/main_floor_open_concept_kitchen.avif" alt="Open-concept kitchen renovation in Brantford by HandKind Construction" width="1512" height="2016" fetchpriority="high">
     <div class="hero-photo-overlay"></div>
   </div>
 </section>
@@ -413,7 +427,7 @@
 <section class="trust-strip">
   <div class="inner trust-strip-inner">
     <div class="trust-item">
-      <span class="trust-item-mark">★★★★★</span>
+      <span class="trust-item-mark" role="img" aria-label="4.9 out of 5 stars">★★★★★</span>
       <span class="trust-item-text">4.9 from 67 Google reviews</span>
     </div>
     <div class="trust-item">
@@ -463,8 +477,8 @@
         <div class="service-number">04</div>
         <h3 class="service-name">Additions &amp; ARUs</h3>
         <p class="service-location">Paris, Brantford &amp; Area</p>
-        <p class="service-desc">Design, engineering, permits and construction co-ordinated under one roof.</p>
-        <a href="/pages/services.html#additions" class="service-link">Learn more →</a>
+        <p class="service-desc">Design, engineering, permits and construction managed by one accountable team.</p>
+        <a href="/pages/home-additions-arus-brantford.html" class="service-link">Learn more →</a>
       </div>
     </div>
   </div>
@@ -636,10 +650,10 @@
     <p class="section-label section-label--light">What Clients Say</p>
     <h2 class="section-title section-title--light">Trusted by Brant County<br><em>homeowners</em></h2>
     <div class="reviews-grid">
-      <div class="review-card review-card--featured"><div class="review-stars">★ ★ ★ ★ ★</div><p class="review-text">"We recently completed a full home renovation with HandKind Construction, and we could not be happier. Their communication was clear, consistent, and always proactive. We trusted them every step of the way and they truly delivered. We can hardly believe it's the same house we bought in June."</p><p class="review-author">Delia L.</p><p class="review-location">Ontario</p></div>
-      <div class="review-card"><div class="review-stars">★ ★ ★ ★ ★</div><p class="review-text">"Immediately, Jason and the HandKind Construction team stood out from the pack for their knowledge and enthusiasm. There were no delays. When there were changes or challenges there was no hesitation or pushback. The end results speak for themselves — I would highly recommend this team!"</p><p class="review-author">Brad S.</p><p class="review-location">Great Room Conversion, Ontario</p></div>
-      <div class="review-card"><div class="review-stars">★ ★ ★ ★ ★</div><p class="review-text">"Jason and his team are ultimate professionals; friendly and highly-skilled. It was a pleasure having them in our home. They were well-organized and very attentive to their work — always checking in with us and adjusting to new ideas. We highly recommend them!"</p><p class="review-author">Carolyn R.</p><p class="review-location">Ontario</p></div>
-      <div class="review-card"><div class="review-stars">★ ★ ★ ★ ★</div><p class="review-text">"We have just completed our third project with HandKind and we are so happy! Jason takes care of everything — electrical, plumbing, flooring, painting, new doors and more. We will not hesitate to have Jason and his team back for our next project."</p><p class="review-author">Katie W.</p><p class="review-location">Ontario</p></div>
+      <div class="review-card review-card--featured"><div class="review-stars" role="img" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</div><p class="review-text">"We recently completed a full home renovation with HandKind Construction, and we could not be happier. Their communication was clear, consistent, and always proactive. We trusted them every step of the way and they truly delivered. We can hardly believe it's the same house we bought in June."</p><p class="review-author">Delia L.</p><p class="review-location">Ontario</p></div>
+      <div class="review-card"><div class="review-stars" role="img" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</div><p class="review-text">"Immediately, Jason and the HandKind Construction team stood out from the pack for their knowledge and enthusiasm. There were no delays. When there were changes or challenges there was no hesitation or pushback. The end results speak for themselves — I would highly recommend this team!"</p><p class="review-author">Brad S.</p><p class="review-location">Great Room Conversion, Ontario</p></div>
+      <div class="review-card"><div class="review-stars" role="img" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</div><p class="review-text">"Jason and his team are ultimate professionals; friendly and highly-skilled. It was a pleasure having them in our home. They were well-organized and very attentive to their work — always checking in with us and adjusting to new ideas. We highly recommend them!"</p><p class="review-author">Carolyn R.</p><p class="review-location">Ontario</p></div>
+      <div class="review-card"><div class="review-stars" role="img" aria-label="5 out of 5 stars">★ ★ ★ ★ ★</div><p class="review-text">"We have just completed our third project with HandKind and we are so happy! Jason takes care of everything — electrical, plumbing, flooring, painting, new doors and more. We will not hesitate to have Jason and his team back for our next project."</p><p class="review-author">Katie W.</p><p class="review-location">Ontario</p></div>
     </div>
     <p class="reviews-note">Verified reviews from Google. <a href="/pages/reviews.html">See all reviews →</a></p>
   </div>
@@ -649,6 +663,7 @@
 <section class="about-block">
   <div class="about-block-inner">
     <p class="section-label">About HandKind Construction</p>
+    <h2 class="h2-inline">Renovation contractor in Paris, serving Brantford &amp; Brant County</h2>
     <p style="font-family:var(--font-sans);font-size:var(--text-base);font-weight:var(--fw-regular);line-height:var(--leading-relaxed);color:var(--text-muted);margin-top:var(--space-5);">HandKind Construction Co. is a renovation contractor based in Paris, Ontario, serving Brantford, Paris and Brant County. The company specialises in kitchen renovations, bathroom renovations, basement finishing, home additions and accessory residential units (ARUs). Every HandKind project is overseen by company management and assigned an accountable site lead. The company has completed 400+ renovation projects across Brant County over 12+ years. Kitchen renovations range from $25,000 to $80,000+. Bathroom renovations range from $15,000 to $50,000+. Basement finishing ranges from $45,000 to $120,000+. All bathroom projects use Schluter KERDI waterproof membrane on shower walls and DITRA uncoupling membrane on tiled floors as a baseline standard. HandKind handles all permit applications, trade coordination, and site management under one contract. Project inquiries are welcome from Brantford, Paris, Brant County and surrounding areas. Contact: hello@handkindconstruction.ca or +1 226-938-7108.</p>
   </div>
 </section>
@@ -657,6 +672,7 @@
 <section class="section" style="text-align:center; padding-top:3rem; padding-bottom:3rem;">
   <div class="inner--narrow">
     <p class="section-label" style="justify-content:center;">Service Area</p>
+    <h2 class="h2-inline">Where we work</h2>
     <p style="font-family:var(--font-sans); font-size:var(--text-md); color:var(--text-body); line-height:var(--leading-relaxed);">Based in Paris, serving Brantford, Brant County and selected nearby communities.</p>
     <p style="margin-top:1rem; font-family:var(--font-ui); font-size:var(--text-sm); display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
       <a href="/pages/locations/brantford.html" style="color:var(--brand-primary); text-decoration:none;">Brantford →</a>
