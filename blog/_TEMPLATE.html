@@ -15,6 +15,7 @@
 <!-- ▸▸ CHANGE THESE THREE LINES ◂◂ -->
 <title>POST TITLE HERE | HandKind Construction</title>
 <meta name="description" content="POST EXCERPT HERE — under 160 characters, include Brantford or Brant County.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://handkindconstruction.ca/blog/POST-SLUG-HERE">
 <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
@@ -70,17 +71,33 @@
     </div>
   </header>
 
-  <!-- HERO IMAGE (optional — delete this block if no image) -->
+  <!-- HERO IMAGE — uncomment once a real project photo exists for this post.
+       Min source width 1600px. Name it POST-SLUG-HERE.jpg in assets/blog/.
+       loading="eager" + fetchpriority="high" because this is the LCP image — do not lazy-load it. -->
   <!--
   <div class="post-hero-image">
-    <img src="/assets/blog/POST-SLUG-HERE.jpg" alt="ALT TEXT HERE">
+    <picture>
+      <source type="image/avif" srcset="/assets/blog/POST-SLUG-HERE.avif">
+      <source type="image/webp" srcset="/assets/blog/POST-SLUG-HERE.webp">
+      <img src="/assets/blog/POST-SLUG-HERE.jpg" alt="ALT TEXT DESCRIBING THE WORK, NOT KEYWORDS" width="1600" height="900" loading="eager" fetchpriority="high">
+    </picture>
+    <figcaption>A completed [project type] by HandKind Construction in [Brantford/Paris/Brant County].</figcaption>
   </div>
+  -->
+
+  <!-- TABLE OF CONTENTS — only needed once you have 4+ H2 sections. Give every H2 a stable id and list them here.
+  <details class="post-toc">
+    <summary>Table of contents</summary>
+    <ol class="post-toc-list">
+      <li><a href="#section-one">Section heading one</a></li>
+    </ol>
+  </details>
   -->
 
   <!-- POST BODY — write your content here -->
   <div class="post-body">
 
-    <h2>Section heading one</h2>
+    <h2 id="section-one">Section heading one</h2>
 
     <p>Write your first paragraph here. Aim for 150–200 words per section. Use the homeowner's name or a concrete scenario where possible — it keeps the content grounded.</p>
 
@@ -104,9 +121,45 @@
       Use a blockquote for a key takeaway or a piece of advice worth highlighting.
     </blockquote>
 
+    <!-- CALLOUTS — use at most these three types. Delete whichever don't apply.
+    <div class="post-callout post-callout--field">
+      <span class="post-callout-label">Field note</span>
+      <p>What HandKind actually sees on jobs like this one.</p>
+    </div>
+    <div class="post-callout post-callout--code">
+      <span class="post-callout-label">Code / permit note</span>
+      <p>An authoritative requirement, with a source cited in Sources and references below.</p>
+    </div>
+    <div class="post-callout post-callout--planning">
+      <span class="post-callout-label">Planning note</span>
+      <p>An action the homeowner should take before or during the project.</p>
+    </div>
+    -->
+
+    <!-- PROJECT PROOF — link to a real HandKind project page that demonstrates this work. Use a real project photo if the linked project page has one.
+    <div class="post-project-proof">
+      <p class="post-project-proof-label">See this in a real HandKind project</p>
+      <div class="post-project-proof-image">
+        <img src="/assets/projects/PROJECT-IMAGE.avif" alt="ALT TEXT DESCRIBING THE WORK" loading="lazy" width="1200" height="675">
+      </div>
+      <div class="post-project-proof-body">
+        <div class="post-project-proof-title">Project Name — Location</div>
+        <div class="post-project-proof-desc">What this project demonstrates in one sentence.</div>
+        <a href="/pages/project-SLUG.html">View project →</a>
+      </div>
+    </div>
+    -->
+
     <h2>What to do next</h2>
 
     <p>End every post with a call to action. Something like: "If you're planning a kitchen renovation in Brantford and want a realistic estimate, we offer free on-site visits with no obligation. Get in touch and we'll walk your space."</p>
+
+    <!-- SOURCES — required for any code/permit/insurance/ROI/rent claim. Link the exact page, not a homepage; note the access date.
+    <h2>Sources and references</h2>
+    <ul class="post-sources">
+      <li><a href="https://www.ontario.ca/laws/regulation/120332" rel="noopener">Ontario Building Code, O. Reg. 332/12</a> (accessed YYYY-MM-DD)</li>
+    </ul>
+    -->
 
   </div>
 
