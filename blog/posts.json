@@ -1,5 +1,16 @@
 [
   {
+    "slug": "home-addition-cost-paris-ontario",
+    "title": "What Does a Home Addition Cost in Paris, Ontario?",
+    "date": "2026-07-22",
+    "author": "Adam McQuaig",
+    "category": "Additions & ARUs",
+    "location": "Paris, Ontario",
+    "excerpt": "Real 2026 home addition costs for Paris, Ontario homeowners \u2014 by project type, what drives the price, and how the Brant County permit process works.",
+    "image": "/assets/og/garage-og.jpg",
+    "featured": true
+  },
+  {
     "slug": "kitchen-vs-basement-renovation-value-brantford",
     "title": "Kitchen vs. Basement Renovation: Which Adds More Value in Brantford?",
     "date": "2026-05-27",
@@ -8,7 +19,7 @@
     "location": "Brantford",
     "excerpt": "Kitchen or basement \u2014 which renovation adds more value to a Brantford home? Real numbers, honest trade-offs, and what we tell homeowners who ask us this every week.",
     "image": "/assets/projects/kitchen_white_big_island.avif",
-    "featured": true
+    "featured": false
   },
   {
     "slug": "egress-windows-brantford-basement",
