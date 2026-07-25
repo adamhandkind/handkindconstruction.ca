@@ -1853,30 +1853,36 @@ Open `blog/posts.json` and add a new entry at the **top** of the array:
 
 Set `"featured": true` only for the post you want to display prominently on the blog index — usually just the most recent one.
 
-## 24.4 Upload (3 min)
+## 24.4 Update `blog/index.html` (5 min)
 
-Upload two files to the web host:
+`posts.json` only drives the "related posts" grid on individual post pages (via `js/blog.js`) — it does **not** drive the blog index listing. `blog/index.html` has a hand-authored `<a class="post-card">` block per post between `<!-- BLOG_CARDS_START -->` and the matching END marker. Copy the featured card's markup, update it for the new post (href, image, `data-cat`, category, location, title, excerpt, date), and paste it directly after `<!-- BLOG_CARDS_START -->`. If the new post is `"featured": true`, add `post-card--featured` to its `<a>` class and remove that class from whichever card previously had it.
+
+## 24.5 Upload (3 min)
+
+Upload three files to the web host:
 
 1. `blog/your-new-post.html`
 2. `blog/posts.json` (updated with the new entry)
+3. `blog/index.html` (updated with the new post card)
 
-The blog index updates automatically, related posts update on all other post pages, and Google indexes the new URL within a day or two once the sitemap has been submitted.
+Related posts update automatically on all other post pages (from `posts.json`), and Google indexes the new URL within a day or two once the sitemap has been submitted.
 
-## 24.5 Adding a Photo to a Post
+## 24.6 Adding a Photo to a Post
 
 1. Export the image at 1200px wide, save as `.jpg`.
 2. Name it the same as the post slug: `your-post-slug-here.jpg`.
 3. Upload to `assets/blog/`.
 4. In the post HTML, uncomment the `<!-- HERO IMAGE -->` block and update `src` and `alt` (write real alt text per Section 11 — describe the actual image, don't keyword-stuff).
 5. In `posts.json`, update `"image": "/assets/blog/your-post-slug-here.jpg"`.
+6. Update the same image path in the post's `<a class="post-card">` block in `blog/index.html` (see Section 24.4) — it's a separate `<img>`, not pulled from `posts.json`.
 
 For project photos, crop to 16:9 before uploading — this matches the card layout on the blog index.
 
-## 24.6 Adding a New Category
+## 24.7 Adding a New Category
 
-If a post needs a category beyond the current five (Kitchens, Bathrooms, Basements, Additions & ARUs, General), just use it in `posts.json`. The filter buttons on the blog index auto-generate from whatever categories exist in the data — no template change needed.
+The five current categories (Kitchens, Bathrooms, Basements, Additions & ARUs, General) are hand-authored as `<button class="filter-btn" data-cat="...">` elements in `blog/index.html` between `<!-- BLOG_FILTERS_START -->` and `<!-- BLOG_FILTERS_END -->` — they are **not** auto-generated from `posts.json`. If a post needs a new category, add a matching filter button there as well as setting it on the post's card and in `posts.json`.
 
-## 24.7 Technical Publishing Checklist
+## 24.8 Technical Publishing Checklist
 
 This is separate from — and in addition to — the editorial Article Quality Checklist (Section 18). Confirm before uploading:
 
@@ -1888,3 +1894,4 @@ This is separate from — and in addition to — the editorial Article Quality C
 - [ ] Post ends with a CTA linking to `/pages/estimate.html` (or the CTA target defined in Section 19)
 - [ ] Schema `datePublished` and `dateModified` are both set
 - [ ] `featured` is only `true` if this should replace the currently featured post
+- [ ] `blog/index.html` has a new post card (Section 24.4) — `posts.json` alone will not make the post appear on the blog index
