@@ -13,12 +13,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Renovation Projects in Brantford | HandKind Construction</title>
 <meta name="description" content="Browse HandKind Construction's portfolio of kitchen, bathroom, basement and addition projects in Brantford, Paris and Brant County, Ontario.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://handkindconstruction.ca/pages/projects.html">
 <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_CA">
 <meta property="og:title" content="Renovation Projects in Brantford | HandKind Construction">
 <meta property="og:description" content="Browse HandKind Construction's portfolio of kitchen, bathroom, basement and addition projects in Brantford, Paris and Brant County, Ontario.">
 <meta property="og:url" content="https://handkindconstruction.ca/pages/projects.html">
@@ -79,8 +81,9 @@
     position: relative;
     overflow: hidden;
     background: var(--cream);
-    cursor: pointer;
   }
+
+  a.proj-card { cursor: pointer; }
 
   .proj-card--tall { aspect-ratio: 3/4; }
   .proj-card--wide { aspect-ratio: 4/3; }
@@ -96,7 +99,7 @@
     transition: transform 0.5s ease;
   }
 
-  .proj-card:hover .proj-photo { transform: scale(1.06); }
+  a.proj-card:hover .proj-photo { transform: scale(1.06); }
 
   .proj-overlay {
     position: absolute;
@@ -500,8 +503,8 @@
     </div>
 
     <div class="coming-soon-note">
-      <p>More project photos are being added regularly — check back soon.</p>
-      <a href="/pages/estimate.html" class="btn btn--dark">Start Your Project</a>
+      <p>Want to see work like this in your own home?</p>
+      <a href="/pages/estimate.html" class="btn btn--dark">Book a Free Site Visit →</a>
     </div>
 
   </div>

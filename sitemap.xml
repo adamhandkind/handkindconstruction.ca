@@ -180,7 +180,21 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://handkindconstruction.ca/pages/project-screened-cat-porch-paris.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Blog posts -->
+  <url>
+    <loc>https://handkindconstruction.ca/blog/main-floor-renovation-cost-brantford.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://handkindconstruction.ca/blog/home-addition-cost-paris-ontario.html</loc>
     <lastmod>2026-07-22</lastmod>
