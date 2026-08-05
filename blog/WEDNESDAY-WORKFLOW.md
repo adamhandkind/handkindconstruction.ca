@@ -245,7 +245,10 @@ The existing site already has useful coverage in the following areas:
 - Kitchen renovation cost
 - Bathroom renovation cost
 - Basement renovation cost
-- Home addition cost
+- Home addition cost (Paris)
+- Whole-home renovation cost
+- Main-floor renovation cost
+- Kitchen vs. basement renovation value
 - Permit requirements
 - Basement egress requirements
 - Bathroom timelines
@@ -442,6 +445,70 @@ Preferred case-study angles:
 - Converting underused space into legal living area
 - Coordinating a major renovation around an occupied home
 - Solving structural problems during a main-floor renovation
+
+## 5.8 Renovation Financing, Rebates and Tax Credits
+
+This is currently the largest gap on the site. HandKind publishes cost articles but nothing on how homeowners pay for a renovation or reduce its net cost. These are high-intent, decision-stage searches, and several 2026 Ontario programs make the topic timely.
+
+Priority topics:
+
+- How to finance a renovation in Ontario (HELOC, refinance, renovation loan, and how draws work)
+- How HandKind's deposits, progress draws and payment schedule work
+- Ontario's expanded HST rebate for substantial renovations (what "substantial" means and who may qualify)
+- The Multigenerational Home Renovation Tax Credit (for legal in-law suites and secondary suites)
+- Home Renovation Savings Program (Enbridge Gas / Save on Energy) rebates for bundled energy upgrades
+- Budgeting a contingency and why final cost differs from a preliminary budget
+- What lenders and rebate programs need from the contractor (invoices, permits, scope documentation)
+
+**Guardrail — stay in the contractor's lane.** HandKind is a builder, not an accountant, mortgage broker or the CRA. Explain how each program affects a renovation project and what documentation HandKind's process produces to support a claim. Do **not** give personalized tax or borrowing advice, do not promise anyone qualifies, and direct readers to confirm eligibility and current amounts with their own accountant, mortgage professional or the program administrator. Rebate rules, dollar figures and deadlines change (some 2026 measures are still subject to pending legislation), so every fact in these articles must be verified and dated at the time of writing and flagged for the annual review in Section 20.
+
+Primary pages supported:
+
+- Estimate page
+- Additions and ARUs page (Multigenerational credit, secondary suites)
+- Basement page (legal suites)
+- Whole-home content (substantial-renovation rebate)
+- FAQ
+
+## 5.9 Insurance, Warranty and Renovation Risk
+
+Competitor content across Ontario under-serves the "protection" side of a renovation — exactly the reassurance the High-Intent Referral Buyer (3.6) is looking for, and a natural extension of the contractor-selection cluster.
+
+Priority topics:
+
+- Telling your home insurer before a renovation (and why it matters mid-project)
+- Verifying a contractor's insurance, WSIB coverage and licensing before signing
+- What a renovation warranty actually covers, and for how long
+- Who is liable if something goes wrong during construction
+- Lien basics and why proper documentation protects the homeowner
+- Deficiencies, holdbacks and final sign-off
+
+Primary pages supported:
+
+- Estimate page
+- About page
+- FAQ
+- All service pages
+
+## 5.10 Renovation Timing, Seasonality and Resale Value
+
+Substantive planning content about *when* to renovate and *what returns value* — not thin seasonal filler (see Section 21).
+
+Priority topics:
+
+- The best time of year to start a renovation in Southwestern Ontario
+- How far ahead to book to hit a spring or summer start (lead times)
+- How weather affects additions, foundations and exterior work locally
+- Which renovations add the most resale value for Brantford and Paris homes
+- Renovating for resale versus renovating to stay
+- Sequencing projects across multiple years
+
+Primary pages supported:
+
+- Homepage
+- Estimate page
+- Whole-home content
+- All service pages
 
 ---
 
@@ -1380,6 +1447,29 @@ Do not treat this as a rigid order. Adjust based on seasonality, project availab
 63. Bathroom access during renovations
 64. Noise and scheduling expectations
 
+## Phase 9: Financing, Rebates and Tax Credits
+
+65. How to finance a renovation in Ontario (HELOC, refinance, renovation loan)
+66. How HandKind's deposits, draws and payment schedule work
+67. Ontario's HST rebate for substantial renovations, explained
+68. The Multigenerational Home Renovation Tax Credit for legal suites
+69. Energy rebates for renovations (Enbridge / Save on Energy)
+70. Contingency budgeting: why final cost differs from the estimate
+
+## Phase 10: Insurance, Warranty and Risk
+
+71. Telling your insurer before a renovation
+72. How to verify a contractor's insurance, WSIB and licensing
+73. What a renovation warranty actually covers
+74. Deficiencies, holdbacks and final sign-off
+
+## Phase 11: Timing and Resale Value
+
+75. The best time of year to start a renovation in Southwestern Ontario
+76. How far ahead to book for a spring or summer start
+77. Which renovations add the most resale value in Brantford and Paris
+78. Renovating to sell versus renovating to stay
+
 ---
 
 # 17. Recommended Initial 12-Week Publishing Sequence
@@ -1733,6 +1823,8 @@ Do not prioritize:
 - Topics that attract mostly low-budget handyman leads
 - Topics outside HandKind’s actual service scope
 
+Note on seasonality: the ban is on *thin* seasonal filler ("5 spring cleaning tips," decorative trend roundups). Substantive planning content that happens to be time-of-year aware — best time to start a project, booking lead times, how weather affects local additions and foundations (Section 5.10) — is encouraged, because it helps a homeowner make a real scheduling decision.
+
 ---
 
 # 22. Final Editorial Standard
@@ -1785,11 +1877,18 @@ Every article should make that knowledge base more complete, more trustworthy an
 
 Once an article has passed the Article Quality Checklist (Section 18) and has been drafted in the Required Submission Format (Section 19), use this workflow to get it live on handkindconstruction.ca. This is a mechanical process — it does not involve any further editorial judgment.
 
-Total time: roughly 30 minutes per post.
+Total time: roughly 40 minutes per post. Publishing touches **four files**, not two — a new post is only fully wired in when all four are updated:
 
-## 24.1 Duplicate the Template (2 min)
+1. `blog/<slug>.html` — the post itself
+2. `blog/posts.json` — post metadata
+3. `blog/index.html` — the blog-index card **and** the CollectionPage schema
+4. `sitemap.xml` — the URL entry
 
-Copy `blog/_TEMPLATE.html` and rename it using the recommended URL slug from the article brief:
+The site is a static site deployed from the `main` branch by GitHub Actions (`.github/workflows/static.yml`) — there is no manual "upload to the host" step, and no server-side build that renders the index from `posts.json`. Everything below is committed to git and goes live when it lands on `main`.
+
+## 24.1 Create the Post File (2 min)
+
+Do **not** start from `blog/_TEMPLATE.html`. The template is missing the breadcrumb nav, canonical link, Open Graph / Twitter tags, and the dual `BlogPosting` + `BreadcrumbList` JSON-LD that every real post carries. Instead, copy the most recent published post (e.g. `blog/whole-home-renovation-cost-brantford.html`) and rename the copy with the slug from the article brief:
 
 ```
 blog/your-post-slug-here.html
@@ -1797,10 +1896,8 @@ blog/your-post-slug-here.html
 
 Slug rules:
 
-- Lowercase
-- Hyphenated
-- No special characters
-- Matches the slug already decided in Section 8 (Article Brief) / Section 19 (Recommended URL Slug)
+- Lowercase, hyphenated, no special characters
+- Matches the slug decided in Section 8 (Article Brief) / Section 19 (Recommended URL Slug)
 
 Good slugs:
 
@@ -1808,21 +1905,21 @@ Good slugs:
 - `home-addition-vs-aru-brantford.html`
 - `renovate-or-move-brantford-paris.html`
 
-## 24.2 Fill In the Template (20 min)
+## 24.2 Fill In the Post (20 min)
 
-Open the new file and replace every `CHANGE THIS` placeholder:
+Work through the copied file top to bottom and replace every value carried over from the source post. In the `<head>`:
 
-| Placeholder | Replace with |
+| Element | Update to |
 |---|---|
-| `POST TITLE HERE` | The article title from Section 19 (also the H1) |
-| `POST EXCERPT HERE` | The meta description from Section 19, under 160 characters |
-| `POST-SLUG-HERE` | The filename without `.html` |
-| `YYYY-MM-DD` | Today's publish date |
-| `CATEGORY` | One of: Kitchens / Bathrooms / Basements / Additions & ARUs / General (see 24.6 to add a new one) |
-| `LOCATION` | Brantford / Brant County / Paris, Ontario |
-| `X min read` | ~1 min per 200 words |
+| `<title>` | Article title + ` \| HandKind Construction` |
+| `<meta name="description">` | Meta description from Section 19, under 160 characters |
+| `<link rel="canonical">` | `https://handkindconstruction.ca/blog/your-slug.html` |
+| `og:title`, `og:description`, `og:url`, `og:image` | Match the new title / description / URL; set the OG image (see 24.6) |
+| `twitter:title`, `twitter:description`, `twitter:image` | Same as OG |
+| `BlogPosting` JSON-LD | `headline`, `description`, `datePublished`, `dateModified`, `image`, `mainEntityOfPage` URL |
+| `BreadcrumbList` JSON-LD + visible breadcrumb `<nav>` | Final crumb = this article's title |
 
-Then paste the finished article (Section 19, part 3) between the `<div class="post-body">` tags, preserving the structure already required in Section 9:
+In the body: set the `<h1>`, the post meta (category, location, date, read time ≈ 1 min per 200 words), then paste the finished article (Section 19, part 3) into the `post-body`, preserving the structure from Section 9:
 
 - `<h2>` for main section headings
 - `<p>` for paragraphs
@@ -1831,67 +1928,88 @@ Then paste the finished article (Section 19, part 3) between the `<div class="po
 - `<table>` for cost ranges or comparisons
 - `<strong>` for important terms within paragraphs
 
-As a baseline length, aim for 500–900 words for a standard supporting article. Pillar or cost/feasibility articles identified in the Priority Topic Roadmap (Section 16) may reasonably run longer — defer to the "Recommended Article Length" field from the Article Brief (Section 8) rather than treating 900 words as a hard ceiling.
+Length: aim for 500–900 words for a standard supporting article. Pillar or cost/feasibility articles from the Priority Topic Roadmap (Section 16) may reasonably run longer — defer to the "Recommended Article Length" field from the brief rather than treating 900 words as a hard ceiling.
 
-## 24.3 Update `posts.json` (5 min)
+## 24.3 Update `posts.json` (3 min)
 
-Open `blog/posts.json` and add a new entry at the **top** of the array:
+Add a new entry at the **top** of the array:
 
 ```json
 {
   "slug": "your-post-slug-here",
   "title": "Your Post Title Here",
-  "date": "2026-03-25",
+  "date": "2026-08-05",
   "author": "Adam McQuaig",
   "category": "Kitchens",
   "location": "Brantford",
   "excerpt": "One sentence excerpt under 160 characters — same as your meta description.",
-  "image": "",
-  "featured": false
+  "image": "/assets/projects/your-hero.avif",
+  "featured": true
 },
 ```
 
-Set `"featured": true` only for the post you want to display prominently on the blog index — usually just the most recent one.
+If this post should be the featured one on the index (usually the newest), set its `"featured": true` **and flip the previously featured post to `"featured": false`.** Only one post is featured at a time.
 
-## 24.4 Update `blog/index.html` (5 min)
+## 24.4 Update `blog/index.html` (8 min)
 
-`posts.json` only drives the "related posts" grid on individual post pages (via `js/blog.js`) — it does **not** drive the blog index listing. `blog/index.html` has a hand-authored `<a class="post-card">` block per post between `<!-- BLOG_CARDS_START -->` and the matching END marker. Copy the featured card's markup, update it for the new post (href, image, `data-cat`, category, location, title, excerpt, date), and paste it directly after `<!-- BLOG_CARDS_START -->`. If the new post is `"featured": true`, add `post-card--featured` to its `<a>` class and remove that class from whichever card previously had it.
+This is the step the old workflow got wrong: the index does **not** rebuild itself from `posts.json`. (`posts.json` only drives the "related posts" grid on individual post pages, via `js/blog.js` — not the index listing.) On the index the cards are hand-coded HTML, and the page's JavaScript only *filters* the existing DOM by category. Edit two separate places in `index.html`:
 
-## 24.5 Upload (3 min)
+**(a) The card block** — between `<!-- BLOG_CARDS_START -->` and `<!-- BLOG_CARDS_END -->`, add the new post's `<a class="post-card">` as the first card. If it is the featured post:
 
-Upload three files to the web host:
+- The new card gets `class="post-card post-card--featured"` and its `<img>` uses `loading="eager" fetchpriority="high"`.
+- Demote the previous featured card to plain `class="post-card"` with `loading="lazy"`.
+- Match the existing markup exactly (post-meta, `<h2 class="post-title">`, excerpt, read-more, author line with a formatted date). Write real descriptive `alt` text — not the bare title.
 
-1. `blog/your-new-post.html`
-2. `blog/posts.json` (updated with the new entry)
-3. `blog/index.html` (updated with the new post card)
+**(b) The CollectionPage schema** — in the `CollectionPage` JSON-LD near the top of the file, add the new URL as `"position": 1` in `mainEntity.itemListElement` and **renumber every following position**. (The separate `BreadcrumbList` block on the index does not change.)
 
-Related posts update automatically on all other post pages (from `posts.json`), and Google indexes the new URL within a day or two once the sitemap has been submitted.
+> **Do not run `scripts/generate_blog_cards.py` to do this.** It regenerates the cards from `posts.json` but emits `alt="{title}"` and `loading="lazy"` for *every* card — silently wiping the hand-tuned alt text and the `eager`/`fetchpriority` on the featured image — and it does not touch the CollectionPage schema at all. Hand-edit the card to match the quality of the existing ones.
 
-## 24.6 Adding a Photo to a Post
+## 24.5 Update `sitemap.xml` (2 min)
 
-1. Export the image at 1200px wide, save as `.jpg`.
-2. Name it the same as the post slug: `your-post-slug-here.jpg`.
-3. Upload to `assets/blog/`.
-4. In the post HTML, uncomment the `<!-- HERO IMAGE -->` block and update `src` and `alt` (write real alt text per Section 11 — describe the actual image, don't keyword-stuff).
-5. In `posts.json`, update `"image": "/assets/blog/your-post-slug-here.jpg"`.
-6. Update the same image path in the post's `<a class="post-card">` block in `blog/index.html` (see Section 24.4) — it's a separate `<img>`, not pulled from `posts.json`.
+Add a `<url>` entry at the top of the `<!-- Blog posts -->` block:
 
-For project photos, crop to 16:9 before uploading — this matches the card layout on the blog index.
+```xml
+<url>
+  <loc>https://handkindconstruction.ca/blog/your-post-slug-here.html</loc>
+  <lastmod>2026-08-05</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+```
 
-## 24.7 Adding a New Category
+`<lastmod>` = the publish date.
 
-The five current categories (Kitchens, Bathrooms, Basements, Additions & ARUs, General) are hand-authored as `<button class="filter-btn" data-cat="...">` elements in `blog/index.html` between `<!-- BLOG_FILTERS_START -->` and `<!-- BLOG_FILTERS_END -->` — they are **not** auto-generated from `posts.json`. If a post needs a new category, add a matching filter button there as well as setting it on the post's card and in `posts.json`.
+## 24.6 Add the Hero Photo
 
-## 24.8 Technical Publishing Checklist
+Prefer a genuine HandKind project photo (Section 11). Most recent posts reuse an existing optimized image from `/assets/projects/` (`.avif`) or a social image from `/assets/og/`.
 
-This is separate from — and in addition to — the editorial Article Quality Checklist (Section 18). Confirm before uploading:
+1. If adding a new file, export at ~1200px wide; use `.avif` / `.webp` to match the existing optimized assets, or `.jpg` for a social/OG image.
+2. Reference it consistently in three places: the post's hero `<img>` (with real `alt` text), the `image` field in `posts.json`, and the card `<img>` in `index.html`.
+3. Set the post's `og:image` to a 1200×630 social image in `/assets/og/`.
+
+For a new card thumbnail, a 16:9 crop matches the index card layout.
+
+## 24.7 Deploy (2 min)
+
+Commit the four changed files (post HTML, `posts.json`, `index.html`, `sitemap.xml`) — plus any new image — on a branch and open a PR, matching the existing workflow (recent posts were merged via PRs to `main`). Merging to `main` triggers `.github/workflows/static.yml`, which deploys the whole repo to GitHub Pages. Google typically indexes the new URL within a day or two.
+
+## 24.8 Adding a New Category
+
+The five current categories (Kitchens, Bathrooms, Basements, Additions & ARUs, General) are hand-authored as `<button class="filter-btn" data-cat="...">` elements in `blog/index.html` between `<!-- BLOG_FILTERS_START -->` and `<!-- BLOG_FILTERS_END -->` — they are **not** auto-generated from `posts.json` or the DOM. If a post needs a new category, add a matching filter button there, and set the same category on the post's card `data-cat` and in `posts.json`.
+
+## 24.9 Technical Publishing Checklist
+
+Separate from — and in addition to — the editorial Article Quality Checklist (Section 18). Confirm before merging:
 
 - [ ] Title includes "Brantford" or "Brant County" (or both), where locally relevant per Section 6.5
-- [ ] Meta description is under 160 characters and includes the primary keyword
-- [ ] The `slug` in `posts.json` matches the filename exactly
-- [ ] Date is set to the actual publish date (not in the future)
+- [ ] Meta description under 160 characters and includes the primary keyword
+- [ ] Canonical, OG and Twitter tags all point to the new slug
+- [ ] `BlogPosting` `datePublished` and `dateModified` are both set; breadcrumb final crumb is the article title
+- [ ] `posts.json`: new entry at the top; `slug` matches the filename exactly; date = actual publish date (not future)
+- [ ] Exactly one post has `featured: true` (previous featured flipped to false in **both** `posts.json` and the `index.html` card)
+- [ ] `index.html`: new card added between the CARDS markers with correct featured/lazy attributes and real alt text (`posts.json` alone will **not** make the post appear on the index)
+- [ ] `index.html`: new URL added to the CollectionPage `itemListElement` at position 1 and all positions renumbered
+- [ ] `sitemap.xml`: new `<url>` added with `lastmod` = publish date
 - [ ] At least one `<h2>` includes the primary keyword or a close variant
-- [ ] Post ends with a CTA linking to `/pages/estimate.html` (or the CTA target defined in Section 19)
-- [ ] Schema `datePublished` and `dateModified` are both set
-- [ ] `featured` is only `true` if this should replace the currently featured post
-- [ ] `blog/index.html` has a new post card (Section 24.4) — `posts.json` alone will not make the post appear on the blog index
+- [ ] Post ends with a CTA linking to `/pages/estimate.html` (or the CTA target from Section 19)
+- [ ] `generate_blog_cards.py` was **not** run over the hand-tuned cards
