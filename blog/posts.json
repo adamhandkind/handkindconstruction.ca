@@ -1,5 +1,16 @@
 [
   {
+    "slug": "hst-rebate-substantial-renovation-brantford",
+    "title": "Ontario's HST Rebate for Substantial Renovations, Explained",
+    "date": "2026-08-05",
+    "author": "Adam McQuaig",
+    "category": "General",
+    "location": "Brantford & Brant County",
+    "excerpt": "How Ontario's HST rebate works on a substantial (gut) renovation \u2014 the 90% rule, how much you can claim, and who files it. A Brantford builder's guide.",
+    "image": "/assets/projects/refreshed_staircase_railings.avif",
+    "featured": true
+  },
+  {
     "slug": "main-floor-renovation-cost-brantford",
     "title": "Main-Floor Renovation Cost in Brantford: Kitchen, Flooring and Structural Changes",
     "date": "2026-07-21",
@@ -8,7 +19,7 @@
     "location": "Brantford",
     "excerpt": "Real 2026 main-floor renovation costs for Brantford homeowners \u2014 kitchen, flooring and structural changes, broken down by scope and cost driver.",
     "image": "/assets/projects/kitchen_white_big_island.avif",
-    "featured": true
+    "featured": false
   },
   {
     "slug": "home-addition-cost-paris-ontario",
