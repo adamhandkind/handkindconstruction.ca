@@ -1952,7 +1952,7 @@ If this post should be the featured one on the index (usually the newest), set i
 
 ## 24.4 Update `blog/index.html` (8 min)
 
-This is the step the old workflow got wrong: the index does **not** rebuild itself from `posts.json`. The cards are hand-coded HTML, and the page's JavaScript only *filters* the existing DOM by category. Edit two separate places in `index.html`:
+This is the step the old workflow got wrong: the index does **not** rebuild itself from `posts.json`. (`posts.json` only drives the "related posts" grid on individual post pages, via `js/blog.js` — not the index listing.) On the index the cards are hand-coded HTML, and the page's JavaScript only *filters* the existing DOM by category. Edit two separate places in `index.html`:
 
 **(a) The card block** — between `<!-- BLOG_CARDS_START -->` and `<!-- BLOG_CARDS_END -->`, add the new post's `<a class="post-card">` as the first card. If it is the featured post:
 
@@ -1995,7 +1995,7 @@ Commit the four changed files (post HTML, `posts.json`, `index.html`, `sitemap.x
 
 ## 24.8 Adding a New Category
 
-If a post needs a category beyond the current five (Kitchens, Bathrooms, Basements, Additions & ARUs, General), use it in `posts.json` **and** on the card's `data-cat` attribute in `index.html`. The filter buttons on the index auto-generate from the categories present in the DOM — no other template change needed.
+The five current categories (Kitchens, Bathrooms, Basements, Additions & ARUs, General) are hand-authored as `<button class="filter-btn" data-cat="...">` elements in `blog/index.html` between `<!-- BLOG_FILTERS_START -->` and `<!-- BLOG_FILTERS_END -->` — they are **not** auto-generated from `posts.json` or the DOM. If a post needs a new category, add a matching filter button there, and set the same category on the post's card `data-cat` and in `posts.json`.
 
 ## 24.9 Technical Publishing Checklist
 
@@ -2007,7 +2007,7 @@ Separate from — and in addition to — the editorial Article Quality Checklist
 - [ ] `BlogPosting` `datePublished` and `dateModified` are both set; breadcrumb final crumb is the article title
 - [ ] `posts.json`: new entry at the top; `slug` matches the filename exactly; date = actual publish date (not future)
 - [ ] Exactly one post has `featured: true` (previous featured flipped to false in **both** `posts.json` and the `index.html` card)
-- [ ] `index.html`: new card added between the CARDS markers with correct featured/lazy attributes and real alt text
+- [ ] `index.html`: new card added between the CARDS markers with correct featured/lazy attributes and real alt text (`posts.json` alone will **not** make the post appear on the index)
 - [ ] `index.html`: new URL added to the CollectionPage `itemListElement` at position 1 and all positions renumbered
 - [ ] `sitemap.xml`: new `<url>` added with `lastmod` = publish date
 - [ ] At least one `<h2>` includes the primary keyword or a close variant
