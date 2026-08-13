@@ -43,6 +43,7 @@
 | handkind construction (branded) | 268 | 78 | 1.15 | Homepage — expected, not actionable |
 | construction companies near me | 25 | 2 | 5.56 | Homepage — decent position/CTR, near-me variant of "contractor near me" (still pending below) |
 | kitchen renovations near me | 122 | 1 | 10.94 | Split: homepage 108 impr/pos 24.68, kitchen page 110 impr/pos **14.79** — kitchen page outranks homepage here, unlike basement's total invisibility. Useful for T-16: not a cannibalization/indexation problem, points toward a genuine content-gap diagnosis instead. |
+| brantford contractors (near-miss for "brantford general contractors" below) | 28 | 2 | 4.46 | Homepage — confirmed, decent position/CTR | 
 
 ## Refreshed top-line numbers (2026-08-13 export, Last 3 months window)
 
