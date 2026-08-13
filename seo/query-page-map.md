@@ -15,7 +15,7 @@
 
 | Query | Impr | Clicks | Position | Ranking URL | Intended URL | Action |
 |---|---:|---:|---:|---|---|---|
-| contractor near me | | | | | `/` (no single service fits — likely homepage) | |
+| contractor near me | 1113 | 0 | 5.83 | Homepage — confirmed. (GSC's "contains" filter also captured 5 related variants — general contractor near me, renovations contractor near me, etc. — all summed to exactly the homepage's 1,286 total impressions, so homepage is 100% of the traffic across every near-me contractor variant.) | `/` (no single service fits — likely homepage) | **Matches original spec baseline exactly** (1,128 impr/5.8 pos there vs 1,113/5.83 here — stable over time). Decent position, **zero clicks** on the single highest-impression query on the whole site — worth a title/snippet audit (T-12) once T-04 fully closes, since this is the single biggest click-capture opportunity identified anywhere in this doc. |
 | general contractor | | | | | `/` or `/pages/services.html` | |
 | general contractor brantford | 58 | 3 | 2.14 | `/` (homepage) — confirmed via GSC, all `rwg_token` variants also resolve to homepage | `/` or `/pages/services.html` or `/pages/locations/brantford.html` | **None needed** — position 2.14 already strong, homepage correctly owns this term |
 | brantford general contractors | | | | | same as above | |
