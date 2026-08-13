@@ -27,7 +27,7 @@
 | bathroom renovation brantford | | | | | `/pages/bathroom-renovation-brantford.html` | |
 | bathroom renovations brantford | | | | | same as above | |
 | bathroom contractor | | | | | `/pages/bathroom-renovation-brantford.html` | |
-| basement renovation brantford | | | | | `/pages/basement-finishing-brantford.html` | |
+| basement renovation brantford | 316 | 1 | 18.44 | **Not** the dedicated basement page. Homepage 262 impr/1 click/pos 13.74; `/pages/projects.html` 34 impr/pos 49.15; `/pages/project-full-basement-finish-brantford.html` 15 impr/pos 30.73; `/pages/services.html` 14 impr/pos 45.14; `/pages/bathroom-renovation-brantford.html` 7 impr/pos 38.86 | `/pages/basement-finishing-brantford.html` | **Cannibalization/relevance gap** — the dedicated basement page has **zero impressions** for its own core term. Homepage is carrying it at a decent position (13.74) while unrelated pages (bathroom page, projects hub) pick up scraps. Needs T-14 diagnosis: why isn't the basement page itself ranking at all for this term? |
 | basement finishing brantford | | | | | same as above | |
 | home additions | | | | | `/pages/home-additions-arus-brantford.html` | |
 | home extensions | | | | | same as above | |
