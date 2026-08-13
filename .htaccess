@@ -3,16 +3,15 @@
 
 RewriteEngine On
 
-# 1. Force HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# 2. Force non-www (www.handkindconstruction.ca -> handkindconstruction.ca)
+# 1. Force HTTPS + non-www together, in one hop (avoid a two-redirect chain
+#    for http://www.* requests, which would otherwise land here twice: once
+#    to fix the scheme, once more to fix the host).
+RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\.handkindconstruction\.ca$ [NC]
 RewriteRule ^(.*)$ https://handkindconstruction.ca/$1 [L,R=301]
 
-# 3. Collapse /blog/index.html -> /blog/ (avoid duplicate URL for the same page)
+# 2. Collapse /blog/index.html -> /blog/ (avoid duplicate URL for the same page)
 RewriteRule ^blog/index\.html$ /blog/ [L,R=301]
 
-# 4. Collapse /index.html -> / site-wide
+# 3. Collapse /index.html -> / site-wide
 RewriteRule ^index\.html$ / [L,R=301]
