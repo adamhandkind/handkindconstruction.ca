@@ -36,6 +36,13 @@
 
 **"Intended URL" column above is my best guess from page content, not evidence — don't treat it as the answer.** The whole point of this table is to find out whether the *actual* ranking URL matches or not. Once filled in, this is what unblocks Phase 3 (T-12–T-25) per the spec's hard gate.
 
+## Supplementary queries checked (not exact matches to the 18 priority terms above, logged for completeness)
+
+| Query | Impr | Clicks | Position | Ranking URL |
+|---|---:|---:|---:|---|
+| handkind construction (branded) | 268 | 78 | 1.15 | Homepage — expected, not actionable |
+| construction companies near me | 25 | 2 | 5.56 | Homepage — decent position/CTR, near-me variant of "contractor near me" (still pending below) |
+
 ## Refreshed top-line numbers (2026-08-13 export, Last 3 months window)
 
 - True site total (Chart.csv): **265 clicks · 17,125 impressions** (spec's original baseline: 268 clicks · 17,057 impr — essentially flat, expected since this is a near-identical rolling 3-month window).
