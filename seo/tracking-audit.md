@@ -16,7 +16,7 @@ Both lead forms (`pages/estimate.html`, `pages/contact.html`) are JobTread embed
 
 ## Gaps / findings
 
-1. **Contact-form submissions are conflated with estimate-form submissions.** Both land on the same `/thank-you.html` and both fire `generate_lead` with `form_id: 'estimate'`. If lead-quality reporting needs to separate "wants a full project estimate" from "general question," this can't currently be split. Low-effort fix if wanted: pass a query param or referrer check into `thank-you.html` to set `form_id` correctly — **not done here, this is Phase 2+ implementation, flagging only.**
+1. ~~**Contact-form submissions are conflated with estimate-form submissions.**~~ **Fixed 2026-08-13** — `thank-you.html` now reads `document.referrer` to distinguish which form the visitor arrived from (`/pages/estimate.html` → `form_id: 'estimate'`, `/pages/contact.html` → `form_id: 'contact'`), instead of hardcoding `'estimate'` for both. No change needed to either form page — the fix is entirely in `thank-you.html`'s existing referrer-based `generate_lead` guard. Verified locally: both referrer paths produce the correct `form_id`, and any other/no referrer correctly does not fire (unchanged prior behavior).
 2. **No `phoneHref` distinction between location pages** — `phone_click` captures `cta_location` context but not which page/service the click came from beyond that. Acceptable for current measurement needs.
 3. Tracking is entirely **client-side gtag** — no server-side/GTM server container, no Google Ads conversion linkage confirmed (out of scope to verify without Ads account access).
 

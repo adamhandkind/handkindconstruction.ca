@@ -26,6 +26,14 @@ Cross-checked every `<loc>` in `sitemap.xml` (45 entries) against the T-02 real 
 
 **Conclusion:** T-11 is done. No robots.txt edit required.
 
+## T-30 — Sitemap live URL validation (2026-08-13)
+
+Checked all 45 URLs in `sitemap.xml` live: `curl -D -` against each, with `--max-redirs 0` to catch any redirect instead of silently following it.
+
+**Result: all 45 return `200 OK` directly, zero redirect `Location` headers, zero duplicates.** Every sitemap URL is already its own canonical destination — no redirect chains, no non-canonical entries.
+
+**Conclusion:** T-30 is done, no changes needed.
+
 ## Net effect on T-10/T-11 line items
 
 Both can be marked **done** in `_progress.md` with no production change needed — worth noting as a rare case in this audit where "the fix" is confirming there's nothing to fix.

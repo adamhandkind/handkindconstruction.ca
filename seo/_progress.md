@@ -11,7 +11,7 @@ Phasing (§0.7): **Phase 1** evidence/baselines (read-only) → **Phase 2** tech
 | T-03 | 1 | done | — | Metadata snapshot of priority pages captured from repo source (not live-verified, per T-01 caveat). All pages have unique titles/descriptions and correct self-canonicals already. `preflight-inventory.md`. |
 | T-04 | 1 | blocked | — | BLOCKED — DATA ACCESS REQUIRED. Needs GSC filtered export or Search Console API access to map query→landing page. Gates Phase 3 (all title/content changes). |
 | T-05 | 1 | blocked | — | BLOCKED — needs Google Business Profile confirmation or direct answer from Adam on legal name/address/public phone/email. Gates all schema/contact work. |
-| T-36a | 1 | **done** | — | GA4 (`G-2Q3G09W17B`) already tracks `phone_click`, `email_click`, `generate_lead` (form submit via thank-you.html), and CTA/engagement events. See `tracking-audit.md`. Minor gap flagged (estimate vs. contact form not distinguished) — optional fix, not blocking. |
+| T-36a | 1 | **done** | — | GA4 (`G-2Q3G09W17B`) already tracks `phone_click`, `email_click`, `generate_lead` (form submit via thank-you.html), and CTA/engagement events. See `tracking-audit.md`. Estimate-vs-contact form split fixed 2026-08-13 (`thank-you.html` now sets `form_id` from `document.referrer`). |
 | T-35 | 1 | todo | — | GBP audit — Adam-facing (needs GBP dashboard access). |
 | T-37 | 1 | blocked | — | BLOCKED — DATA ACCESS REQUIRED (Ahrefs/Semrush not connected). |
 | T-38 | 1 | **done (provisional)** | — | Audited against known in-code NAP (not yet T-05-confirmed) — see `citation-audit.md`. **No NAP conflicts** across Yelp, YellowPages, Town of Paris directory, D&B, ZoomInfo, Yably — all consistent. Real finding is **coverage, not accuracy**: no claimed presence found on Bing Places, Apple Business Connect, HomeStars, or Houzz — all free and where tracked competitors do show up. Facebook NAP unverified (page didn't render via fetch). Re-verify once T-05 formally closes. |
@@ -25,7 +25,9 @@ Phasing (§0.7): **Phase 1** evidence/baselines (read-only) → **Phase 2** tech
 | T-12–T-25 | 3 | blocked | — | Gated on T-04 + T-05 per spec — not started. |
 | T-26–T-27 | 4 | blocked | — | Depends on T-04. |
 | T-28 | Required | **partial** | — | Repo-source pass done: 0 broken internal links, 0 JSON-LD parse errors across all 49 HTML files. See `crawl-health-baseline.md`. Duplicate-title/meta check, mobile/CLS, live redirect chains still deferred to after Phase 2/3. |
-| T-29–T-34 | Required | todo | — | Validation/monitoring — mostly executable once earlier phases land. |
+| T-29 | Required | blocked | — | Blocked with T-06/T-07/T-09 — validates redirect behavior that isn't implemented yet. |
+| T-30 | Required | **done** | — | All 45 sitemap URLs return live 200 directly, zero redirects, zero duplicates. See `sitemap-robots-audit.md`. |
+| T-31–T-34 | Required | todo | — | Mostly executable once earlier phases land. |
 | T-36 | 4 | todo | — | Review acquisition — Adam-facing, can start anytime in parallel. |
 | T-40 | 4 | blocked | — | Depends on T-39. |
 

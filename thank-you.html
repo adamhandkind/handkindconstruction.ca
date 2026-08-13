@@ -51,12 +51,13 @@
        redirects after its backend submitWebForm call actually succeeds — this
        page is never reached by a button click alone). Guarded with sessionStorage
        so refresh, back/forward navigation, or a direct/bookmarked visit to this
-       URL does not re-fire or fire at all. */
-    var cameFromLeadForm = /\/pages\/(estimate|contact)\.html$/.test(document.referrer);
+       URL does not re-fire or fire at all. form_id is read from the referrer path
+       so estimate-form and contact-form submissions are distinguishable in GA4. */
+    var referrerMatch = document.referrer.match(/\/pages\/(estimate|contact)\.html$/);
     var alreadyFired = sessionStorage.getItem('hk_generate_lead_fired') === '1';
-    if (cameFromLeadForm && !alreadyFired) {
+    if (referrerMatch && !alreadyFired) {
       sessionStorage.setItem('hk_generate_lead_fired', '1');
-      if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_id: 'estimate' });
+      if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_id: referrerMatch[1] });
     }
   })();
 </script>
