@@ -17,7 +17,7 @@
 |---|---:|---:|---:|---|---|---|
 | contractor near me | | | | | `/` (no single service fits — likely homepage) | |
 | general contractor | | | | | `/` or `/pages/services.html` | |
-| general contractor brantford | | | | | `/` or `/pages/services.html` or `/pages/locations/brantford.html` | |
+| general contractor brantford | 58 | 3 | 2.14 | `/` (homepage) — confirmed via GSC, all `rwg_token` variants also resolve to homepage | `/` or `/pages/services.html` or `/pages/locations/brantford.html` | **None needed** — position 2.14 already strong, homepage correctly owns this term |
 | brantford general contractors | | | | | same as above | |
 | home renovation brantford | | | | | `/` or `/pages/locations/brantford.html` | |
 | home renovations brantford | | | | | same as above | |
