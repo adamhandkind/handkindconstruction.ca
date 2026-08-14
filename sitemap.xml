@@ -189,6 +189,12 @@
 
   <!-- Blog posts -->
   <url>
+    <loc>https://handkindconstruction.ca/blog/renovate-or-move-brantford-paris.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://handkindconstruction.ca/blog/hst-rebate-substantial-renovation-brantford.html</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>

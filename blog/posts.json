@@ -1,5 +1,16 @@
 [
   {
+    "slug": "renovate-or-move-brantford-paris",
+    "title": "Renovate or Move? A Brantford and Paris Homeowner's Decision Guide",
+    "date": "2026-08-13",
+    "author": "Adam McQuaig",
+    "category": "General",
+    "location": "Brantford & Paris, Ontario",
+    "excerpt": "Weighing a renovation against selling and buying in Brantford or Paris? Here's how to compare the real costs, timelines and trade-offs before you decide.",
+    "image": "/assets/projects/covered-porch-1.avif",
+    "featured": true
+  },
+  {
     "slug": "hst-rebate-substantial-renovation-brantford",
     "title": "Ontario's HST Rebate for Substantial Renovations, Explained",
     "date": "2026-08-05",
@@ -8,7 +19,7 @@
     "location": "Brantford & Brant County",
     "excerpt": "How Ontario's HST rebate works on a substantial (gut) renovation \u2014 the 90% rule, how much you can claim, and who files it. A Brantford builder's guide.",
     "image": "/assets/projects/refreshed_staircase_railings.avif",
-    "featured": true
+    "featured": false
   },
   {
     "slug": "main-floor-renovation-cost-brantford",
