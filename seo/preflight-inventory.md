@@ -81,3 +81,57 @@ Non-content repo files that are NOT pages: `ACTION-PLAN.md`, `AUDIT_REPORT.md`, 
 **Finding:** every priority page already has a unique title, a written (non-boilerplate) meta description, and a correct self-referential apex-https canonical. This matches the spec's own note in §6 that titles are "already reasonable" — **T-12/T-13 should be a light audit against T-04 query data, not a rewrite pass.** T-08 (self-referential canonicals) already appears satisfied at the source level; what's unverified is whether the *live* host serves the same `<head>` given the T-01 deploy-pipeline uncertainty.
 
 H1s and JSON-LD not yet captured — next pass if needed once T-01's deploy question is resolved (no point auditing live-vs-source drift twice).
+
+---
+
+## 2026-08-18 — Live re-audit (new spec baseline, T-04 + T-09)
+
+T-01's deploy-pipeline question is now resolved: all four redirect variants (http→https, www→apex, `/index.html`→`/`, `/blog/index.html`→`/blog/`) are confirmed live and single-hop (see `_progress.md`). This pass fetched all 45 indexable pages directly from `https://handkindconstruction.ca` (not repo source) and checked title, meta description, canonical, and JSON-LD presence.
+
+**T-09 — self-referential canonicals: 100% pass.** All 45 pages emit exactly one canonical, apex-https, no params/fragments, matching their own path exactly. Zero mismatches, zero missing. No action needed — carries forward the source-level finding, now confirmed live.
+
+**T-04 — title/description length audit** (spec guidance: titles ~50–60 chars, descriptions ~140–160 chars — guidance, not hard rules; do not rewrite until T-05 confirms query ownership):
+
+Titles over 60 chars (candidates for T-13 tightening, pending T-05):
+| Page | Title length |
+|---|---:|
+| `/blog/main-floor-renovation-cost-brantford.html` | 107 |
+| `/blog/whole-home-renovation-cost-brantford.html` | 97 |
+| `/blog/egress-windows-brantford-basement.html` | 95 |
+| `/blog/kitchen-vs-basement-renovation-value-brantford.html` | 92 |
+| `/blog/renovate-or-move-brantford-paris.html` | 90 |
+| `/pages/basement-finishing-brantford.html` | 85 |
+| `/pages/project-condo-main-level-brantford.html` | 83 |
+| `/blog/hst-rebate-substantial-renovation-brantford.html` | 83 |
+| `/pages/project-garage-overhaul-brantford.html` | 82 |
+| `/pages/home-additions-arus-brantford.html` | 74 |
+| `/pages/project-he-shed-paris.html` | 74 |
+| `/blog/home-addition-cost-paris-ontario.html` | 73 |
+| `/` (homepage) | 72 |
+| `/pages/bathroom-renovation-brantford.html` | 69 |
+| `/pages/kitchen-renovation-brantford.html` | 68 |
+| `/pages/project-screened-cat-porch-paris.html` | 68 |
+| `/pages/project-his-her-bathrooms-paris.html` | 66 |
+| `/pages/locations/brantford.html` | 62 |
+| `/pages/project-sunroom-addition-brant-county.html` | 62 |
+| `/pages/project-covered-porch-paris.html` | 61 |
+
+Descriptions outside 120–165 chars:
+| Page | Desc length |
+|---|---:|
+| `/pages/project-sunroom-addition-brant-county.html` | 195 |
+| `/pages/basement-finishing-brantford.html` | 200 |
+| `/pages/process.html` | 185 |
+| `/pages/locations/paris.html` | 174 |
+| `/pages/project-full-basement-finish-brantford.html` | 175 |
+| `/pages/home-additions-arus-brantford.html` | 168 |
+| `/pages/project-screened-cat-porch-paris.html` | 166 |
+| `/pages/bathroom-renovation-brantford.html` | 167 |
+| `/pages/project-detached-garage-paris.html` | 169 |
+| `/pages/reviews.html` | 118 |
+
+Note: all descriptions are genuine, non-truncated, on-brand copy — an earlier extraction pass in this session flagged several as suspiciously short (11–79 chars) but that was a regex bug (apostrophes in copy like "Ontario's" were misread as attribute-closing quotes); re-verified by hand, the actual content is intact and reasonable length. No real data-quality issue there.
+
+**Priority pages (homepage, kitchen, bathroom, basement, additions) all carry titles/descriptions on the long side of guidance** — consistent with them being the most content-rich pages. This is a real, evidence-backed candidate list for T-13/T-14, but per the spec's gate, do not shorten any of these until T-05's fresh query×page map confirms what each page should actually be optimized for — a shorter title chosen blind could cut the exact phrase currently earning the ranking.
+
+JSON-LD present on all 45 pages (1–2 blocks each). No page missing structured data entirely.
