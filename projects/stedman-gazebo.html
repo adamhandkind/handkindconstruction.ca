@@ -186,7 +186,7 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
       <h2>What we're proposing</h2>
       <div class="prose">
         <p>An eight-sided timber pavilion, 26 feet by 22 feet, set on a stamped concrete floor. The front and sides stay open behind black wrought iron railings, so it feels part of the garden while giving shelter from sun and rain. Flush concrete walkways lead in through the east and west sides with no step at all, and the front steps down one riser to the grass.</p>
-        <p>The frame is heavy Douglas fir. Eight-by-eight posts stand on galvanized steel saddles and carry beams tied together with curved knee braces, which form a soft arch between every pair of posts.</p>
+        <p>The frame is heavy rough-sawn Douglas fir. Full eight-by-eight posts are each turned to face their corner, and stand on concealed steel bases so only a slim black plate shows at the floor. They carry beams tied together with curved knee braces, which form a soft arch between every pair of posts.</p>
         <p>The back of the gazebo is a wall of light rather than a solid wall. Three arched stained-glass panels are held in open timber framing, with a knee wall below the centre panel clad in vertical cedar planks and topped with a cedar cap. Air moves freely around the glass and light comes through it. The glass in the model is a stand-in until the artwork is chosen.</p>
         <p>Overhead, the steep roof is charcoal standing-seam steel, finished with a pyramid cap and a finial. Inside, the whole underside is lined with cedar tongue-and-groove boards stained to match the frame, so looking up is as good as looking out.</p>
       </div>
@@ -201,7 +201,7 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
         <div><dt>Covered area</dt><dd>About 458 sq ft</dd></div>
         <div><dt>Eave height</dt><dd>About 9′ above the floor</dd></div>
         <div><dt>Overall height</dt><dd>About 19′-9″ to the top of the finial</dd></div>
-        <div><dt>Frame</dt><dd>Douglas fir posts, beams and curved braces</dd></div>
+        <div><dt>Frame</dt><dd>Rough-sawn Douglas fir: 8×8 posts, beams and curved braces</dd></div>
         <div><dt>Roof</dt><dd>22-gauge standing-seam steel</dd></div>
         <div><dt>Ceiling</dt><dd>1×6 cedar tongue-and-groove</dd></div>
         <div><dt>Floor</dt><dd>Stamped concrete, wood-plank pattern</dd></div>
@@ -219,7 +219,7 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
         <div class="prose"><p>Warm wood inside and out, set against dark steel and iron so the timber frame is what you notice first.</p></div>
       </div>
       <div class="board">
-        <figure class="chip"><div class="swatch sw-fir"></div><figcaption>Douglas fir<span>Posts, beams, braces</span></figcaption></figure>
+        <figure class="chip"><div class="swatch sw-fir"></div><figcaption>Rough-sawn fir<span>Posts, beams, braces</span></figcaption></figure>
         <figure class="chip"><div class="swatch sw-tg"></div><figcaption>Cedar T&amp;G<span>Ceiling and soffits</span></figcaption></figure>
         <figure class="chip"><div class="swatch sw-cedar"></div><figcaption>Cedar planks<span>Back knee wall</span></figcaption></figure>
         <figure class="chip"><div class="swatch sw-roof"></div><figcaption>Standing seam<span>Charcoal steel roof</span></figcaption></figure>
@@ -327,6 +327,7 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
     cedar: mat(0xA0683E, 0.85),
     cap: mat(0x845430, 0.8),
     galv: mat(0x9AA0A3, 0.45, 0.6),
+    blk: mat(0x1A1A1C, 0.5, 0.4),
     metal: mat(0x3A4248, 0.5, 0.45),
     iron: mat(0x1E1E20, 0.55, 0.35),
     pvc: mat(0xF0F0EC, 0.5),
@@ -402,12 +403,42 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
   }
   function ring(off, z) { return offsetPoly(outer, off).map(function (p) { return [p[0], p[1], z]; }); }
 
-  var POST = 7.5, PH = POST / 2, POST_H = 116, BM_BOT = 108.5;
-  var postLine = offsetPoly(outer, PH);
-  var edges = [];
+  // full 8x8 rough-cut posts, each turned so one face looks straight out along its corner
+  var HALF = 4, POST_H = 116, BM_BOT = 108.5, PLATE = 0.5;
+  var postLine = [], postAng = [];
   for (var i = 0; i < 8; i++) {
-    var a = postLine[i], b = postLine[(i + 1) % 8], dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy);
-    edges.push({ ang: Math.atan2(dy, dx), s: [a[0] + dx / L * PH, a[1] + dy / L * PH], clear: L - POST });
+    var v = outer[i], pv = outer[(i + 7) % 8], nv = outer[(i + 1) % 8];
+    var up = [v[0] - pv[0], v[1] - pv[1]], un = [nv[0] - v[0], nv[1] - v[1]];
+    var lu = Math.hypot(up[0], up[1]), ln = Math.hypot(un[0], un[1]);
+    up = [up[0] / lu, up[1] / lu]; un = [un[0] / ln, un[1] / ln];
+    var bo = [up[1] + un[1], -up[0] - un[0]], lb = Math.hypot(bo[0], bo[1]); bo = [bo[0] / lb, bo[1] / lb];
+    var al = Math.acos(Math.max(-1, Math.min(1, -bo[0] * un[0] - bo[1] * un[1])));
+    var dd = HALF + HALF / Math.tan(al);
+    postLine.push([v[0] - bo[0] * dd, v[1] - bo[1] * dd]);
+    postAng.push(Math.atan2(bo[1], bo[0]));
+  }
+  function exitX(y, beta) {
+    var best = 1e9;
+    for (var q = 0; q < 4; q++) {
+      var a2 = beta + q * Math.PI / 2, nx = Math.cos(a2), ny = Math.sin(a2);
+      if (nx > 1e-9) best = Math.min(best, (HALF - ny * y) / nx);
+    }
+    return best;
+  }
+  function exitP(pa, da) { var b2 = pa - da; return [exitX(0, b2), (exitX(1, b2) - exitX(-1, b2)) / 2]; }
+  var edges = [];
+  for (i = 0; i < 8; i++) {
+    var a = postLine[i], b = postLine[(i + 1) % 8], dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy), ea = Math.atan2(dy, dx);
+    var e0 = exitP(postAng[i], ea), e1 = exitP(postAng[(i + 1) % 8], ea + Math.PI);
+    edges.push({ ang: ea, s: [a[0] + dx / L * e0[0], a[1] + dy / L * e0[0]], clear: L - e0[0] - e1[0], ks: e0[1], ke: e1[1] });
+  }
+  // box whose ends are bevel-cut to meet the rotated post faces: W = [slope at x0, slope at x1, x0, x1]
+  function warpBox(x0, y0, z0, x1, y1, z1, W) {
+    function wx(x, y) { if (!W) return x; var t = W[3] === W[2] ? 0 : (x - W[2]) / (W[3] - W[2]); return x + y * (W[0] + (W[1] - W[0]) * t); }
+    var sp = new Soup();
+    sp.hex([[wx(x0, y0), y0, z0], [wx(x1, y0), y0, z0], [wx(x1, y1), y1, z0], [wx(x0, y1), y1, z0],
+            [wx(x0, y0), y0, z1], [wx(x1, y0), y0, z1], [wx(x1, y1), y1, z1], [wx(x0, y1), y1, z1]]);
+    return sp.geom();
   }
 
   // ground and slab (slab top 8" above grade)
@@ -437,20 +468,20 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
     add(s.geom(), mat(0xA39C90, 1), root, true);
   })();
 
-  // posts: chamfered 8x8 on galvanized saddles
-  var CH = 1, h = PH;
+  // posts on concealed knife-plate bases: only the black base plate shows
+  var CH = 1, h = HALF;
   var ps = new THREE.Shape();
   var pp = [[-h + CH, -h], [h - CH, -h], [h, -h + CH], [h, h - CH], [h - CH, h], [-h + CH, h], [-h, h - CH], [-h, -h + CH]];
   ps.moveTo(pp[0][0], pp[0][1]); for (i = 1; i < 8; i++) ps.lineTo(pp[i][0], pp[i][1]);
-  var postGeom = new THREE.ExtrudeGeometry(ps, { depth: POST_H - 1, bevelEnabled: false }); postGeom.translate(0, 0, 1);
-  var sadGeom = box(-h - 0.25, -h - 0.25, 0, h + 0.25, h + 0.25, 1);
-  postLine.forEach(function (p) {
-    add(postGeom, M.fir).position.set(p[0], p[1], 0);
-    add(sadGeom, M.galv).position.set(p[0], p[1], 0);
+  var postGeom = new THREE.ExtrudeGeometry(ps, { depth: POST_H - PLATE, bevelEnabled: false }); postGeom.translate(0, 0, PLATE);
+  var plateGeom = box(-h, -h, 0, h, h, PLATE);
+  postLine.forEach(function (p, k) {
+    var pm = add(postGeom, M.fir); pm.position.set(p[0], p[1], 0); pm.rotation.z = postAng[k];
+    var bp = add(plateGeom, M.blk); bp.position.set(p[0], p[1], 0); bp.rotation.z = postAng[k];
   });
 
   // BM1 beams between post faces
-  edges.forEach(function (e) { add(box(0, -2.75, 0, e.clear, 2.75, 7.5), M.fir, frame(e.s[0], e.s[1], BM_BOT, e.ang)); });
+  edges.forEach(function (e) { add(warpBox(0, -2.75, 0, e.clear, 2.75, 7.5, [e.ks, e.ke, 0, e.clear]), M.fir, frame(e.s[0], e.s[1], BM_BOT, e.ang)); });
 
   // curved knee braces
   (function () {
@@ -478,7 +509,11 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
       [(i2 + 1) % 8, (i2 + 7) % 8].forEach(function (j) {
         var q = postLine[j], ddx = q[0] - p[0], ddy = q[1] - p[1], l = Math.hypot(ddx, ddy);
         ddx /= l; ddy /= l;
-        add(g, M.fir, frame(p[0] + ddx * PH, p[1] + ddy * PH, BM_BOT, Math.atan2(ddy, ddx)));
+        var da = Math.atan2(ddy, ddx), ep = exitP(postAng[i2], da);
+        var gg = g.clone();
+        gg.applyMatrix4(new THREE.Matrix4().set(1, ep[1], 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1));
+        gg.computeVertexNormals();
+        add(gg, M.fir, frame(p[0] + ddx * ep[0], p[1] + ddy * ep[0], BM_BOT, da));
       });
     }
   })();
@@ -487,8 +522,9 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
   var picket = box(-0.3125, -0.3125, 4.5, 0.3125, 0.3125, 34.5);
   function railing(e, x0, x1, freeEnd) {
     var f = frame(e.s[0], e.s[1], 0, e.ang);
-    add(box(x0, -0.75, 34.5, x1, 0.75, 36), M.iron, f);
-    add(box(x0, -0.75, 3, x1, 0.75, 4.5), M.iron, f);
+    var W = freeEnd === "max" ? [e.ks, 0, x0, x1] : freeEnd === "min" ? [0, e.ke, x0, x1] : [e.ks, e.ke, x0, x1];
+    add(warpBox(x0, -0.75, 34.5, x1, 0.75, 36, W), M.iron, f);
+    add(warpBox(x0, -0.75, 3, x1, 0.75, 4.5, W), M.iron, f);
     var n = Math.floor((x1 - x0) / 4), sp = (x1 - x0) / (n + 1);
     for (var k = 1; k <= n; k++) add(picket, M.iron, f).position.x = x0 + sp * k;
     if (freeEnd) {
@@ -511,7 +547,8 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
   }
   var S = 3.5, S2 = S / 2;
   // knee wall cladding: vertical 1x6 cedar both faces, 1/2" off the slab, 1/8" reveals, layout centred
-  function plankWall(par, Lc) {
+  function plankWall(par, Lc, WK) {
+    function wx(x, y) { var t = x / Lc; return x + y * (WK[0] + (WK[1] - WK[0]) * t); }
     var W = 5.5, REV = 0.125, P = W + REV, n = Math.floor((Lc + REV) / P), extra = Lc - (n * P - REV), widths = [], k;
     if (extra / 2 > 1) { widths.push(extra / 2 - REV); for (k = 0; k < n; k++) widths.push(W); widths.push(extra / 2 - REV); }
     else { widths.push(W + extra / 2); for (k = 0; k < n - 2; k++) widths.push(W); widths.push(W + extra / 2); }
@@ -520,8 +557,8 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
       var x = 0;
       widths.forEach(function (w) {
         var xb = Math.min(x + w, Lc);
-        sp.hex([[x, yy[0], 0.5], [xb, yy[0], 0.5], [xb, yy[1], 0.5], [x, yy[1], 0.5],
-                [x, yy[0], 36], [xb, yy[0], 36], [xb, yy[1], 36], [x, yy[1], 36]]);
+        sp.hex([[wx(x, yy[0]), yy[0], 0.5], [wx(xb, yy[0]), yy[0], 0.5], [wx(xb, yy[1]), yy[1], 0.5], [wx(x, yy[1]), yy[1], 0.5],
+                [wx(x, yy[0]), yy[0], 36], [wx(xb, yy[0]), yy[0], 36], [wx(xb, yy[1]), yy[1], 36], [wx(x, yy[1]), yy[1], 36]]);
         x = xb + REV;
       });
     });
@@ -539,28 +576,29 @@ footer .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-si
       add(box(xc + 0.75, -0.75, zr - 0.75, xc + wi / 2, 0.75, zr + 0.75), M.pvc, par);
     });
   }
-  function timberFrame(par, Lc, xc, w, zbot, zsill, ztop, rails) {
+  function timberFrame(par, Lc, xc, w, zbot, zsill, ztop, rails, ed) {
     var xl0 = xc - w / 2 - S, xl1 = xc - w / 2, xr0 = xc + w / 2, xr1 = xc + w / 2 + S;
     add(box(xl0, -S2, zbot, xl1, S2, BM_BOT), M.fir, par);
     add(box(xr0, -S2, zbot, xr1, S2, BM_BOT), M.fir, par);
     add(box(xl1, -S2, zsill - S, xr0, S2, zsill), M.fir, par);
     add(box(xl1, -S2, ztop, xr0, S2, ztop + S), M.fir, par);
     rails.forEach(function (zc) {
-      add(box(0, -S2, zc - S2, xl0, S2, zc + S2), M.fir, par);
-      add(box(xr1, -S2, zc - S2, Lc, S2, zc + S2), M.fir, par);
+      add(warpBox(0, -S2, zc - S2, xl0, S2, zc + S2, [ed.ks, 0, 0, xl0]), M.fir, par);
+      add(warpBox(xr1, -S2, zc - S2, Lc, S2, zc + S2, [0, ed.ke, xr1, Lc]), M.fir, par);
     });
   }
   (function () {
     var e = edges[3], Lc = e.clear, xc = Lc / 2, f = frame(e.s[0], e.s[1], 0, e.ang);
-    add(box(0, -2.125, 0, Lc, 2.125, 36), M.cedar, f);
-    plankWall(f, Lc);
-    add(box(0, -3.625, 36, Lc, 3.625, 36.75), M.cap, f);
+    var WK = [e.ks, e.ke, 0, Lc];
+    add(warpBox(0, -2.125, 0, Lc, 2.125, 36, WK), M.cedar, f);
+    plankWall(f, Lc, WK);
+    add(warpBox(0, -3.625, 36, Lc, 3.625, 36.75, WK), M.cap, f);
     glassUnit(f, xc, 54, 36.75 + S, 72, false);
-    timberFrame(f, Lc, xc, 54, 36.75, 36.75 + S, 99, [72]);
+    timberFrame(f, Lc, xc, 54, 36.75, 36.75 + S, 99, [72], e);
     [2, 4].forEach(function (k) {
       var e2 = edges[k], L2 = e2.clear, x2 = L2 / 2, f2 = frame(e2.s[0], e2.s[1], 0, e2.ang);
       glassUnit(f2, x2, 36, 12, 78, true);
-      timberFrame(f2, L2, x2, 36, 0, 12, 96, [36, 72]);
+      timberFrame(f2, L2, x2, 36, 0, 12, 96, [36, 72], e2);
     });
   })();
 
